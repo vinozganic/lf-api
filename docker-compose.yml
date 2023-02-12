@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    mongo:
+        image: mongo:6.0
+        container_name: mongo
+        command: mongod --auth
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=user
+            - MONGO_INITDB_ROOT_PASSWORD=password
+        restart: always
+        ports:
+            - 27017:27017
+        volumes:
+            - ./data:/data/db
