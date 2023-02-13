@@ -1,5 +1,5 @@
 const subTypeValidation = (body) => {
-    const { subtype } = body
+    const { type, subtype } = body
     const validSubTypes = {
         clothes: [
             "tshirt",
@@ -65,16 +65,21 @@ const subTypeValidation = (body) => {
             "keyboard",
         ],
     }
-    if (!validSubTypes.includes(subtype)) {
+
+    if (!validSubTypes[type].includes(subtype)) {
         return {
+            success: false,
             error: {
                 message: "Invalid subtype",
                 invalidSubtype: subtype,
-                validSubtypes,
+                validSubtypes: validSubTypes[type],
             },
         }
     }
-    return {}
+
+    return {
+        success: true,
+    }
 }
 
 module.exports = subTypeValidation

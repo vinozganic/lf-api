@@ -3,6 +3,7 @@ const typeValidation = (body) => {
     const validTypes = ["clothes", "misc", "tech"]
     if (!validTypes.includes(type)) {
         return {
+            success: false,
             error: {
                 message: "Invalid type",
                 invalidType: type,
@@ -10,7 +11,9 @@ const typeValidation = (body) => {
             },
         }
     }
-    return {}
+    return {
+        success: true,
+    }
 }
 
 module.exports = typeValidation
