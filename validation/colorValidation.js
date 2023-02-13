@@ -1,6 +1,6 @@
 const colorValidation = (body) => {
     const { color } = body
-    if(!Array.isArray(color) || color.length !== 3) {
+    if (!Array.isArray(color) || color.length !== 3) {
         return {
             success: false,
             error: {
@@ -10,22 +10,21 @@ const colorValidation = (body) => {
         }
     }
 
-    const isColorValid = color.every((color) => 
-        typeof color[i] !== "number" || color[i] < 0 || color[i] > 255)
+    const isColorValid = color.every((c) => typeof c == "number" && c >= 0 && c <= 255)
 
-    if(!isColorValid) {
+    if (!isColorValid) {
         return {
             success: false,
             error: {
-                message: "Invalid color format. Color must be an array of 3 numbers",
-            }
+                message: "Invalid color",
+                invalidColor: color,
+            },
         }
     }
 
     return {
-        success: true
+        success: true,
     }
-    
 }
 
 module.exports = colorValidation

@@ -3,45 +3,67 @@ const locationValidation = (body) => {
     const validLocationTypes = ["exact", "nonExact"]
     let error = undefined
 
+    if (!location.type) {
+        return { success: false, error: { message: "Missing location type" } }
+    }
+
     if (!validLocationTypes.includes(location.type)) {
-        error = {
-            message: "Invalid location type",
-            validLocationTypes,
+        return {
+            success: false,
+            error: {
+                message: "Invalid location type",
+                validLocationTypes,
+            },
         }
     }
 
     if (location.type === "exact") {
         if (!location.coordinates) {
-            error = {
-                message: "Missing coordinates",
+            return {
+                success: false,
+                error: {
+                    message: "Missing coordinates",
+                },
             }
         }
 
         if (!location.coordinates.latitude || !location.coordinates.longitude) {
-            error = {
-                message: "Missing coordinates",
+            return {
+                success: false,
+                error: {
+                    message: "Missing coordinates",
+                },
             }
         }
 
         if (typeof location.coordinates.latitude !== "number" || typeof location.coordinates.longitude !== "number") {
-            error = {
-                message: "Invalid coordinates. Latitude and longitute must be a number",
+            return {
+                success: false,
+                error: {
+                    message: "Invalid coordinates. Latitude and longitude must be a number",
+                },
             }
         }
 
         if (location.coordinates.latitude < -90 || location.coordinates.latitude > 90) {
-            error = {
-                message: "Invalid latitude",
-                invalidLatitude: location.coordinates.latitude,
-                validLatitude: [-90, 90],
+            return {
+                success: false,
+                error: {
+                    message: "Invalid latitude",
+                    invalidLatitude: location.coordinates.latitude,
+                    validLatitude: [-90, 90],
+                },
             }
         }
 
         if (location.coordinates.longitude < -180 || location.coordinates.longitude > 180) {
-            error = {
-                message: error.invalidLatitude ? "Invalid longitude and latitude" : "Invalid longitude",
-                invalidLongitude: location.coordinates.longitude,
-                validLongitude: [-180, 180],
+            return {
+                success: false,
+                error: {
+                    message: error.invalidLatitude ? "Invalid longitude and latitude" : "Invalid longitude",
+                    invalidLongitude: location.coordinates.longitude,
+                    validLongitude: [-180, 180],
+                },
             }
         }
 
@@ -49,33 +71,60 @@ const locationValidation = (body) => {
     }
 
     if (location.type === "nonExact") {
-        // for the following format, the coordinatesArray must be an array of arrays of arrays of two numbers,
-        // where the first number is the latitude and the second number is the longitude
-        /*
-        location: {
-            type: "nonExact",
-            coordinatesArray: [
-                [{longitude: startLong, latitude: startLat}, {longitude: endLong, latitude: endLat}],
-                [{longitude: startLong, latitude: startLat}, {longitude: endLong, latitude: endLat}],
-            ]
+        if (!location.publicTransportLines) {
+            return {
+                success: false,
+                error: {
+                    message: "Missing publicTransportLines",
+                },
+            }
         }
-        */
+
+        if (!Array.isArray(location.publicTransportLines)) {
+            return {
+                success: false,
+                error: {
+                    message: "Invalid publicTransportLines. Must be an array",
+                },
+            }
+        }
+
+        const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17]
+        location.publicTransportLines.forEach((publicTransportLine) => {
+            if (!validPublicTransportLines.includes(publicTransportLine)) {
+                error = {
+                    message: "Invalid publicTransportLine",
+                    invalidPublicTransportLine: publicTransportLine,
+                    validPublicTransportLines,
+                }
+            }
+        })
+        if (error) return { success: false, error }
 
         if (!location.coordinatesArray) {
-            error = {
-                message: "Missing coordinatesArray",
+            return {
+                success: false,
+                error: {
+                    message: "Missing coordinatesArray",
+                },
             }
         }
 
         if (!Array.isArray(location.coordinatesArray)) {
-            error = {
-                message: "Invalid coordinatesArray. Must be an array",
+            return {
+                success: false,
+                error: {
+                    message: "Invalid coordinatesArray. Must be an array",
+                },
             }
         }
 
         if (location.coordinatesArray.length === 0) {
-            error = {
-                message: "Invalid coordinatesArray. Must not be empty",
+            return {
+                success: false,
+                error: {
+                    message: "Invalid coordinatesArray. Must be an array with at least one element",
+                },
             }
         }
 
@@ -87,13 +136,19 @@ const locationValidation = (body) => {
                     message: "Invalid coordinates. Must be an array",
                 }
             }
+        })
+        if (error) return { success: false, error }
 
+        coordinatesArray.forEach((coordinates) => {
             if (coordinates.length !== 2) {
                 error = {
                     message: "Invalid coordinates. Must be an array of two elements",
                 }
             }
+        })
+        if (error) return { success: false, error }
 
+        coordinatesArray.forEach((coordinates) => {
             coordinates.forEach((coordinate) => {
                 if (error) return
                 if (typeof coordinate.latitude !== "number" || typeof coordinate.longitude !== "number") {
