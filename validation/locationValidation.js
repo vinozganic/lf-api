@@ -135,36 +135,3 @@ const locationValidation = (body) => {
 }
 
 module.exports = locationValidation
-
-const req = {
-    body: {
-        location: {
-            type: "nonExact",
-            coordinatesArray: [
-                [
-                    { longitude: -12.53, latitude: 56.23 },
-                    { longitude: 34.67, latitude: -90.34 },
-                ],
-                [
-                    { longitude: 99.123, latitude: 12.34 },
-                    { longitude: -78.56, latitude: -65.43 },
-                ],
-                [
-                    { longitude: 45.67, latitude: 89.01 },
-                    { longitude: -23.45, latitude: -67.89 },
-                ],
-                [
-                    { longitude: 12.67, latitude: 56.78 },
-                    { longitude: -67.89, latitude: 23.45 },
-                ],
-                [
-                    { longitude: 67.89, latitude: 45.67 },
-                    { longitude: -12.34, latitude: -56.78 },
-                ],
-            ],
-        },
-    },
-}
-
-const res = locationValidation(req.body)
-console.log(res)
