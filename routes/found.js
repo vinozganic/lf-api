@@ -4,11 +4,11 @@ const { addFound } = require("../services/foundService")
 const router = express.Router()
 
 router.post("/", async (req, res) => {
-    const newFound = await addFound(req.body)
-    if (newFound.message === "Invalid type") {
-        return res.status(400).json({ message: "Invalid type" })
+    const data = await addFound(req.body)
+    if (data.error) {
+        return res.status(400).json(data)
     }
-    res.status(201).json(newFound)
+    res.status(201).json(data)
 })
 
 module.exports = router
