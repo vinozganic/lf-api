@@ -1,13 +1,14 @@
 const { Found } = require("../db")
+const validate = require("../validation/validation")
 
 const addFound = async (body) => {
-    const validTypes = ["clothes", "tech", "misc"]
-    if (!validTypes.includes(body.type)) {
-        return { error: "Invalid type" }
+    const validationResult = validate(body)
+    if (!validationResult.success) {
+        return validationResult
     }
     const newFound = new Found(body)
     await newFound.save()
-    return newFound
+    return { success: true, newFound }
 }
 
 module.exports = { addFound }
