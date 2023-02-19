@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const mongoose = require("mongoose")
 const foundRouter = require("./routes/found")
 const lostRouter = require("./routes/lost")
@@ -9,6 +10,13 @@ const PORT = process.env.PORT || 8000
 
 const app = express()
 app.use(express.json())
+
+var corsOptions = {
+    origin: process.env.FRONTEND_URL,
+}
+
+app.use(cors(corsOptions))
+
 
 app.use("/found", foundRouter)
 app.use("/lost", lostRouter)
