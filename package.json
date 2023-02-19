@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon index.js",
+        "dev": "docker compose up --env-file .env.dev",
         "start": "node index.js"
     },
     "repository": {

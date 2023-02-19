@@ -1,5 +1,16 @@
 version: "3.8"
 services:
+    api:
+        image: lost-and-found/api:latest
+        build: .
+        container_name: api
+        ports:
+            - 8000:8000
+        links:
+            - mongo
+        environment:
+            - MONGO_URI=mongodb://user:password@mongo:27017/lf?authSource=admin
+            - NODE_ENV=${NODE_ENV}
     mongo:
         image: mongo:6.0
         container_name: mongo
