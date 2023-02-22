@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev": "docker compose up -d",
-        "start": "node index.js"
+        "start": "node index.js",
+        "test": "jest --runInBand ./tests/"
     },
     "repository": {
         "type": "git",
@@ -22,9 +23,15 @@
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
-        "mongoose": "^6.9.1"
+        "mongodb-memory-server-core": "^8.11.4",
+        "mongoose": "^6.9.2"
     },
     "devDependencies": {
+        "jest": "^29.4.3",
+        "mongodb-memory-server": "^8.11.4",
         "nodemon": "^2.0.20"
+    },
+    "jest": {
+        "testEnvironment": "node"
     }
 }
