@@ -1,5 +1,4 @@
 const validateType = require("./typeValidation")
-const validateSubType = require("./subTypeValidation")
 const validateColor = require("./colorValidation")
 const validateLocation = require("./locationValidation")
 const validateTime = require("./timeValidation")
