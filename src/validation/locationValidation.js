@@ -3,6 +3,10 @@ const locationValidation = (body) => {
     const validLocationTypes = ["exact", "nonExact"]
     let error = undefined
 
+    if (!location) {
+        return { success: false, error: { message: "Missing location" } }
+    }
+
     if (!location.type) {
         return { success: false, error: { message: "Missing location type" } }
     }
@@ -31,7 +35,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: "Missing coordinates",
+                    message: "Invalid coordinates",
                 },
             }
         }
@@ -60,7 +64,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: error.invalidLatitude ? "Invalid longitude and latitude" : "Invalid longitude",
+                    message: error?.invalidLatitude ? "Invalid longitude and latitude" : "Invalid longitude",
                     invalidLongitude: location.coordinates.longitude,
                     validLongitude: [-180, 180],
                 },
@@ -71,11 +75,29 @@ const locationValidation = (body) => {
     }
 
     if (location.type === "nonExact") {
+        if (!location.publicTransportLines && !location.coordinatesArray) {
+            return {
+                success: false,
+                error: {
+                    message: "Missing coordinatesArray and publicTransportLines",
+                },
+            }
+        }
+
         if (!location.publicTransportLines) {
             return {
                 success: false,
                 error: {
                     message: "Missing publicTransportLines",
+                },
+            }
+        }
+
+        if (!location.coordinatesArray) {
+            return {
+                success: false,
+                error: {
+                    message: "Missing coordinatesArray",
                 },
             }
         }
@@ -89,27 +111,6 @@ const locationValidation = (body) => {
             }
         }
 
-        const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17]
-        location.publicTransportLines.forEach((publicTransportLine) => {
-            if (!validPublicTransportLines.includes(publicTransportLine)) {
-                error = {
-                    message: "Invalid publicTransportLine",
-                    invalidPublicTransportLine: publicTransportLine,
-                    validPublicTransportLines,
-                }
-            }
-        })
-        if (error) return { success: false, error }
-
-        if (!location.coordinatesArray) {
-            return {
-                success: false,
-                error: {
-                    message: "Missing coordinatesArray",
-                },
-            }
-        }
-
         if (!Array.isArray(location.coordinatesArray)) {
             return {
                 success: false,
@@ -119,16 +120,19 @@ const locationValidation = (body) => {
             }
         }
 
-        if (location.coordinatesArray.length === 0) {
-            return {
-                success: false,
-                error: {
-                    message: "Invalid coordinatesArray. Must be an array with at least one element",
-                },
+        const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17]
+        location.publicTransportLines.forEach((publicTransportLine) => {
+            if (!validPublicTransportLines.includes(publicTransportLine)) {
+                error = {
+                    message: "Invalid publicTransportLines. Line does not exist",
+                    invalidPublicTransportLine: publicTransportLine,
+                    validPublicTransportLines,
+                }
             }
-        }
+        })
+        if (error) return { success: false, error }
 
-        coordinatesArray = location.coordinatesArray
+        let coordinatesArray = location.coordinatesArray
 
         coordinatesArray.forEach((coordinates) => {
             if (!Array.isArray(coordinates)) {
@@ -153,7 +157,7 @@ const locationValidation = (body) => {
                 if (error) return
                 if (typeof coordinate.latitude !== "number" || typeof coordinate.longitude !== "number") {
                     error = {
-                        message: "Invalid coordinates. Latitude and longitute must be a number",
+                        message: "Invalid coordinates. Latitude and longitude must be a number",
                     }
                 }
 
