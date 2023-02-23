@@ -95,7 +95,7 @@ describe("validateLocation", () => {
     })
 
     test("returns an error for empty coordinates in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: [] } })
+        const result = validateLocation({ location: { type: "exact", coordinates: {} } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid coordinates")
     })
@@ -124,49 +124,50 @@ describe("validateLocation", () => {
         expect(result.error.message).toBe("Invalid longitude")
     })
 
+    test("returns an error if there is neither coordinatesArray nor publicTransportLines in non exact location", () => {
+        const result = validateLocation({ location: { type: "nonExact" } })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing coordinatesArray and publicTransportLines")
+    })
+
     test("returns an error for empty public transport lines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinates: [] } })
+        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing publicTransportLines")
     })
 
+    test("returns error for missing coordinatesArray", () => {
+        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [2] } })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing coordinatesArray")
+    })
+
     test("returns an error for public transport lines that are not an array in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: "not an array" } })
+        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: "not an array", coordinatesArray: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid publicTransportLines. Must be an array")
     })
 
     test("returns an error for non valid public transport lines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [-23, 12] } })
+        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [-23, 12], coordinatesArray: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid publicTransportLines. Line does not exist")
     })
 
-    test("returns success for valid public transport line in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [2] } })
-        expect(result.success).toBe(true)
-    })
-
     test("returns an error for coordinates that are not an array in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: "not an array" } })
+        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: "not an array", publicTransportLines: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid coordinatesArray. Must be an array")
     })
 
-    test("returns an error for empty coordinates array", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinatesArray. Must be an array with at least one element")
-    })
-
     test("returns an error for coordinates that are not an array in coordinatesArray in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [23, 12] } })
+        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [23, 12], publicTransportLines: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid coordinates. Must be an array")
     })
 
     test("returns an error for coordinates that are not an array of 2 elements in coordinatesArray in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [[23, 12, 12]] } })
+        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [[23, 12, 12]], publicTransportLines: [] } })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid coordinates. Must be an array of two elements")
     })
@@ -181,6 +182,7 @@ describe("validateLocation", () => {
                         { longitude: 23, latitude: 23 },
                     ],
                 ],
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -197,6 +199,7 @@ describe("validateLocation", () => {
                         { longitude: 23, latituede: 23 },
                     ],
                 ],
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -213,6 +216,7 @@ describe("validateLocation", () => {
                         { longitude: 200, latitude: 23 },
                     ],
                 ],
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -229,14 +233,9 @@ describe("validateLocation", () => {
                         { longitude: 23, latitude: 23 },
                     ],
                 ],
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(true)
-    })
-
-    test("returns an error if there is neither coordinatesArray nor publicTransportLines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact" } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing coordinatesArray or publicTransportLines")
     })
 })
