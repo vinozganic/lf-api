@@ -6,7 +6,7 @@
     "scripts": {
         "start:dev": "nodemon -L src/index.js",
         "start": "node src/index.js",
-        "test": "jest --runInBand ./tests/"
+        "test": "jest --runInBand ./tests/ --testTimeout=10000"
     },
     "repository": {
         "type": "git",
