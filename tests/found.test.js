@@ -218,8 +218,3 @@ describe('validateLocation', () => {
     });
 
 });
-
-describe('validateTime', () => {
-
-    test()
-});
