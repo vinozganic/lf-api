@@ -1,24 +1,10 @@
 const { beforeAll } = require("@jest/globals")
+const validateType = require("../../src/validation/typeValidation")
+const validateColor = require("../../src/validation/colorValidation")
+const validateLocation = require("../../src/validation/locationValidation")
+const validateTime = require("../../src/validation/timeValidation")
+const validateIdentifiable = require("../../src/validation/identifiableValidation")
 
-const mongoose = require("mongoose")
-const dbHandler = require("./dbHandler")
-const validateType = require("../src/validation/typeValidation")
-const validateColor = require("../src/validation/colorValidation")
-const validateLocation = require("../src/validation/locationValidation")
-const validateTime = require("../src/validation/timeValidation")
-const validateIdentifiable = require("../src/validation/identifiableValidation")
-
-beforeAll(async () => {
-    await dbHandler.connect()
-})
-
-afterEach(async () => {
-    await dbHandler.clearDatabase()
-})
-
-afterAll(async () => {
-    await dbHandler.closeDatabase()
-})
 
 describe("validateType", () => {
     test("returns an error for empty type", () => {
