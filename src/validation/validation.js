@@ -19,16 +19,16 @@ const validate = (body) => {
     }
 
     const typeCheck = validateType(body)
-    // const subTypeCheck = validateSubType(body)
     const colorCheck = validateColor(body)
     const locationCheck = validateLocation(body)
     const timeCheck = validateTime(body)
     const identifiableCheck = validateIdentifiable(body)
     const phoneNumberCheck = validatePhoneNumber(body)
 
-    console.log(typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck)
+    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck].filter(
+        (check) => check.success === false
+    )
 
-    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck].filter((check) => check.success === false)
     if (errors.length > 0) {
         return {
             success: false,
