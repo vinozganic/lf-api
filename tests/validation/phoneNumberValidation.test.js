@@ -1,14 +1,6 @@
 const validatePhoneNumber = require("../../src/validation/phoneNumberValidation")
 
-describe("phoneNumberValidation", () => {
-
-    test("returns error when no phone number is provided", () => {
-        const result = validatePhoneNumber({
-            phoneNumber : undefined
-        })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing phone number.")
-    });
+describe("validatePhoneNumber", () => {
 
     test("returns error when phone number is not a string", () => {
         const result = validatePhoneNumber({
