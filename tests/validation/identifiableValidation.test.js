@@ -1,6 +1,6 @@
 const validateIdentifiable = require("../../src/validation/identifiableValidation")
 
-describe("Identifiable Validation", () => {
+describe("validateIdentifiable", () => {
     test("returns an error for empty identifiable", () => {
         const result = validateIdentifiable({
             identifiable: {},
