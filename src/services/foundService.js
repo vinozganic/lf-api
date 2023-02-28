@@ -9,7 +9,7 @@ const addFound = async (body) => {
     }
 
     const newFound = new Found({
-        trackingKey,
+        trackingKey: generateKey(),
         ...body,
     })
     await newFound.save()
