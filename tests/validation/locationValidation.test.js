@@ -80,7 +80,7 @@ describe("validateLocation", () => {
         const result = validateLocation({
             location: {
                 type: "MultiLineString",
-                coordinates: [[179, 75]],
+                coordinates: [[[179, 75]]],
                 publicTransportLines: [1, 2, 3],
             },
         })
@@ -93,8 +93,10 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [1, "a"],
-                    [2, "b"],
+                    [
+                        [1, "a"],
+                        [2, "b"],
+                    ],
                 ],
                 publicTransportLines: [1, 2, 3],
             },
@@ -108,8 +110,14 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [181, 75],
+                    [
+                        [179, 75],
+                        [169, 75],
+                    ],
+                    [
+                        [179, 75],
+                        [181, 75],
+                    ],
                 ],
                 publicTransportLines: [1, 2, 3],
             },
@@ -123,8 +131,18 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 91],
+                    [
+                        [179, 75],
+                        [179, 57],
+                    ],
+                    [
+                        [179, 75],
+                        [179, 91],
+                    ],
+                    [
+                        [179, 75],
+                        [-100, -20],
+                    ],
                 ],
                 publicTransportLines: [1, 2, 3],
             },
@@ -138,8 +156,18 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [181, 91],
+                    [
+                        [179, 75],
+                        [-164, 23],
+                    ],
+                    [
+                        [179, 75],
+                        [-120, -50],
+                    ],
+                    [
+                        [179, 75],
+                        [190, -99],
+                    ],
                 ],
                 publicTransportLines: [1, 2, 3],
             },
@@ -153,8 +181,10 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 75],
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
                 ],
             },
         })
@@ -167,8 +197,10 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 75],
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
                 ],
                 publicTransportLines: "not an array",
             },
@@ -182,8 +214,10 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 75],
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
                 ],
                 publicTransportLines: ["not a number", 2, 3],
             },
@@ -192,14 +226,15 @@ describe("validateLocation", () => {
         expect(result.error.message).toBe("Invalid public transport lines")
     })
 
-    const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     test("returns an error if publicTransportLines are not in validPublicTransportLines", () => {
         const result = validateLocation({
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 75],
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
                 ],
                 publicTransportLines: [99],
             },
@@ -223,8 +258,10 @@ describe("validateLocation", () => {
             location: {
                 type: "MultiLineString",
                 coordinates: [
-                    [179, 75],
-                    [179, 75],
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
                 ],
                 publicTransportLines: [1, 2, 3],
             },
