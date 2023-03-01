@@ -13,7 +13,7 @@ services:
             - MONGO_URI=mongodb://user:password@mongo:27017/lf?authSource=admin
             - PORT=8000
             - FRONTEND_URL=http://localhost:3000
-            - POSTGRES_URI=postgres://user:password@postgres:5432/lf
+            - POSTGRES_URI=postgres://user:password@postgres:5432/matches
         volumes:
             - ./src:/app/src
         command: npm run start:dev
@@ -41,4 +41,4 @@ services:
         environment:
             - POSTGRES_PASSWORD=password
             - POSTGRES_USER=user
-            - POSTGRES_DB=lf
+            - POSTGRES_DB=matches
