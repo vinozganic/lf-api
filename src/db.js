@@ -1,6 +1,22 @@
 const mongoose = require("mongoose")
 const { Client } = require("pg")
 
+const checkIfTableExistsQuery = `
+    SELECT EXISTS (
+        SELECT 1
+        FROM pg_catalog.pg_tables
+        WHERE schemaname = 'public'
+        AND tablename = 'matches'
+    );
+`
+const createTableQuery = `
+    CREATE TABLE matches (
+        id SERIAL PRIMARY KEY,
+        found_id INTEGER NOT NULL,
+        lost_id INTEGER NOT NULL,
+        matchProbability NUMERIC(7,6) NOT NULL
+    );
+`
 const connectToMongo = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
@@ -21,30 +37,16 @@ const connectToPostgres = async () => {
         if (process.env.NODE_ENV === "development") {
             await client.connect()
             console.log("Connected to PostgreSQL")
-            const results = await client.query(`
-                SELECT EXISTS (
-                    SELECT 1
-                    FROM pg_catalog.pg_tables
-                    WHERE schemaname = 'public'
-                    AND tablename = 'matches'
-                );
-            `)
+            const results = await client.query(checkIfTableExistsQuery)
             const tableExists = results.rows[0].exists
             if (!tableExists) {
                 console.log("Creating table matches.")
-                await client.query(`
-                    CREATE TABLE matches (
-                        id SERIAL PRIMARY KEY,
-                        found_id INTEGER NOT NULL,
-                        lost_id INTEGER NOT NULL,
-                        matchProbability NUMERIC(7,6) NOT NULL
-                    );
-                `)
+                await client.query(createTableQuery)
                 console.log("Created table matches.")
             } else {
                 console.log("Table matches exists.")
             }
-        } 
+        }
     } catch (error) {
         console.log(error)
     } finally {
