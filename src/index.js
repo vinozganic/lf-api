@@ -3,7 +3,7 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const foundRouter = require("./routes/found")
 const lostRouter = require("./routes/lost")
-const { connect } = require("./db")
+const { connectToMongo, connectToPostgres } = require("./db")
 
 const PORT = process.env.PORT || 8000
 
@@ -19,7 +19,8 @@ app.use(cors(corsOptions))
 app.use("/found", foundRouter)
 app.use("/lost", lostRouter)
 
-connect()
+connectToMongo()
+connectToPostgres()
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
