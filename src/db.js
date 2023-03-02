@@ -1,16 +1,8 @@
 const mongoose = require("mongoose")
 const { Client } = require("pg")
 
-const checkIfTableExistsQuery = `
-    SELECT EXISTS (
-        SELECT 1
-        FROM pg_catalog.pg_tables
-        WHERE schemaname = 'public'
-        AND tablename = 'matches'
-    );
-`
-const createTableQuery = `
-    CREATE TABLE matches (
+const createTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS matches (
         id SERIAL PRIMARY KEY,
         found_id INTEGER NOT NULL,
         lost_id INTEGER NOT NULL,
@@ -28,29 +20,21 @@ const connectToMongo = async () => {
     }
 }
 
-const client = new Client({
+const postgresClient = new Client({
     connectionString: process.env.POSTGRES_URI,
 })
 
 const connectToPostgres = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
-            await client.connect()
+            await postgresClient.connect()
             console.log("Connected to PostgreSQL")
-            const results = await client.query(checkIfTableExistsQuery)
-            const tableExists = results.rows[0].exists
-            if (!tableExists) {
-                console.log("Creating table matches.")
-                await client.query(createTableQuery)
-                console.log("Created table matches.")
-            } else {
-                console.log("Table matches exists.")
-            }
+            await postgresClient.query(createTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
     } finally {
-        await client.end()
+        await postgresClient.end()
     }
 }
 
@@ -62,4 +46,4 @@ const Found = mongoose.model("found", foundSchema)
 const lostSchema = new Schema({}, { strict: false })
 const Lost = mongoose.model("lost", lostSchema)
 
-module.exports = { Found, Lost, connectToMongo, connectToPostgres, client }
+module.exports = { Found, Lost, connectToMongo, connectToPostgres, postgresClient }
