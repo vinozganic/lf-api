@@ -10,12 +10,16 @@ services:
         links:
             - mongo
         environment:
-            - MONGO_URI=mongodb://user:password@mongo:27017/lf?authSource=admin
             - PORT=8000
+            - MONGO_URI=mongodb://user:password@mongo:27017/lf?authSource=admin
+            - POSTGRES_URI=postgres://user:password@postgres:5432/matches
             - FRONTEND_URL=http://localhost:3000
         volumes:
             - ./src:/app/src
         command: npm run start:dev
+        depends_on:
+            - mongo
+            - postgres
     mongo:
         image: mongo:6.0
         container_name: mongo
@@ -28,3 +32,13 @@ services:
             - 27017:27017
         volumes:
             - ./data:/data/db
+    postgres:
+        image: postgres:15.0
+        container_name: postgres
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_DB=matches
