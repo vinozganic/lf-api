@@ -15,6 +15,7 @@ describe("validateLocation", () => {
         const result = validateLocation({
             location: {
                 type: "not a valid type",
+                coordinates: [176, 75],
             },
         })
         expect(result.success).toBe(false)
