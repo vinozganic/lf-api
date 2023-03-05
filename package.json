@@ -6,19 +6,19 @@
     "scripts": {
         "start:dev": "nodemon -L src/index.js",
         "start": "node src/index.js",
-        "test": "jest --runInBand ./tests/ --testTimeout=10000"
+        "test": "jest --runInBand ./tests/ --testTimeout=10000 --coverage"
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@bitbucket.org/lost-and-found/lfzagreb.git"
+        "url": "git+ssh://git@bitbucket.org/lost-and-found/lf-api.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://bitbucket.org/lost-and-found/lfzagreb/issues"
+        "url": "https://bitbucket.org/lost-and-found/lf-api/issues"
     },
-    "homepage": "https://bitbucket.org/lost-and-found/lfzagreb#readme",
+    "homepage": "https://bitbucket.org/lost-and-found/lf-api#readme",
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.18.2",
