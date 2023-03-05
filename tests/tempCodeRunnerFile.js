@@ -1,2 +1,1 @@
-
-expect(result.success).toBe(true);
+expect(result.success).toBe(true)
