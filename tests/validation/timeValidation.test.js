@@ -1,6 +1,5 @@
 const validateTime = require("../../src/validation/timeValidation")
 
-
 describe("validateTime", () => {
     test("returns an error for empty time", () => {
         const result = validateTime({
@@ -8,7 +7,7 @@ describe("validateTime", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid time")
-    });
+    })
 
     test("returns an error for empty startTime", () => {
         const result = validateTime({
@@ -19,7 +18,7 @@ describe("validateTime", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid time")
-    });
+    })
 
     test("returns an error for empty endTime", () => {
         const result = validateTime({
@@ -30,7 +29,7 @@ describe("validateTime", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid time")
-    });
+    })
 
     test("returns success for valid time", () => {
         const result = validateTime({
@@ -40,5 +39,5 @@ describe("validateTime", () => {
             },
         })
         expect(result.success).toBe(true)
-    });
-});
+    })
+})
