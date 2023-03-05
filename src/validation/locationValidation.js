@@ -2,12 +2,21 @@ const locationValidation = (body) => {
     const { location } = body
     const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
+    if (!location.type || !location.coordinates) {
+        return {
+            success: false,
+            error: {
+                message: "Invalid location",
+            },
+        }
+    }
+
     if (location.type === "Point") {
         if (location.coordinates.length !== 2) {
             return {
                 success: false,
                 error: {
-                    message: "Invalid location",
+                    message: "Invalid coordinates",
                 },
             }
         }
