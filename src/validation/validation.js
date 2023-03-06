@@ -11,6 +11,7 @@ const validate = (body) => {
     const missingFields = requiredFields.filter((field) => !fields.includes(field))
     if (missingFields.length > 0) {
         return {
+            success: false,
             error: {
                 message: "Missing fields",
                 missingFields,
@@ -25,9 +26,9 @@ const validate = (body) => {
     const identifiableCheck = validateIdentifiable(body)
     const phoneNumberCheck = validatePhoneNumber(body)
 
-    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck].filter(
-        (check) => check.success === false
-    )
+    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck]
+        .filter((check) => check.success === false)
+        .map((check) => check.error.message)
 
     if (errors.length > 0) {
         return {

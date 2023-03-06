@@ -12,16 +12,6 @@ const identifiableValidation = (body) => {
         }
     }
 
-    if (!identifiable) {
-        return {
-            sucess: false,
-            error: {
-                message: "Invalid identifiable",
-                invalidIdentifiable: body.identifiable,
-                validIdentifiable: [true, false],
-            },
-        }
-    }
     return { success: true }
 }
 
