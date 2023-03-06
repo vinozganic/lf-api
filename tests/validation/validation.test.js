@@ -1,241 +1,417 @@
-const { beforeAll } = require("@jest/globals")
+const validate = require("../../src/validation/validation");
 
-const mongoose = require("mongoose")
-const dbHandler = require("./dbHandler")
-const validateType = require("../src/validation/typeValidation")
-const validateColor = require("../src/validation/colorValidation")
-const validateLocation = require("../src/validation/locationValidation")
-const validateTime = require("../src/validation/timeValidation")
-const validateIdentifiable = require("../src/validation/identifiableValidation")
+describe("validate", () => {
 
-beforeAll(async () => {
-    await dbHandler.connect()
-})
+    test("returns an error for empty body", () => {
+        const result = validate({       
 
-afterEach(async () => {
-    await dbHandler.clearDatabase()
-})
-
-afterAll(async () => {
-    await dbHandler.closeDatabase()
-})
-
-describe("validateType", () => {
-    test("returns an error for empty type", () => {
-        const result = validateType({})
+        })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid type")
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["type", "subtype", "color", "location", "time", "identifiable", "phoneNumber"])
     })
+
+    test("returns an error for missing type", () => {
+        const result = validate({
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["type"])
+    })
+
+    test("returns an error for missing color", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["color"])
+    })
+
+    test("returns an error for missing location", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["location"])
+    })
+
+    test("returns an error for missing time", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["time"])
+    })
+
+    test("returns an error for missing identifiable", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["identifiable"])
+    })
+
+    test("returns an error for missing phoneNumber", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["phoneNumber"])
+    })
+
+    test("returns an error for missing type and color", () => {
+        const result = validate({
+            subtype: "laptop",
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Missing fields")
+        expect(result.error.missingFields).toEqual(["type", "color"])
+    })
+
     test("returns an error for invalid type", () => {
-        const result = validateType({ type: "not a type" })
+        const result = validate({
+            type: "wrong type",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid type")
+        expect(result.errors).toEqual(["Invalid type"])
     })
 
     test("returns an error for invalid subtype", () => {
-        const result = validateType({ type: "tech" })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid subtype")
-    })
-
-    test("returns an error for invalid subtype", () => {
-        const result = validateType({ type: "tech", subtype: "not a subtype" })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid subtype")
-    })
-
-    test("returns an error for invalid subtype", () => {
-        const result = validateType({ type: "tech", subtype: "shirt" })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid subtype")
-    })
-
-    test("returns success for valid subtype", () => {
-        const result = validateType({ type: "tech", subtype: "laptop" })
-        expect(result.success).toBe(true)
-    })
-})
-
-describe("validateColor", () => {
-    test("returns an error for invalid color format", () => {
-        const result = validateColor({ color: "not an array" })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid color format. Color must be an array of 3 numbers")
-    })
-
-    test("returns an error for invalid color values", () => {
-        const result = validateColor({ color: [256, -1, 200] })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid color")
-    })
-
-    test("returns success for valid color", () => {
-        const result = validateColor({ color: [100, 200, 50] })
-        expect(result.success).toBe(true)
-    })
-})
-
-describe("validateLocation", () => {
-    test("returns an error for empty location", () => {
-        const result = validateLocation({})
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing location")
-    })
-
-    test("returns an error for empty location", () => {
-        const result = validateLocation({ location: "not an object" })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing location type")
-    })
-
-    test("returns an error for invalid location type", () => {
-        const result = validateLocation({ location: { type: "not a type" } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid location type")
-    })
-
-    test("returns an error for empty coordinates in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: {} } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
-    })
-
-    test("returns an error for missing latitude or longitude coordinates in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: { longitude: 80 } } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
-    })
-
-    test("returns an error for coordinates that are not numbers in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: { latitude: 80, longitude: "not a number" } } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates. Latitude and longitude must be a number")
-    })
-
-    test("returns an error for latitude not being within the valid range in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: { latitude: 100, longitude: 100 } } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid latitude")
-    })
-
-    test("returns an error for longitude not being within the valid range in exact location", () => {
-        const result = validateLocation({ location: { type: "exact", coordinates: { latitude: 80, longitude: 200 } } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid longitude")
-    })
-
-    test("returns an error if there is neither coordinatesArray nor publicTransportLines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact" } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing coordinatesArray and publicTransportLines")
-    })
-
-    test("returns an error for empty public transport lines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing publicTransportLines")
-    })
-
-    test("returns error for missing coordinatesArray", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [2] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing coordinatesArray")
-    })
-
-    test("returns an error for public transport lines that are not an array in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: "not an array", coordinatesArray: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid publicTransportLines. Must be an array")
-    })
-
-    test("returns an error for non valid public transport lines in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", publicTransportLines: [-23, 12], coordinatesArray: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid publicTransportLines. Line does not exist")
-    })
-
-    test("returns an error for coordinates that are not an array in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: "not an array", publicTransportLines: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinatesArray. Must be an array")
-    })
-
-    test("returns an error for coordinates that are not an array in coordinatesArray in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [23, 12], publicTransportLines: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates. Must be an array")
-    })
-
-    test("returns an error for coordinates that are not an array of 2 elements in coordinatesArray in non exact location", () => {
-        const result = validateLocation({ location: { type: "nonExact", coordinatesArray: [[23, 12, 12]], publicTransportLines: [] } })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates. Must be an array of two elements")
-    })
-
-    test("returns an error for coordinates that are not numbers in coordinatesArray in non exact location", () => {
-        const result = validateLocation({
+        const result = validate({
+            type: "tech",
+            subtype: "wrong subtype",
+            color: [100, 200, 50],
             location: {
-                type: "nonExact",
-                coordinatesArray: [
+                type: "MultiLineString",
+                coordinates: [
                     [
-                        { longitude: "rg", latitude: "not a number" },
-                        { longitude: 23, latitude: 23 },
+                        [179, 75],
+                        [179, 75],
                     ],
                 ],
-                publicTransportLines: [],
+                publicTransportLines: [1, 2, 3],
             },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates. Latitude and longitude must be a number")
+        expect(result.errors).toEqual(["Invalid subtype"])
     })
 
-    test("returns an error for latitude not being within the valid range in coordinatesArray in non exact location", () => {
-        const result = validateLocation({
+    test("returns an error for invalid color", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: "red",
             location: {
-                type: "nonExact",
-                coordinatesArray: [
+                type: "MultiLineString",
+                coordinates: [
                     [
-                        { longitude: 100, latitude: 100 },
-                        { longitude: 23, latituede: 23 },
+                        [179, 75],
+                        [179, 75],
                     ],
                 ],
-                publicTransportLines: [],
+                publicTransportLines: [1, 2, 3],
             },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid latitude at coordinatesArray[0][0]")
+        expect(result.errors).toEqual(["Invalid color format. Color must be an array of 3 numbers"])
     })
 
-    test("returns an error for longitude not being within the valid range in coordinatesArray in non exact location", () => {
-        const result = validateLocation({
-            location: {
-                type: "nonExact",
-                coordinatesArray: [
-                    [
-                        { longitude: 80, latitude: 80 },
-                        { longitude: 200, latitude: 23 },
-                    ],
-                ],
-                publicTransportLines: [],
+    test("returns an error for invalid location", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: "wrong format",
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
             },
+            identifiable: true,
+            phoneNumber : "+385911125672"
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid longitude at coordinatesArray[0][1]")
+        expect(result.errors).toEqual(["Invalid location type"])
     })
 
-    test("returns success for valid coordinatesArray in non exact location", () => {
-        const result = validateLocation({
+    test("returns an error for invalid identifiable", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
             location: {
-                type: "nonExact",
-                coordinatesArray: [
+                type: "MultiLineString",
+                coordinates: [
                     [
-                        { longitude: 80, latitude: 80 },
-                        { longitude: 23, latitude: 23 },
+                        [179, 75],
+                        [179, 75],
                     ],
                 ],
-                publicTransportLines: [],
+                publicTransportLines: [1, 2, 3],
             },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: "true",
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.errors).toEqual(["Invalid identifiable"])
+    })
+
+    test("returns an error for invalid phoneNumber", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : 23
+        })
+        expect(result.success).toBe(false)
+        expect(result.errors).toEqual(["Invalid phone number. Phone number must be a string."])
+    })
+
+    test("returns an error for invalid time", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: "wrong format",
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.errors).toEqual(["Invalid time"])
+    })
+
+    test("returns an error for invalid location and time", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: "wrong format",
+            time: "wrong format",
+            identifiable: true,
+            phoneNumber : "+385911125672"
+        })
+        expect(result.success).toBe(false)
+        expect(result.errors).toEqual(["Invalid location type", "Invalid time"])
+    })
+
+    test("returns an error for fully invalid body", () => {
+        const result = validate({
+            type: "not a type",
+            subtype: "not a subtype",
+            color: "red",
+            location: "wrong format",
+            time: "wrong format",
+            identifiable: "true",
+            phoneNumber : 23
+        })
+        expect(result.success).toBe(false)
+        expect(result.errors).toEqual([
+            "Invalid type",
+            "Invalid color format. Color must be an array of 3 numbers",
+            "Invalid location type",
+            "Invalid time",
+            "Invalid identifiable",
+            "Invalid phone number. Phone number must be a string."])
+    })
+            
+
+
+    test("returns success for valid body", () => {
+        const result = validate({
+            type: "tech",
+            subtype: "laptop",
+            color: [100, 200, 50],
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [179, 75],
+                        [179, 75],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+            time: {
+                startTime: Date("21.02.2021. 12:00"),
+                endTime: Date("21.02.2022. 13:00"),
+            },
+            identifiable: true,
+            phoneNumber : "+385911125672"
         })
         expect(result.success).toBe(true)
     })
+
 })
+
+
+
