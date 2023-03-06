@@ -7,7 +7,7 @@ describe("validateIdentifiable", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid identifiable")
-    });
+    })
 
     test("returns an error for non boolean identifiable", () => {
         const result = validateIdentifiable({
@@ -15,12 +15,12 @@ describe("validateIdentifiable", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid identifiable")
-    });
+    })
 
     test("returns success for true identifiable", () => {
         const result = validateIdentifiable({
             identifiable: true,
         })
         expect(result.success).toBe(true)
-    });
-});
+    })
+})
