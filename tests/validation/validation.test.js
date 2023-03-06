@@ -1,11 +1,8 @@
-const validate = require("../../src/validation/validation");
+const validate = require("../../src/validation/validation")
 
 describe("validate", () => {
-
     test("returns an error for empty body", () => {
-        const result = validate({       
-
-        })
+        const result = validate({})
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
         expect(result.error.missingFields).toEqual(["type", "subtype", "color", "location", "time", "identifiable", "phoneNumber"])
@@ -30,7 +27,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -56,7 +53,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -73,7 +70,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -96,7 +93,7 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -122,7 +119,7 @@ describe("validate", () => {
                 startTime: Date("21.02.2021. 12:00"),
                 endTime: Date("21.02.2022. 13:00"),
             },
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -173,7 +170,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
@@ -200,7 +197,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid type"])
@@ -226,7 +223,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid subtype"])
@@ -252,7 +249,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid color format. Color must be an array of 3 numbers"])
@@ -269,10 +266,10 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid location type"])
+        expect(result.errors).toEqual(["Invalid location"])
     })
 
     test("returns an error for invalid identifiable", () => {
@@ -295,7 +292,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: "true",
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid identifiable"])
@@ -321,7 +318,7 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : 23
+            phoneNumber: 23,
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid phone number. Phone number must be a string."])
@@ -344,7 +341,7 @@ describe("validate", () => {
             },
             time: "wrong format",
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual(["Invalid time"])
@@ -358,10 +355,10 @@ describe("validate", () => {
             location: "wrong format",
             time: "wrong format",
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid location type", "Invalid time"])
+        expect(result.errors).toEqual(["Invalid location", "Invalid time"])
     })
 
     test("returns an error for fully invalid body", () => {
@@ -372,19 +369,18 @@ describe("validate", () => {
             location: "wrong format",
             time: "wrong format",
             identifiable: "true",
-            phoneNumber : 23
+            phoneNumber: 23,
         })
         expect(result.success).toBe(false)
         expect(result.errors).toEqual([
             "Invalid type",
             "Invalid color format. Color must be an array of 3 numbers",
-            "Invalid location type",
+            "Invalid location",
             "Invalid time",
             "Invalid identifiable",
-            "Invalid phone number. Phone number must be a string."])
+            "Invalid phone number. Phone number must be a string.",
+        ])
     })
-            
-
 
     test("returns success for valid body", () => {
         const result = validate({
@@ -406,12 +402,8 @@ describe("validate", () => {
                 endTime: Date("21.02.2022. 13:00"),
             },
             identifiable: true,
-            phoneNumber : "+385911125672"
+            phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(true)
     })
-
 })
-
-
-

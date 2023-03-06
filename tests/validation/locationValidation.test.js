@@ -177,6 +177,23 @@ describe("validateLocation", () => {
         expect(result.error.message).toBe("Invalid coordinates")
     })
 
+    test("returns an error if LineString coordinates are invalid", () => {
+        const result = validateLocation({
+            location: {
+                type: "MultiLineString",
+                coordinates: [
+                    [
+                        [1, 2, 3],
+                        [2, 2],
+                    ],
+                ],
+                publicTransportLines: [1, 2, 3],
+            },
+        })
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Invalid coordinates")
+    })
+
     test("returns an error if publicTransportLines don't exist in MultiLineString", () => {
         const result = validateLocation({
             location: {
