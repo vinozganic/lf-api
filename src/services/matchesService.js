@@ -1,36 +1,32 @@
-const { postgresClient } = require('../db')
+const { postgresPool } = require('../db')
 
 const matchThreshold = 0.6
 
-const getMatchesByIdQuery = (type, id) => `
-    SELECT * FROM matches WHERE ${type}=${id} ORDER BY matchProbability DESC;
+const getMatchesByIdQuery = (type) => `
+    SELECT * FROM matches WHERE ${type}=$1 ORDER BY matchProbability DESC;
 `
-const insertMatchQuery = (foundId, lostId, matchProbability) => `
-    INSERT INTO matches VALUES (${foundId}, ${lostId}, ${matchProbability});
+const insertMatchQuery = () => `
+    INSERT INTO matches VALUES ($1, $2, $3);
 `
 const getMatchesById = async (type, id) => {
     const typeQueryParametar = type === 'found' ? 'found_id' : 'lost_id'
     try {
-        const result = await postgresClient.query(getMatchesByIdQuery(typeQueryParametar, id))
+        const result = await postgresPool.query(getMatchesByIdQuery(typeQueryParametar), [id])
         return { success: true, matches: result.rows }
     } catch (error) {
         console.log(error)
         return { success: false, error }
-    } finally {
-        await postgresClient.end()
     }
 }
 const insertMatch = async (foundId, lostId, matchProbability) => {
     try {
         if (matchProbability > 1) return { success: false, message: 'Match probability cannot be greater than 1.'}
         if (matchProbability < matchThreshold) return { success: false, message: 'Match probability is too low.'}
-        await postgresClient.query(insertMatchQuery(foundId, lostId, matchProbability))
+        await postgresPool.query(insertMatchQuery, [foundId, lostId, matchProbability])
         return { success: true }
     } catch (error) {
         console.log(error)
         return { success: false, error }
-    } finally {
-        await postgresClient.end()
     }
 }
 
