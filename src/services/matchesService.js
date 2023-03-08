@@ -29,7 +29,6 @@ const getMatchesByLostId = async (id) => {
 }
 const insertMatch = async (foundId, lostId, matchProbability) => {
     try {
-        if (matchProbability > 1) return { success: false, message: 'Match probability cannot be greater than 1.'}
         await pgConnector.query(insertMatchQuery, [foundId, lostId, matchProbability])
         return { success: true }
     } catch (error) {
