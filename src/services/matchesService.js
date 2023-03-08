@@ -1,17 +1,26 @@
-const { postgresPool } = require('../db')
+const { pgConnector } = require('../db')
 
-const matchThreshold = 0.6
-
-const getMatchesByIdQuery = (type) => `
-    SELECT * FROM matches WHERE ${type}=$1 ORDER BY matchProbability DESC;
+const getMatchesByFoundIdQuery = () => `
+    SELECT * FROM matches WHERE found_id=$1 ORDER BY matchProbability DESC;
+`
+const getMatchesByLostIdQuery = () => `
+    SELECT * FROM matches WHERE lost_id=$1 ORDER BY matchProbability DESC;
 `
 const insertMatchQuery = () => `
     INSERT INTO matches VALUES ($1, $2, $3);
 `
-const getMatchesById = async (type, id) => {
-    const typeQueryParametar = type === 'found' ? 'found_id' : 'lost_id'
+const getMatchesByFoundId = async (id) => {
     try {
-        const result = await postgresPool.query(getMatchesByIdQuery(typeQueryParametar), [id])
+        const result = await pgConnector.query(getMatchesByFoundIdQuery, [id])
+        return { success: true, matches: result.rows }
+    } catch (error) {
+        console.log(error)
+        return { success: false, error }
+    }
+}
+const getMatchesByLostId = async (id) => {
+    try {
+        const result = await pgConnector.query(getMatchesByLostIdQuery, [id])
         return { success: true, matches: result.rows }
     } catch (error) {
         console.log(error)
@@ -21,8 +30,7 @@ const getMatchesById = async (type, id) => {
 const insertMatch = async (foundId, lostId, matchProbability) => {
     try {
         if (matchProbability > 1) return { success: false, message: 'Match probability cannot be greater than 1.'}
-        if (matchProbability < matchThreshold) return { success: false, message: 'Match probability is too low.'}
-        await postgresPool.query(insertMatchQuery, [foundId, lostId, matchProbability])
+        await pgConnector.query(insertMatchQuery, [foundId, lostId, matchProbability])
         return { success: true }
     } catch (error) {
         console.log(error)
@@ -30,4 +38,4 @@ const insertMatch = async (foundId, lostId, matchProbability) => {
     }
 }
 
-module.exports = { getMatchesById, insertMatch }
+module.exports = { getMatchesByFoundId, getMatchesByLostId, insertMatch }

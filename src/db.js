@@ -20,16 +20,16 @@ const connectToMongo = async () => {
     }
 }
 
-const postgresPool = new Pool({
+const pgConnector = new Pool({
     connectionString: process.env.POSTGRES_URI,
 })
 
 const connectToPostgres = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
-            await postgresPool.connect()
+            await pgConnector.connect()
             console.log("Connected to PostgreSQL")
-            await postgresPool.query(createTableIfNotExistsQuery)
+            await pgConnector.query(createTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
@@ -44,4 +44,4 @@ const Found = mongoose.model("found", foundSchema)
 const lostSchema = new Schema({}, { strict: false })
 const Lost = mongoose.model("lost", lostSchema)
 
-module.exports = { Found, Lost, connectToMongo, connectToPostgres, postgresPool }
+module.exports = { Found, Lost, connectToMongo, connectToPostgres, pgConnector }
