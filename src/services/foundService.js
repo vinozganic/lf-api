@@ -1,5 +1,5 @@
 const { Found } = require("../db")
-const validate = require("../validation/validation")
+const validate = require("../validation/items/validation")
 const { generateKey } = require("../helpers/trackingKey")
 
 const addFound = async (body) => {
