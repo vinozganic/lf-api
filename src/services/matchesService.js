@@ -30,7 +30,7 @@ const getMatchesByLostId = async (id) => {
 const insertMatch = async (foundId, lostId, matchProbability) => {
     try {
         await pgConnector.query(insertMatchQuery, [foundId, lostId, matchProbability])
-        return { success: true }
+        return { success: true, match: { foundId, lostId, matchProbability } }
     } catch (error) {
         console.log(error)
         return { success: false, error }
