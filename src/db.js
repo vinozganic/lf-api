@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const { Client } = require("pg")
+const { Pool } = require("pg")
 
 const createTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS matches (
@@ -20,21 +20,19 @@ const connectToMongo = async () => {
     }
 }
 
-const postgresClient = new Client({
+const pgConnector = new Pool({
     connectionString: process.env.POSTGRES_URI,
 })
 
 const connectToPostgres = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
-            await postgresClient.connect()
+            await pgConnector.connect()
             console.log("Connected to PostgreSQL")
-            await postgresClient.query(createTableIfNotExistsQuery)
+            await pgConnector.query(createTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
-    } finally {
-        await postgresClient.end()
     }
 }
 
@@ -46,4 +44,4 @@ const Found = mongoose.model("found", foundSchema)
 const lostSchema = new Schema({}, { strict: false })
 const Lost = mongoose.model("lost", lostSchema)
 
-module.exports = { Found, Lost, connectToMongo, connectToPostgres, postgresClient }
+module.exports = { Found, Lost, connectToMongo, connectToPostgres, pgConnector }
