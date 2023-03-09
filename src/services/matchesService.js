@@ -1,5 +1,5 @@
 const { pgConnector } = require('../db')
-const validate = require('../validation/matches/validation')
+const { validateOnlyId, validateIdsAndMatchProbability } = require('../validation/matches/validation')
 
 const getMatchesByFoundIdQuery = () => `
     SELECT * FROM matches WHERE found_id=$1 ORDER BY matchProbability DESC;
@@ -11,7 +11,7 @@ const insertMatchQuery = () => `
     INSERT INTO matches VALUES ($1, $2, $3);
 `
 const getMatchesByFoundId = async (id) => {
-    const validationResult = validate("getMatchesByFoundId", { id })
+    const validationResult = validateOnlyId(id)
     if (!validationResult.success) {
         return validationResult
     }
@@ -24,7 +24,7 @@ const getMatchesByFoundId = async (id) => {
     }
 }
 const getMatchesByLostId = async (id) => {
-    const validationResult = validate("getMatchesByLostId", { id })
+    const validationResult = validateOnlyId(id)
     if (!validationResult.success) {
         return validationResult
     }
@@ -36,14 +36,20 @@ const getMatchesByLostId = async (id) => {
         return { success: false, error }
     }
 }
-const insertMatch = async (foundId, lostId, matchProbability) => {
-    const validationResult = validate("insertMatch", { foundId, lostId, matchProbability })
+const insertMatch = async (body) => {
+    const validationResult = validateIdsAndMatchProbability(body)
     if (!validationResult.success) {
         return validationResult
     }
     try {
-        await pgConnector.query(insertMatchQuery, [foundId, lostId, matchProbability])
-        return { success: true, match: { foundId, lostId, matchProbability } }
+        await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
+        return { 
+            success: true, 
+            match: { 
+                foundId : body.foundId, 
+                lostId : body.lostId, 
+                matchProbability : body.matchProbability 
+            } }
     } catch (error) {
         console.log(error)
         return { success: false, error }
