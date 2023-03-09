@@ -2,13 +2,13 @@ const { pgConnector } = require('../db')
 const { validateOnlyId, validateIdsAndMatchProbability } = require('../validation/matches/validation')
 
 const getMatchesByFoundIdQuery = () => `
-    SELECT * FROM matches WHERE found_id=$1 ORDER BY matchProbability DESC;
+    SELECT * FROM matches WHERE found_id=$1 ORDER BY match_probability DESC;
 `
 const getMatchesByLostIdQuery = () => `
-    SELECT * FROM matches WHERE lost_id=$1 ORDER BY matchProbability DESC;
+    SELECT * FROM matches WHERE lost_id=$1 ORDER BY match_probability DESC;
 `
 const insertMatchQuery = () => `
-    INSERT INTO matches VALUES ($1, $2, $3) RETURNING found_id, lost_id, matchProbability;
+    INSERT INTO matches (found_id, lost_id, match_probability) VALUES ($1, $2, $3) RETURNING found_id, lost_id, match_probability;
 `
 const getMatchesByFoundId = async (id) => {
     const validationResult = validateOnlyId(id)
@@ -49,7 +49,7 @@ const insertMatch = async (body) => {
             match: { 
                 foundId : insertedValues.found_id, 
                 lostId : insertedValues.lost_id, 
-                matchProbability : insertedValues.matchProbability 
+                matchProbability : insertedValues.match_probability 
             } }
     } catch (error) {
         console.log(error)
