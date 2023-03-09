@@ -1,12 +1,12 @@
 const validateType = require("./typeValidation")
 const validateColor = require("./colorValidation")
 const validateLocation = require("./locationValidation")
-const validateTime = require("./timeValidation")
+const validateDate = require("./dateValidation")
 const validateIdentifiable = require("./identifiableValidation")
 const validatePhoneNumber = require("./phoneNumberValidation")
 
 const validate = (body) => {
-    const requiredFields = ["type", "subtype", "color", "location", "time", "identifiable", "phoneNumber"]
+    const requiredFields = ["type", "subtype", "color", "location", "date", "identifiable", "phoneNumber"]
     const fields = Object.keys(body)
     const missingFields = requiredFields.filter((field) => !fields.includes(field))
     if (missingFields.length > 0) {
@@ -22,11 +22,11 @@ const validate = (body) => {
     const typeCheck = validateType(body)
     const colorCheck = validateColor(body)
     const locationCheck = validateLocation(body)
-    const timeCheck = validateTime(body)
+    const dateCheck = validateDate(body)
     const identifiableCheck = validateIdentifiable(body)
     const phoneNumberCheck = validatePhoneNumber(body)
 
-    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck]
+    const errors = [typeCheck, colorCheck, locationCheck, dateCheck, identifiableCheck, phoneNumberCheck]
         .filter((check) => check.success === false)
         .map((check) => check.error.message)
 

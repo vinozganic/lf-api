@@ -1,4 +1,4 @@
-const validate = require("../../src/validation/validation")
+const validate = require("../../src/validation/items/validation")
 
 describe("validate", () => {
     test("returns an error for empty body", () => {

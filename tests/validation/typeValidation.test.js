@@ -1,4 +1,4 @@
-const validateType = require("../../src/validation/typeValidation")
+const validateType = require("../../src/validation/items/typeValidation")
 
 describe("validateType", () => {
     test("returns an error for empty type", () => {
