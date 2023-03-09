@@ -8,7 +8,7 @@ const getMatchesByLostIdQuery = () => `
     SELECT * FROM matches WHERE lost_id=$1 ORDER BY matchProbability DESC;
 `
 const insertMatchQuery = () => `
-    INSERT INTO matches VALUES ($1, $2, $3);
+    INSERT INTO matches VALUES ($1, $2, $3) RETURNING found_id, lost_id, matchProbability;
 `
 const getMatchesByFoundId = async (id) => {
     const validationResult = validateOnlyId(id)
@@ -42,13 +42,14 @@ const insertMatch = async (body) => {
         return validationResult
     }
     try {
-        await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
+        const result = await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
+        const insertedValues = result.rows[0]
         return { 
             success: true, 
             match: { 
-                foundId : body.foundId, 
-                lostId : body.lostId, 
-                matchProbability : body.matchProbability 
+                foundId : insertedValues.found_id, 
+                lostId : insertedValues.lost_id, 
+                matchProbability : insertedValues.matchProbability 
             } }
     } catch (error) {
         console.log(error)
