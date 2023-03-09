@@ -7,7 +7,6 @@ describe("validateDate", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid date")
-        expect(result.error.dateValid).toBe(false)
     })
 
     test("returns an error for invalid date (invalid month)", () => {
@@ -16,7 +15,6 @@ describe("validateDate", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid date")
-        expect(result.error.dateValid).toBe(false)
     })
 
     test("returns an error for invalid date (invalid day)", () => {
@@ -25,7 +23,6 @@ describe("validateDate", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid date")
-        expect(result.error.dateValid).toBe(false)
     })
 
     test("returns success for valid date", () => {

@@ -1,8 +1,6 @@
 const dateValidation = (body) => {
-    const {
-        date: setDate, // I have to put it this way (setDate), because Date is a reserved word in JS
-    } = body
-    const providedDate = new Date(setDate)
+    const { date } = body
+    const providedDate = new Date(date)
     const currentDate = new Date()
 
     const isDateInvalid = isNaN(providedDate) || providedDate > currentDate
@@ -12,7 +10,6 @@ const dateValidation = (body) => {
         ...(isDateInvalid && {
             error: {
                 message: "Invalid date",
-                dateValid: false,
             },
         }),
     }
