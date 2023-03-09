@@ -1,15 +1,7 @@
 const validateId = require("./idValidation")
 const validateMatchProbability = require("./matchProbabilityValidation")
 
-const validateOnlyId = (id) => {
-    const validationResult = validateId(id)
-    if (!validationResult.success) {
-        return validationResult
-    }
-    return { success: true }
-}
-
-const validateIdsAndMatchProbability = (body) => {
+const validateInsertMatch = (body) => {
     const validationResultOfFoundId = validateId(body.foundId)
     const validationResultOfLostId = validateId(body.lostId)
     const validationResultOfMatchProbability = validateMatchProbability(body.matchProbability)
@@ -27,4 +19,4 @@ const validateIdsAndMatchProbability = (body) => {
     return { success: true }
 }
 
-module.exports = { validateOnlyId, validateIdsAndMatchProbability}
+module.exports = validateInsertMatch
