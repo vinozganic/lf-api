@@ -8,13 +8,13 @@ const validatePhoneNumber = require("./phoneNumberValidation")
 const validate = (body) => {
     const requiredFields = ["type", "subtype", "color", "location", "time", "identifiable", "phoneNumber"]
     const fields = Object.keys(body)
-    const missingFields = requiredFields.filter((field) => !fields.includes(field))
-    if (missingFields.length > 0) {
+    const missingField = requiredFields.filter((field) => !fields.includes(field))[0]
+    if (missingField) {
         return {
             success: false,
             error: {
-                message: "Missing fields",
-                missingFields,
+                message: "Missing field",
+                missingField,
             },
         }
     }
@@ -26,14 +26,15 @@ const validate = (body) => {
     const identifiableCheck = validateIdentifiable(body)
     const phoneNumberCheck = validatePhoneNumber(body)
 
-    const errors = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck]
+    const error = [typeCheck, colorCheck, locationCheck, timeCheck, identifiableCheck, phoneNumberCheck]
         .filter((check) => check.success === false)
         .map((check) => check.error.message)
+        [0]
 
-    if (errors.length > 0) {
+    if (error) {
         return {
             success: false,
-            errors,
+            error,
         }
     }
 

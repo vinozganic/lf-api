@@ -2,18 +2,19 @@ const validateId = require("./idValidation")
 const validateMatchProbability = require("./matchProbabilityValidation")
 
 const validateInsertMatch = (body) => {
-    const validationResultOfFoundId = validateId(body.foundId)
-    const validationResultOfLostId = validateId(body.lostId)
-    const validationResultOfMatchProbability = validateMatchProbability(body.matchProbability)
+    const foundIdCheck = validateId(body.foundId)
+    const lostIdCheck = validateId(body.lostId)
+    const matchProbabilityCheck = validateMatchProbability(body.matchProbability)
 
-    const errors = [validationResultOfFoundId, validationResultOfLostId, validationResultOfMatchProbability]
+    const error = [foundIdCheck, lostIdCheck, matchProbabilityCheck]
         .filter((check) => check.success === false)
         .map((check) => check.error.message)
+        [0]
 
-    if (errors.length > 0) {
+    if (error) {
         return {
             success: false,
-            errors,
+            error
         }
     }
     return { success: true }

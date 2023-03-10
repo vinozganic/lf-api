@@ -51,7 +51,8 @@ const insertMatch = async (body) => {
                 foundId : insertedValues.found_id, 
                 lostId : insertedValues.lost_id, 
                 matchProbability : insertedValues.match_probability 
-            } }
+            } 
+        }
     } catch (error) {
         console.log(error)
         return { success: false, error }
