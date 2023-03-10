@@ -5,7 +5,7 @@ describe("validate", () => {
         const result = validate({})
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["type", "subtype", "color", "location", "time", "identifiable", "phoneNumber"])
+        expect(result.error.missingFields).toEqual(["type", "subtype", "color", "location", "date", "identifiable", "phoneNumber"])
     })
 
     test("returns an error for missing type", () => {
@@ -22,10 +22,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -48,10 +45,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -65,10 +59,7 @@ describe("validate", () => {
             type: "tech",
             subtype: "laptop",
             color: [100, 200, 50],
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -77,7 +68,7 @@ describe("validate", () => {
         expect(result.error.missingFields).toEqual(["location"])
     })
 
-    test("returns an error for missing time", () => {
+    test("returns an error for missing date", () => {
         const result = validate({
             type: "tech",
             subtype: "laptop",
@@ -97,7 +88,7 @@ describe("validate", () => {
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["time"])
+        expect(result.error.missingFields).toEqual(["date"])
     })
 
     test("returns an error for missing identifiable", () => {
@@ -115,10 +106,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -141,10 +129,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
         })
         expect(result.success).toBe(false)
@@ -165,10 +150,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -192,10 +174,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -218,10 +197,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -244,10 +220,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -261,10 +234,7 @@ describe("validate", () => {
             subtype: "laptop",
             color: [100, 200, 50],
             location: "wrong format",
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
@@ -287,10 +257,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: "true",
             phoneNumber: "+385911125672",
         })
@@ -313,10 +280,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: 23,
         })
@@ -324,7 +288,7 @@ describe("validate", () => {
         expect(result.errors).toEqual(["Invalid phone number. Phone number must be a string."])
     })
 
-    test("returns an error for invalid time", () => {
+    test("returns an error for invalid date", () => {
         const result = validate({
             type: "tech",
             subtype: "laptop",
@@ -339,26 +303,26 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: "wrong format",
+            date: "wrong format",
             identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid time"])
+        expect(result.errors).toEqual(["Invalid date"])
     })
 
-    test("returns an error for invalid location and time", () => {
+    test("returns an error for invalid location and date", () => {
         const result = validate({
             type: "tech",
             subtype: "laptop",
             color: [100, 200, 50],
             location: "wrong format",
-            time: "wrong format",
+            date: "wrong format",
             identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid location", "Invalid time"])
+        expect(result.errors).toEqual(["Invalid location", "Invalid date"])
     })
 
     test("returns an error for fully invalid body", () => {
@@ -367,7 +331,7 @@ describe("validate", () => {
             subtype: "not a subtype",
             color: "red",
             location: "wrong format",
-            time: "wrong format",
+            date: "wrong format",
             identifiable: "true",
             phoneNumber: 23,
         })
@@ -376,7 +340,7 @@ describe("validate", () => {
             "Invalid type",
             "Invalid color format. Color must be an array of 3 numbers",
             "Invalid location",
-            "Invalid time",
+            "Invalid date",
             "Invalid identifiable",
             "Invalid phone number. Phone number must be a string.",
         ])
@@ -397,10 +361,7 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            time: {
-                startTime: Date("21.02.2021. 12:00"),
-                endTime: Date("21.02.2022. 13:00"),
-            },
+            date: Date("21.02.2021. 12:00"),
             identifiable: true,
             phoneNumber: "+385911125672",
         })
