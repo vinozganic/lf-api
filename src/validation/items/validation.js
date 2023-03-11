@@ -13,8 +13,7 @@ const validate = (body) => {
         return {
             success: false,
             error: {
-                message: "Missing fields",
-                missingFields,
+                message: `Missing ${missingFields[0]}.`,
             },
         }
     }
@@ -33,7 +32,9 @@ const validate = (body) => {
     if (errors.length > 0) {
         return {
             success: false,
-            errors,
+            error : {
+                message: `${errors[0]}`
+            },
         }
     }
 

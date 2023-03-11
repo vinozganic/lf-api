@@ -6,7 +6,7 @@ const createTableIfNotExistsQuery = `
         id SERIAL PRIMARY KEY,
         found_id INTEGER NOT NULL,
         lost_id INTEGER NOT NULL,
-        matchProbability NUMERIC(7,6) NOT NULL
+        match_probability NUMERIC(7,6) NOT NULL
     );
 `
 const connectToMongo = async () => {
