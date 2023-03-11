@@ -8,7 +8,7 @@ describe("validateLocation", () => {
             location: {},
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid location")
+        expect(result.error.message).toBe("Invalid location.")
     })
 
     test("returns an error for invalid location type", () => {
@@ -19,7 +19,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid location type")
+        expect(result.error.message).toBe("Invalid location type.")
     })
 
     test("returns an error for invalid Points coordinates length", () => {
@@ -30,7 +30,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error for invalid type of Points coordinates", () => {
@@ -41,7 +41,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when Points coordinates are out of range (longitude)", () => {
@@ -52,7 +52,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when Points coordinates are out of range (latitude)", () => {
@@ -63,7 +63,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when Points coordinates are out of range (both)", () => {
@@ -74,7 +74,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error for invalid MultiLineString coordinates length", () => {
@@ -86,7 +86,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error for invalid type of MultiLineString coordinates", () => {
@@ -103,7 +103,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when MultiLineString coordinates are out of range (longitude)", () => {
@@ -124,7 +124,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when MultiLineString coordinates are out of range (latitude)", () => {
@@ -149,7 +149,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error when MultiLineString coordinates are out of range (both)", () => {
@@ -174,7 +174,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error if LineString coordinates are invalid", () => {
@@ -191,7 +191,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid coordinates")
+        expect(result.error.message).toBe("Invalid coordinates.")
     })
 
     test("returns an error if publicTransportLines don't exist in MultiLineString", () => {
@@ -207,7 +207,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing public transport lines")
+        expect(result.error.message).toBe("Missing public transport lines.")
     })
 
     test("returns an error if publicTransportLines are not an array", () => {
@@ -224,7 +224,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid public transport lines")
+        expect(result.error.message).toBe("Invalid public transport lines.")
     })
 
     test("returns an error if publicTransportLines are not an array of numbers", () => {
@@ -241,7 +241,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid public transport lines")
+        expect(result.error.message).toBe("Invalid public transport lines.")
     })
 
     test("returns an error if publicTransportLines are not in validPublicTransportLines", () => {
@@ -258,7 +258,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid public transport lines")
+        expect(result.error.message).toBe("Invalid public transport lines.")
     })
 
     test("returns success for valid Points location", () => {

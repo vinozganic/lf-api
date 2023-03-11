@@ -9,7 +9,7 @@ const dateValidation = (body) => {
         success: isDateInvalid ? false : true,
         ...(isDateInvalid && {
             error: {
-                message: "Invalid date",
+                message: "Invalid date.",
             },
         }),
     }

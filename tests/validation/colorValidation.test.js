@@ -4,13 +4,13 @@ describe("validateColor", () => {
     test("returns an error for invalid color format", () => {
         const result = validateColor({ color: "not an array" })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid color format. Color must be an array of 3 numbers")
+        expect(result.error.message).toBe("Invalid color format. Color must be an array of 3 numbers.")
     })
 
     test("returns an error for invalid color values", () => {
         const result = validateColor({ color: [256, -1, 200] })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid color")
+        expect(result.error.message).toBe("Invalid color.")
     })
 
     test("returns success for valid color", () => {
