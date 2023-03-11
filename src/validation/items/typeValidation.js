@@ -5,7 +5,7 @@ const typeValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid type.",
+                message: "Invalid type",
                 invalidType: type,
                 validTypes,
             },
@@ -81,7 +81,7 @@ const typeValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid subtype.",
+                message: "Invalid subtype",
                 invalidSubtype: subtype,
                 validSubtypes: validSubTypes[type],
             },

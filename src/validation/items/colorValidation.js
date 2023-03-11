@@ -4,7 +4,7 @@ const colorValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid color format. Color must be an array of 3 numbers.",
+                message: "Invalid color format. Color must be an array of 3 numbers",
                 invalidColor: color,
             },
         }
@@ -16,7 +16,7 @@ const colorValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid color.",
+                message: "Invalid color",
                 invalidColor: color,
             },
         }
