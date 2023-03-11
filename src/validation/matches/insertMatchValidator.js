@@ -6,15 +6,16 @@ const validateInsertMatch = (body) => {
     const lostIdCheck = validateId(body.lostId)
     const matchProbabilityCheck = validateMatchProbability(body.matchProbability)
 
-    const error = [foundIdCheck, lostIdCheck, matchProbabilityCheck]
+    const errors = [foundIdCheck, lostIdCheck, matchProbabilityCheck]
         .filter((check) => check.success === false)
         .map((check) => check.error.message)
-        [0]
 
-    if (error) {
+    if (errors.length > 0) {
         return {
             success: false,
-            error
+            error : {
+                message: `${errors[0]}`
+            }
         }
     }
     return { success: true }

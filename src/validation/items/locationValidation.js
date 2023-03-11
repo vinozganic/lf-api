@@ -6,7 +6,7 @@ const locationValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid location",
+                message: "Invalid location.",
             },
         }
     }
@@ -16,7 +16,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: "Invalid coordinates",
+                    message: "Invalid coordinates.",
                 },
             }
         }
@@ -26,7 +26,7 @@ const locationValidation = (body) => {
                 return {
                     success: false,
                     error: {
-                        message: "Invalid coordinates",
+                        message: "Invalid coordinates.",
                     },
                 }
             }
@@ -36,7 +36,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: "Invalid coordinates",
+                    message: "Invalid coordinates.",
                 },
             }
         }
@@ -45,7 +45,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: "Invalid coordinates",
+                    message: "Invalid coordinates.",
                 },
             }
         }
@@ -55,7 +55,7 @@ const locationValidation = (body) => {
                 return {
                     success: false,
                     error: {
-                        message: "Invalid coordinates",
+                        message: "Invalid coordinates.",
                     },
                 }
             }
@@ -65,7 +65,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid coordinates",
+                            message: "Invalid coordinates.",
                         },
                     }
                 }
@@ -74,7 +74,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid coordinates",
+                            message: "Invalid coordinates.",
                         },
                     }
                 }
@@ -83,7 +83,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid coordinates",
+                            message: "Invalid coordinates.",
                         },
                     }
                 }
@@ -92,7 +92,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid coordinates",
+                            message: "Invalid coordinates.",
                         },
                     }
                 }
@@ -104,7 +104,7 @@ const locationValidation = (body) => {
                 return {
                     success: false,
                     error: {
-                        message: "Invalid public transport lines",
+                        message: "Invalid public transport lines.",
                     },
                 }
             }
@@ -114,7 +114,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid public transport lines",
+                            message: "Invalid public transport lines.",
                         },
                     }
                 }
@@ -123,7 +123,7 @@ const locationValidation = (body) => {
                     return {
                         success: false,
                         error: {
-                            message: "Invalid public transport lines",
+                            message: "Invalid public transport lines.",
                         },
                     }
                 }
@@ -132,7 +132,7 @@ const locationValidation = (body) => {
             return {
                 success: false,
                 error: {
-                    message: "Missing public transport lines",
+                    message: "Missing public transport lines.",
                 },
             }
         }
@@ -140,7 +140,7 @@ const locationValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid location type",
+                message: "Invalid location type.",
             },
         }
     }

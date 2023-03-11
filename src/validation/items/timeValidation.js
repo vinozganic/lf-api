@@ -9,7 +9,7 @@ const timeValidation = (body) => {
         success: isStartTimeInvalid || isEndTimeInvalid ? false : true,
         ...((isStartTimeInvalid || isEndTimeInvalid) && {
             error: {
-                message: "Invalid time",
+                message: "Invalid time.",
                 ...(isStartTimeInvalid && { startTimeValid: false }), // isStartTimeInvalid ? { startTimeValid: false } : {}
                 ...(isEndTimeInvalid && { endTimeValid: false }), // isEndTimeInvalid ? { endTimeValid: false } : {}
             },
