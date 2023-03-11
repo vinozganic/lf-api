@@ -340,7 +340,7 @@ describe("validate", () => {
             "Invalid type.",
             "Invalid color format. Color must be an array of 3 numbers.",
             "Invalid location.",
-            "Invalid dat.e",
+            "Invalid date.",
             "Invalid identifiable.",
             "Invalid phone number. Phone number must be a string.",
         ])
