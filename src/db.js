@@ -9,6 +9,14 @@ const createTableIfNotExistsQuery = `
         match_probability NUMERIC(7,6) NOT NULL
     );
 `
+const Schema = mongoose.Schema
+
+const itemSchema = new Schema({}, { strict: false })
+itemSchema.index({ location: "2dsphere" }, { unique: true })
+
+const Found = mongoose.model("found", itemSchema)
+const Lost = mongoose.model("lost", itemSchema)
+
 const connectToMongo = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
@@ -35,13 +43,5 @@ const connectToPostgres = async () => {
         console.log(error)
     }
 }
-
-const Schema = mongoose.Schema
-
-const foundSchema = new Schema({}, { strict: false })
-const Found = mongoose.model("found", foundSchema)
-
-const lostSchema = new Schema({}, { strict: false })
-const Lost = mongoose.model("lost", lostSchema)
 
 module.exports = { Found, Lost, connectToMongo, connectToPostgres, pgConnector }
