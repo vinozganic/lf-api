@@ -17,9 +17,6 @@ itemSchema.index({ location: "2dsphere" }, { unique: true })
 const Found = mongoose.model("found", itemSchema)
 const Lost = mongoose.model("lost", itemSchema)
 
-Found.createIndexes({ location: "2dsphere" })
-Lost.createIndexes({ location: "2dsphere" })
-
 const connectToMongo = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
