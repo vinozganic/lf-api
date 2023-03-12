@@ -5,7 +5,7 @@ const identifiableValidation = (body) => {
         return {
             success: false,
             error: {
-                message: "Invalid identifiable",
+                message: "Invalid identifiable.",
                 invalidIdentifiable: body.identifiable,
                 validIdentifiable: [true, false],
             },

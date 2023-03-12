@@ -6,7 +6,7 @@ describe("validateIdentifiable", () => {
             identifiable: {},
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid identifiable")
+        expect(result.error.message).toBe("Invalid identifiable.")
     })
 
     test("returns an error for non boolean identifiable", () => {
@@ -14,7 +14,7 @@ describe("validateIdentifiable", () => {
             identifiable: "true",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid identifiable")
+        expect(result.error.message).toBe("Invalid identifiable.")
     })
 
     test("returns success for true identifiable", () => {

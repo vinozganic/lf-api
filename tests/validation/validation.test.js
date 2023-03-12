@@ -4,8 +4,7 @@ describe("validate", () => {
     test("returns an error for empty body", () => {
         const result = validate({})
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["type", "subtype", "color", "location", "date", "identifiable", "phoneNumber"])
+        expect(result.error.message).toBe("Missing type.")
     })
 
     test("returns an error for missing type", () => {
@@ -27,8 +26,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["type"])
+        expect(result.error.message).toBe("Missing type.")
     })
 
     test("returns an error for missing color", () => {
@@ -50,8 +48,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["color"])
+        expect(result.error.message).toBe("Missing color.")
     })
 
     test("returns an error for missing location", () => {
@@ -64,8 +61,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["location"])
+        expect(result.error.message).toBe("Missing location.")
     })
 
     test("returns an error for missing date", () => {
@@ -87,8 +83,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["date"])
+        expect(result.error.message).toBe("Missing date.")
     })
 
     test("returns an error for missing identifiable", () => {
@@ -110,8 +105,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["identifiable"])
+        expect(result.error.message).toBe("Missing identifiable.")
     })
 
     test("returns an error for missing phoneNumber", () => {
@@ -133,8 +127,7 @@ describe("validate", () => {
             identifiable: true,
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["phoneNumber"])
+        expect(result.error.message).toBe("Missing phoneNumber.")
     })
 
     test("returns an error for missing type and color", () => {
@@ -155,8 +148,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing fields")
-        expect(result.error.missingFields).toEqual(["type", "color"])
+        expect(result.error.message).toBe("Missing type.")
     })
 
     test("returns an error for invalid type", () => {
@@ -179,7 +171,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid type"])
+        expect(result.error.message).toEqual("Invalid type.")
     })
 
     test("returns an error for invalid subtype", () => {
@@ -202,7 +194,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid subtype"])
+        expect(result.error.message).toEqual("Invalid subtype.")
     })
 
     test("returns an error for invalid color", () => {
@@ -225,7 +217,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid color format. Color must be an array of 3 numbers"])
+        expect(result.error.message).toEqual("Invalid color format. Color must be an array of 3 numbers.")
     })
 
     test("returns an error for invalid location", () => {
@@ -239,7 +231,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid location"])
+        expect(result.error.message).toEqual("Invalid location.")
     })
 
     test("returns an error for invalid identifiable", () => {
@@ -262,7 +254,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid identifiable"])
+        expect(result.error.message).toEqual("Invalid identifiable.")
     })
 
     test("returns an error for invalid phoneNumber", () => {
@@ -285,7 +277,7 @@ describe("validate", () => {
             phoneNumber: 23,
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid phone number. Phone number must be a string."])
+        expect(result.error.message).toEqual("Invalid phone number. Phone number must be a string.")
     })
 
     test("returns an error for invalid date", () => {
@@ -308,7 +300,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid date"])
+        expect(result.error.message).toEqual("Invalid date.")
     })
 
     test("returns an error for invalid location and date", () => {
@@ -322,7 +314,7 @@ describe("validate", () => {
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual(["Invalid location", "Invalid date"])
+        expect(result.error.message).toEqual("Invalid location.")
     })
 
     test("returns an error for fully invalid body", () => {
@@ -336,14 +328,7 @@ describe("validate", () => {
             phoneNumber: 23,
         })
         expect(result.success).toBe(false)
-        expect(result.errors).toEqual([
-            "Invalid type",
-            "Invalid color format. Color must be an array of 3 numbers",
-            "Invalid location",
-            "Invalid date",
-            "Invalid identifiable",
-            "Invalid phone number. Phone number must be a string.",
-        ])
+        expect(result.error.message).toEqual("Invalid type.")
     })
 
     test("returns success for valid body", () => {
