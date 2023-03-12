@@ -11,14 +11,13 @@ const createTableIfNotExistsQuery = `
 `
 const Schema = mongoose.Schema
 
-const foundSchema = new Schema({}, { strict: false })
-foundSchema.index({ location: "2dsphere" })
-const Found = mongoose.model("found", foundSchema)
-Found.createIndexes({ location: "2dsphere" })
+const itemSchema = new Schema({}, { strict: false })
+itemSchema.index({ location: "2dsphere" }, { unique: true })
 
-const lostSchema = new Schema({}, { strict: false })
-lostSchema.index({ location: "2dsphere" })
-const Lost = mongoose.model("lost", lostSchema)
+const Found = mongoose.model("found", itemSchema)
+const Lost = mongoose.model("lost", itemSchema)
+
+Found.createIndexes({ location: "2dsphere" })
 Lost.createIndexes({ location: "2dsphere" })
 
 const connectToMongo = async () => {
