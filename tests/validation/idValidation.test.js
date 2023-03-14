@@ -2,25 +2,25 @@ const validateId = require("../../src/validation/matches/idValidation")
 
 describe("validateId", () => {
     test("returns an error for invalid id format", () => {
-        const result = validateId("not a number")
+        const result = validateId(false)
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid id. Id must be a number.")
+        expect(result.error.message).toBe("Invalid id. Id must be a string.")
     })
 
     test("returns an error for invalid id number type", () => {
-        const result = validateId(1.5)
+        const result = validateId("45cbc4a0e4123f6920000002f")
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid id. Id must be an integer.")
+        expect(result.error.message).toBe("Invalid id.")
     })
 
     test("returns an error for invalid id number value", () => {
-        const result = validateId(-1)
+        const result = validateId("45cbc4a0e4123f692000000")
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid id. Id must be a positive integer.")
+        expect(result.error.message).toBe("Invalid id.")
     })
 
     test("returns success for valid id", () => {
-        const result = validateId(1)
+        const result = validateId("45cbc4a0e4123f6920000002")
         expect(result.success).toBe(true)
     })
 })
