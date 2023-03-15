@@ -7,14 +7,20 @@ describe("validateId", () => {
         expect(result.error.message).toBe("Invalid id. Id must be a string.")
     })
 
-    test("returns an error for invalid id number type", () => {
+    test("returns an error when id does not match the regex", () => {
         const result = validateId("45cbc4a0e4123f6920000002f")
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
     })
 
-    test("returns an error for invalid id number value", () => {
+    test("returns an error when id does not match the regex", () => {
         const result = validateId("45cbc4a0e4123f692000000")
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Invalid id.")
+    })
+
+    test("returns an error when id does not match the regex", () => {
+        const result = validateId("45cbc4a0e4123f692000000z")
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
     })

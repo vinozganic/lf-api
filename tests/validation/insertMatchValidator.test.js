@@ -7,7 +7,7 @@ describe("validateInsertMatch", () => {
         expect(result.error.message).toBe("Invalid id. Id must be a string.")
     })
 
-    test("returns an error for invalid foundId number type", () => {
+    test("returns an error when foundId does not match the regex", () => {
         const result = validateInsertMatch({ foundId: "45cbc4a0e4123f6920000002f", lostId: "45cbc4a0e4123f6920000002", matchProbability: 0.5 })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
@@ -25,14 +25,14 @@ describe("validateInsertMatch", () => {
         expect(result.error.message).toBe("Invalid id. Id must be a string.")
     })
 
-    test("returns an error for invalid lostId number type", () => {
+    test("returns an error when lostId does not match the regex", () => {
         const result = validateInsertMatch({ foundId: "45cbc4a0e4123f6920000002", lostId: "45cbc4a0e4123f692000000", matchProbability: 0.5 })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
     })
 
-    test("returns an error for invalid lostId number type", () => {
-        const result = validateInsertMatch({ foundId: "45cbc4a0e4123f6920000002", lostId: "45cbc4a0e4123f6920000002f" })
+    test("returns an error when lostId does not match the regex", () => {
+        const result = validateInsertMatch({ foundId: "45cbc4a0e4123f6920000002", lostId: "45cbc4a0e4123f692000000z" })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
     })
