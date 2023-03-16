@@ -13,7 +13,7 @@ const addFound = async (body) => {
         ...body,
     })
     await newFound.save()
-    return { success: true, newFound }
+    return { success: true, found: newFound }
 }
 
 module.exports = { addFound }

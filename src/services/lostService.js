@@ -13,7 +13,7 @@ const addLost = async (body) => {
         ...body,
     })
     await newLost.save()
-    return { success: true, newLost }
+    return { success: true, lost: newLost }
 }
 
 module.exports = { addLost }
