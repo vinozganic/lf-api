@@ -1,4 +1,12 @@
 const validateMatchProbability = (matchProbability) => {
+    if (matchProbability == null) {
+        return {
+            success: false,
+            error: {
+                message: "Invalid match probability."
+            }
+        }
+    }
     if (typeof matchProbability !== "number") {
         return {
             success: false,
