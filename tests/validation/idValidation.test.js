@@ -1,6 +1,12 @@
 const validateId = require("../../src/validation/matches/idValidation")
 
 describe("validateId", () => {
+    test("returns an error for empty id", () => {
+        const result = validateId()
+        expect(result.success).toBe(false)
+        expect(result.error.message).toBe("Invalid id.")
+    })
+
     test("returns an error for invalid id format", () => {
         const result = validateId(false)
         expect(result.success).toBe(false)
