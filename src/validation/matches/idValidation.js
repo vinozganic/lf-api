@@ -1,25 +1,27 @@
 const validateId = (id) => {
-    if (typeof id !== "number") {
+    if (id == null) {
         return {
             success: false,
             error: {
-                message: "Invalid id. Id must be a number."
+                message: "Invalid id."
             }
         }
     }
-    if (!Number.isInteger(id)) {
+    if (typeof id !== "string") {
         return {
             success: false,
             error: {
-                message: "Invalid id. Id must be an integer."
+                message: "Invalid id. Id must be a string."
             }
         }
     }
-    if (id < 0) {
+    const regex = /^[a-f\d]{24}$/i
+    const match = id.match(regex)
+    if (!match) {
         return {
             success: false,
             error: {
-                message: "Invalid id. Id must be a positive integer."
+                message: "Invalid id."
             }
         }
     }

@@ -4,8 +4,8 @@ const { Pool } = require("pg")
 const createTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS matches (
         id SERIAL PRIMARY KEY,
-        found_id INTEGER NOT NULL,
-        lost_id INTEGER NOT NULL,
+        found_id VARCHAR(24) NOT NULL,
+        lost_id VARCHAR(24) NOT NULL,
         match_probability NUMERIC(7,6) NOT NULL
     );
 `
