@@ -15,13 +15,13 @@ module.exports.connect = async () => {
     await mongoose.connect(uri, mongooseOpts)
 }
 
-module.exports.closeDatabase = async () => {
+module.exports.dropDatabase = async () => {
     await mongoose.connection.dropDatabase()
     await mongoose.connection.close()
     await mongod.stop()
 }
 
-module.exports.clearDatabase = async () => {
+module.exports.dropCollections = async () => {
     const collections = mongoose.connection.collections
     for (const key in collections) {
         const collection = collections[key]
