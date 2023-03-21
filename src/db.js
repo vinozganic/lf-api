@@ -4,7 +4,6 @@ const { Pool } = require("pg")
 const createExtensionIfNotExistsQuery = (extensionName) => `
     CREATE EXTENSION IF NOT EXISTS "${extensionName}";
 `
-
 const createTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS matches (
         id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
