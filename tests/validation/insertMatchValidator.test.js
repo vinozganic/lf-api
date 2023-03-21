@@ -6,6 +6,7 @@ describe("validateInsertMatch", () => {
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid id.")
     })
+    
     test("returns an error for invalid foundId format", () => {
         const result = validateInsertMatch({ foundId: false, lostId: "45cbc4a0e4123f6920000002", matchProbability: 0.5 })
         expect(result.success).toBe(false)
