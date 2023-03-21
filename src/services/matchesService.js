@@ -1,7 +1,10 @@
-const { pgConnector } = require('../db')
-const validateInsertMatch = require('../validation/matches/insertMatchValidator')
-const validateId = require('../validation/matches/idValidation')
+const { pgConnector } = require("../db")
+const validateInsertMatch = require("../validation/matches/insertMatchValidator")
+const validateId = require("../validation/matches/idValidation")
 
+const getMatchByIdQuery = () => `
+    SELECT * FROM matches WHERE id=$1;
+`
 const getMatchesByFoundIdQuery = () => `
     SELECT * FROM matches WHERE found_id=$1 ORDER BY match_probability DESC;
 `
@@ -11,6 +14,21 @@ const getMatchesByLostIdQuery = () => `
 const insertMatchQuery = () => `
     INSERT INTO matches (found_id, lost_id, match_probability) VALUES ($1, $2, $3) RETURNING id, found_id, lost_id, match_probability;
 `
+
+const getMatchById = async (id) => {
+    const validationResult = validateId(id)
+    if (!validationResult.success) {
+        return validationResult
+    }
+    try {
+        const result = await pgConnector.query(getMatchByIdQuery, [id])
+        return { success: true, match: result.rows[0] }
+    } catch (error) {
+        console.log(error)
+        return { success: false, error }
+    }
+}
+
 const getMatchesByFoundId = async (id) => {
     const validationResult = validateId(id)
     if (!validationResult.success) {
@@ -24,6 +42,7 @@ const getMatchesByFoundId = async (id) => {
         return { success: false, error }
     }
 }
+
 const getMatchesByLostId = async (id) => {
     const validationResult = validateId(id)
     if (!validationResult.success) {
@@ -37,6 +56,7 @@ const getMatchesByLostId = async (id) => {
         return { success: false, error }
     }
 }
+
 const insertMatch = async (body) => {
     const validationResult = validateInsertMatch(body)
     if (!validationResult.success) {
@@ -45,14 +65,14 @@ const insertMatch = async (body) => {
     try {
         const result = await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
         const insertedValues = result.rows[0]
-        return { 
-            success: true, 
-            match: { 
-                id : insertedValues.id,
-                foundId : insertedValues.found_id, 
-                lostId : insertedValues.lost_id, 
-                matchProbability : insertedValues.match_probability 
-            } 
+        return {
+            success: true,
+            match: {
+                id: insertedValues.id,
+                foundId: insertedValues.found_id,
+                lostId: insertedValues.lost_id,
+                matchProbability: insertedValues.match_probability,
+            },
         }
     } catch (error) {
         console.log(error)
@@ -60,4 +80,4 @@ const insertMatch = async (body) => {
     }
 }
 
-module.exports = { getMatchesByFoundId, getMatchesByLostId, insertMatch }
+module.exports = { getMatchById, getMatchesByFoundId, getMatchesByLostId, insertMatch }
