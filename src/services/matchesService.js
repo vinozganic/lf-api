@@ -9,7 +9,7 @@ const getMatchesByLostIdQuery = () => `
     SELECT * FROM matches WHERE lost_id=$1 ORDER BY match_probability DESC;
 `
 const insertMatchQuery = () => `
-    INSERT INTO matches (found_id, lost_id, match_probability) VALUES ($1, $2, $3) RETURNING found_id, lost_id, match_probability;
+    INSERT INTO matches (found_id, lost_id, match_probability) VALUES ($1, $2, $3) RETURNING id, found_id, lost_id, match_probability;
 `
 const getMatchesByFoundId = async (id) => {
     const validationResult = validateId(id)
@@ -48,6 +48,7 @@ const insertMatch = async (body) => {
         return { 
             success: true, 
             match: { 
+                id : insertedValues.id,
                 foundId : insertedValues.found_id, 
                 lostId : insertedValues.lost_id, 
                 matchProbability : insertedValues.match_probability 
