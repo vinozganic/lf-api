@@ -6,6 +6,7 @@ describe("validateMatchProbability", () => {
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid match probability.")
     })
+    
     test("returns an error for invalid match probability format", () => {
         const result = validateMatchProbability("not a number")
         expect(result.success).toBe(false)
