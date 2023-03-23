@@ -6,6 +6,7 @@ describe("validateType", () => {
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Invalid type.")
     })
+    
     test("returns an error for invalid type", () => {
         const result = validateType({ type: "not a type" })
         expect(result.success).toBe(false)
