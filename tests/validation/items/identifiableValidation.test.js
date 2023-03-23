@@ -1,4 +1,4 @@
-const validateIdentifiable = require("../../src/validation/items/identifiableValidation")
+const validateIdentifiable = require("../../../src/validation/items/identifiableValidation")
 
 describe("validateIdentifiable", () => {
     test("returns an error for empty identifiable", () => {

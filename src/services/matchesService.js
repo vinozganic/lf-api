@@ -1,6 +1,7 @@
 const { pgConnector } = require("../db")
 const validateInsertMatch = require("../validation/matches/insertMatchValidator")
 const validateId = require("../validation/matches/idValidation")
+const validateUuid = require("../validation/matches/uuidValidator")
 
 const getMatchByIdQuery = () => `
     SELECT * FROM matches WHERE id=$1;
@@ -16,7 +17,7 @@ const insertMatchQuery = () => `
 `
 
 const getMatchById = async (id) => {
-    const validationResult = validateId(id)
+    const validationResult = validateUuid(id)
     if (!validationResult.success) {
         return validationResult
     }

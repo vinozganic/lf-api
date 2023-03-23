@@ -1,4 +1,4 @@
-const validateColor = require("../../src/validation/items/colorValidation")
+const validateColor = require("../../../src/validation/items/colorValidation")
 
 describe("validateColor", () => {
     test("returns an error for invalid color format", () => {
