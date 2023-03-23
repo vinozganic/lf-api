@@ -1,4 +1,4 @@
-const validateLocation = require("../../src/validation/items/locationValidation")
+const validateLocation = require("../../../src/validation/items/locationValidation")
 
 // nakon kaj zavrsis promjeni result.error u result.error.message
 

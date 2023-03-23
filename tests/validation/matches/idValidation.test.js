@@ -1,4 +1,4 @@
-const validateId = require("../../src/validation/matches/idValidation")
+const validateId = require("../../../src/validation/matches/idValidation")
 
 describe("validateId", () => {
     test("returns an error for empty id", () => {

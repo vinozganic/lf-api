@@ -1,4 +1,4 @@
-const validatePhoneNumber = require("../../src/validation/items/phoneNumberValidation")
+const validatePhoneNumber = require("../../../src/validation/items/phoneNumberValidation")
 
 describe("validatePhoneNumber", () => {
     test("returns error when phone number is not a string", () => {

@@ -1,4 +1,4 @@
-const validateUuid = require("../../src/validation/matches/uuidValidator")
+const validateUuid = require("../../../src/validation/matches/uuidValidator")
 
 describe("validateUuid", () => {
     test("returns an error for empty uuid", () => {

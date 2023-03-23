@@ -1,4 +1,4 @@
-const validateDate = require("../../src/validation/items/dateValidation")
+const validateDate = require("../../../src/validation/items/dateValidation")
 
 describe("validateDate", () => {
     test("returns an error for empty date", () => {
