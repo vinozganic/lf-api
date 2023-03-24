@@ -65,8 +65,6 @@ const insertMatch = async (body) => {
     }
     try {
         const result = await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
-
-        console.log(result)
         const insertedValues = result.rows[0]
         return {
             success: true,
