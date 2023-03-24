@@ -12,7 +12,6 @@ const addFound = async (body) => {
         trackingKey: generateKey(),
         ...body,
     })
-    console.log(newFound)
     await newFound.save()
     return { success: true, found: newFound }
 }
