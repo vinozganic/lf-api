@@ -15,7 +15,7 @@ const createTableIfNotExistsQuery = `
 const Schema = mongoose.Schema
 
 const itemSchema = new Schema({}, { strict: false })
-itemSchema.index({ location: "2dsphere" }, { unique: true })
+itemSchema.index({ location: "2dsphere" })
 
 const Found = mongoose.model("found", itemSchema)
 const Lost = mongoose.model("lost", itemSchema)
