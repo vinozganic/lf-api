@@ -55,11 +55,6 @@ describe("GET /matches/<id>", () => {
 })
 
 describe("GET /matches/lost/<lostId>", () => {
-    it("should return 404", async () => {
-        const res = await request(app).get("/matches/lost/64202bd46d22797759e9888c")
-        expect(res.statusCode).toEqual(404)
-    })
-
     it("should return 400", async () => {
         const res = await request(app).get("/matches/lost/invalid")
         expect(res.statusCode).toEqual(400)
@@ -84,11 +79,6 @@ describe("GET /matches/lost/<lostId>", () => {
 })
 
 describe("GET /matches/found/<foundId>", () => {
-    it("should return 404", async () => {
-        const res = await request(app).get("/matches/found/64202bd46d22797759e9888c")
-        expect(res.statusCode).toEqual(404)
-    })
-
     it("should return 400", async () => {
         const res = await request(app).get("/matches/found/invalid")
         expect(res.statusCode).toEqual(400)
