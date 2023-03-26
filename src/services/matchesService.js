@@ -24,7 +24,12 @@ const getMatchById = async (id) => {
     try {
         const result = await pgConnector.query(getMatchByIdQuery, [id])
         if (result.rows.length === 0) {
-            return { success: false, error: "Match not found" }
+            return {
+                success: false,
+                error: {
+                    message: "Match not found",
+                },
+            }
         }
         return { success: true, match: result.rows[0] }
     } catch (error) {
