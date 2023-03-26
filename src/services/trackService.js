@@ -1,15 +1,9 @@
 const { Found, Lost } = require("./db");
-const validate = require("./validation/items/validation");
 
 const getItemByTrackingKey = async (trackingKey) => {
-    
-    try{
-        const validationResult = validate(trackingKey)
-        if(!validationResult.success){
-            return validationResult;
-        }
+    try {
         const lostItem = await Lost.findOne({trackingKey: trackingKey})
-        if(lostItem){
+        if(lostItem) {
             return {
                 success: true,
                 item: {
@@ -20,7 +14,7 @@ const getItemByTrackingKey = async (trackingKey) => {
         }
 
         const foundItem = await Found.findOne({trackingKey: trackingKey})
-        if(foundItem){
+        if(foundItem) {
             return {
                 success: true,
                 item: {
@@ -29,8 +23,14 @@ const getItemByTrackingKey = async (trackingKey) => {
                 }
             }
         }
+        return {
+            success: false,
+            error: {
+                message: "Item not found for given tracking key"
+            }
+        }
 
-    }catch(error){
+    } catch(error) {
         console.log(error)
         return {
             success: false,
