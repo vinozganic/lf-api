@@ -22,6 +22,9 @@ router.get("/found/:foundId", async (req, res) => {
 router.get("/:matchId", async (req, res) => {
     const data = await getMatchById(req.params.matchId)
     if (data.success === false) {
+        if (data.error.message === "Match not found") {
+            return res.status(404).json(data)
+        }
         return res.status(400).json(data)
     }
     res.status(200).json(data)
