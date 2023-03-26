@@ -1,4 +1,4 @@
-FROM node:18.14-alpine as base
+FROM node:18-bullseye as base
 
 WORKDIR /app
 COPY package*.json ./
@@ -16,4 +16,11 @@ ENV NODE_ENV=development
 RUN npm install -g nodemon && npm install
 COPY . .
 WORKDIR /app/src
-CMD ["nodemon", "index.js"]
+CMD ["npm", "run", "start:dev"]
+
+FROM base as test
+ENV NODE_ENV=test
+RUN npm install -g jest && npm install
+COPY . .
+WORKDIR /app/src
+CMD ["npm", "test"]

@@ -1,0 +1,1 @@
+BUILD_TARGET=test docker compose up  --build
