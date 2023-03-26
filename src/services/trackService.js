@@ -12,7 +12,6 @@ const getItemByTrackingKey = async (trackingKey) => {
                 }
             }
         }
-
         const foundItem = await Found.findOne({trackingKey: trackingKey})
         if(foundItem) {
             return {
@@ -29,7 +28,6 @@ const getItemByTrackingKey = async (trackingKey) => {
                 message: "Item not found for given tracking key"
             }
         }
-
     } catch(error) {
         console.log(error)
         return {
