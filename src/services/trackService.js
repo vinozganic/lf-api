@@ -1,6 +1,11 @@
 const { Found, Lost } = require("./db");
+const validateTrackingKey = require("../validation/track/trackingKeyValidation");
 
 const getItemByTrackingKey = async (trackingKey) => {
+    const validationResult = validateTrackingKey(trackingKey)
+    if(!validationResult.success) {
+        return validationResult
+    }
     try {
         const lostItem = await Lost.findOne({trackingKey: trackingKey})
         if(lostItem) {
