@@ -3,7 +3,6 @@ const cors = require("cors")
 const foundRouter = require("./routes/found")
 const lostRouter = require("./routes/lost")
 const matchesRouter = require("./routes/matches")
-const { connectToMongo, connectToPostgres } = require("./db")
 
 const app = express()
 app.use(express.json())
@@ -16,6 +15,6 @@ app.use(cors(corsOptions))
 
 app.use("/found", foundRouter)
 app.use("/lost", lostRouter)
-app.use("/matches", matchesRouter) 
+app.use("/matches", matchesRouter)
 
 module.exports = app

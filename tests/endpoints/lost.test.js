@@ -1,10 +1,10 @@
 const request = require("supertest")
 const app = require("../../src/app")
-const { connect, dropDatabase, dropCollections } = require("../dbHandler")
+const { connectToItemsDatabase, dropItemsCollections, dropItemsDatabase } = require("../dbHandler")
 
-beforeAll(async () => await connect())
-afterEach(async () => await dropCollections())
-afterAll(async () => await dropDatabase())
+beforeAll(async () => await connectToItemsDatabase())
+afterEach(async () => await dropItemsCollections())
+afterAll(async () => await dropItemsDatabase())
 
 describe("lost endpoint", () => {
     it("should raise an error for invalid payload", async () => {

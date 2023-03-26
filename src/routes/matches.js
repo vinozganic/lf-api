@@ -1,5 +1,5 @@
 const express = require("express")
-const {  getMatchesByFoundId, getMatchesByLostId, insertMatch, getMatchById } = require("../services/matchesService")
+const { getMatchesByFoundId, getMatchesByLostId, insertMatch, getMatchById } = require("../services/matchesService")
 
 const router = express.Router()
 
@@ -36,8 +36,3 @@ router.post("/", async (req, res) => {
 })
 
 module.exports = router
-
-
-
-
-
