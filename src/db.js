@@ -4,7 +4,7 @@ const { Pool } = require("pg")
 const createExtensionIfNotExistsQuery = (extensionName) => `
     CREATE EXTENSION IF NOT EXISTS "${extensionName}";
 `
-const createTableIfNotExistsQuery = `
+const createMatchesTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS matches (
         id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
         found_id VARCHAR(24) NOT NULL,
@@ -21,7 +21,7 @@ const createAreasTableIfNotExistsQuery = `
     );
 `
 
-const createTransitLinesTableIfNotExistsQuery = `
+const createTransportLinesTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS transit_lines (
         id SERIAL PRIMARY KEY NOT NULL,
         area_id INTEGER NOT NULL,
@@ -67,7 +67,7 @@ const connectToMatches = async () => {
             await matchesConnector.connect()
             console.log("Connected to matches db")
             await matchesConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
-            await matchesConnector.query(createTableIfNotExistsQuery)
+            await matchesConnector.query(createMatchesTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
@@ -84,7 +84,7 @@ const connectToConfig = async () => {
             await configConnector.connect()
             console.log("Connected to config db")
             await configConnector.query(createAreasTableIfNotExistsQuery)
-            await configConnector.query(createTransitLinesTableIfNotExistsQuery)
+            await configConnector.query(createTransportLinesTableIfNotExistsQuery)
             await configConnector.query(createConnectionStringTableIfNotExistsQuery)
         }
     } catch (error) {
