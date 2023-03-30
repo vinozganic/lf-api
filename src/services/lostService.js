@@ -19,8 +19,7 @@ const addLost = async (body) => {
 
 const batch = async (body) => {
     const results = []
-    for (const element of body) {
-        const { id } = element
+    for (const id of body) {
         const validationResult = validateId(id)
         if (!validationResult.success) {
             results.push({
