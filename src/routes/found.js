@@ -1,5 +1,5 @@
 const express = require("express")
-const { addFound } = require("../services/foundService")
+const { addFound, batch } = require("../services/foundService")
 
 const router = express.Router()
 
@@ -9,6 +9,11 @@ router.post("/", async (req, res) => {
         return res.status(400).json(data)
     }
     res.status(201).json(data)
+})
+
+router.post("/batch", async (req, res) => {
+    const data = await batch(req.body)
+    res.status(200).json(data)
 })
 
 module.exports = router
