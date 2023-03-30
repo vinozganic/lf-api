@@ -1,4 +1,4 @@
-const { pgConnector } = require("../db")
+const { matchesConnector } = require("../db")
 const validateInsertMatch = require("../validation/matches/insertMatchValidator")
 const validateId = require("../validation/matches/idValidation")
 const validateUuid = require("../validation/matches/uuidValidator")
@@ -22,7 +22,7 @@ const getMatchById = async (id) => {
         return validationResult
     }
     try {
-        const result = await pgConnector.query(getMatchByIdQuery, [id])
+        const result = await matchesConnector.query(getMatchByIdQuery, [id])
         if (result.rows.length === 0) {
             return {
                 success: false,
@@ -44,7 +44,7 @@ const getMatchesByFoundId = async (id) => {
         return validationResult
     }
     try {
-        const result = await pgConnector.query(getMatchesByFoundIdQuery, [id])
+        const result = await matchesConnector.query(getMatchesByFoundIdQuery, [id])
         return { success: true, matches: result.rows }
     } catch (error) {
         console.log(error)
@@ -58,7 +58,7 @@ const getMatchesByLostId = async (id) => {
         return validationResult
     }
     try {
-        const result = await pgConnector.query(getMatchesByLostIdQuery, [id])
+        const result = await matchesConnector.query(getMatchesByLostIdQuery, [id])
         return { success: true, matches: result.rows }
     } catch (error) {
         console.log(error)
@@ -72,7 +72,7 @@ const insertMatch = async (body) => {
         return validationResult
     }
     try {
-        const result = await pgConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
+        const result = await matchesConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
         const insertedValues = result.rows[0]
         return {
             success: true,

@@ -1,8 +1,9 @@
 const app = require("./app")
-const { connectToMongo, connectToPostgres } = require("./db")
+const { connectToMongo, connectToConfig, connectToMatches } = require("./db")
 
 connectToMongo()
-connectToPostgres()
+connectToMatches()
+connectToConfig()
 
 const PORT = process.env.PORT || 8000
 

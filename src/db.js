@@ -12,6 +12,32 @@ const createTableIfNotExistsQuery = `
         match_probability NUMERIC(7,6) NOT NULL
     );
 `
+
+const createAreasTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS areas (
+        id SERIAL PRIMARY KEY NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        geo_json JSONB NOT NULL
+    );
+`
+
+const createTransitLinesTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS transit_lines (
+        id SERIAL PRIMARY KEY NOT NULL,
+        area_id INTEGER NOT NULL,
+        type VARCHAR(255) NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        geo_json JSONB NOT NULL
+    );
+`
+
+const createConnectionStringTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS connection_strings (
+        name VARCHAR(255) PRIMARY KEY NOT NULL,
+        value VARCHAR(255) NOT NULL
+    );
+`
+        
 const Schema = mongoose.Schema
 
 const itemSchema = new Schema({}, { strict: false })
@@ -31,21 +57,40 @@ const connectToMongo = async () => {
     }
 }
 
-const pgConnector = new Pool({
-    connectionString: process.env.POSTGRES_URI,
+const matchesConnector = new Pool({
+    connectionString: process.env.MATCHES_URI,
 })
 
-const connectToPostgres = async () => {
+const connectToMatches = async () => {
     try {
         if (process.env.NODE_ENV === "development") {
-            await pgConnector.connect()
-            console.log("Connected to PostgreSQL")
-            await pgConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
-            await pgConnector.query(createTableIfNotExistsQuery)
+            await matchesConnector.connect()
+            console.log("Connected to matches db")
+            await matchesConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
+            await matchesConnector.query(createTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
     }
 }
 
-module.exports = { Found, Lost, connectToMongo, connectToPostgres, pgConnector }
+const configConnector = new Pool({
+    connectionString: process.env.CONFIG_URI,
+})
+
+const connectToConfig = async () => {
+    try {
+        if (process.env.NODE_ENV === "development") {
+            await configConnector.connect()
+            console.log("Connected to config db")
+            await configConnector.query(createAreasTableIfNotExistsQuery)
+            await configConnector.query(createTransitLinesTableIfNotExistsQuery)
+            await configConnector.query(createConnectionStringTableIfNotExistsQuery)
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+module.exports = { Found, Lost, connectToMongo, connectToMatches, connectToConfig, matchesConnector, configConnector }

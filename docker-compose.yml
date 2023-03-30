@@ -12,13 +12,15 @@ services:
         environment:
             - PORT=8000
             - MONGO_URI=mongodb://user:password@mongo:27017/lf?authSource=admin
-            - POSTGRES_URI=postgres://user:password@postgres:5432/matches
+            - MATCHES_URI=postgres://user:password@matches:5432/matches
+            - CONFIG_URI=postgres://user:password@config:5432/config
             - FRONTEND_URL=http://localhost:5173
         volumes:
             - ./src:/app/src
         depends_on:
             - mongo
-            - postgres
+            - matches
+            - config
     mongo:
         image: mongo:6.0
         container_name: mongo
@@ -31,9 +33,9 @@ services:
             - 27017:27017
         volumes:
             - ./data:/data/db
-    postgres:
+    matches:
         image: postgres:15.0
-        container_name: postgres
+        container_name: matches
         restart: always
         ports:
             - 5432:5432
@@ -41,3 +43,13 @@ services:
             - POSTGRES_USER=user
             - POSTGRES_PASSWORD=password
             - POSTGRES_DB=matches
+    config:
+        image: postgres:15.0	
+        container_name: config
+        restart: always
+        ports:
+            - 5433:5432
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=password
+            - POSTGRES_DB=config
