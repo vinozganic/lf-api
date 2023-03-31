@@ -31,7 +31,7 @@ const createTransportLinesTableIfNotExistsQuery = `
     );
 `
 
-const createConnectionStringTableIfNotExistsQuery = `
+const createConnectionStringsTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS connection_strings (
         name VARCHAR(255) PRIMARY KEY NOT NULL,
         value VARCHAR(255) NOT NULL
@@ -85,7 +85,7 @@ const connectToConfig = async () => {
             console.log("Connected to config db")
             await configConnector.query(createAreasTableIfNotExistsQuery)
             await configConnector.query(createTransportLinesTableIfNotExistsQuery)
-            await configConnector.query(createConnectionStringTableIfNotExistsQuery)
+            await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
