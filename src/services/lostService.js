@@ -1,6 +1,6 @@
 const { Lost } = require("../db")
 const validate = require("../validation/items/validation")
-const validateId = require("../validation/matches/idValidation")
+const validateIdList = require("../validation/matches/validateIdList")
 const { generateKey } = require("../helpers/trackingKey")
 
 const addLost = async (body) => {
@@ -17,41 +17,25 @@ const addLost = async (body) => {
     return { success: true, lost: newLost }
 }
 
-const batch = async (body) => {
-    const results = []
-    for (const id of body) {
-        const validationResult = validateId(id)
-        if (!validationResult.success) {
-            results.push({
-                success: false,
-                id,
-                error: validationResult.error.message,
-            })
-            continue
+const getLostBatch = async (body) => {
+    const validationResult = validateIdList(body)
+    if (!validationResult.success) {
+        return validationResult
+    }
+    try {
+        const items = await Lost.find({ _id: { $in: body } })
+        return {
+            success: true,
+            matches: items,
         }
-        try {
-            const lost = await Lost.findOne({ _id: id })
-            if (lost) {
-                results.push({
-                    success: true,
-                    body: lost,
-                })
-            } else {
-                results.push({
-                    success: false,
-                    id,
-                    error: "Item not lost for the given id.",
-                })
-            }
-        } catch (error) {
-            results.push({
-                success: false,
-                id,
-                error,
-            })
+    } catch (error) {
+        return {
+            success: false,
+            error: {
+                message: error,
+            },
         }
     }
-    return results
 }
 
-module.exports = { addLost, batch }
+module.exports = { addLost, getLostBatch }

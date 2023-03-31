@@ -1,5 +1,5 @@
 const express = require("express")
-const { addLost, batch } = require("../services/lostService")
+const { addLost, getLostBatch } = require("../services/lostService")
 
 const router = express.Router()
 
@@ -12,7 +12,10 @@ router.post("/", async (req, res) => {
 })
 
 router.post("/batch", async (req, res) => {
-    const data = await batch(req.body)
+    const data = await getLostBatch(req.body)
+    if (data.success === false) {
+        return res.status(400).json(data)
+    }
     res.status(200).json(data)
 })
 

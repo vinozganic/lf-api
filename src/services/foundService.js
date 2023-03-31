@@ -1,6 +1,6 @@
 const { Found } = require("../db")
 const validate = require("../validation/items/validation")
-const validateId = require("../validation/matches/idValidation")
+const validateIdList = require("../validation/matches/validateIdList")
 const { generateKey } = require("../helpers/trackingKey")
 
 const addFound = async (body) => {
@@ -17,41 +17,25 @@ const addFound = async (body) => {
     return { success: true, found: newFound }
 }
 
-const batch = async (body) => {
-    const results = []
-    for (const id of body) {
-        const validationResult = validateId(id)
-        if (!validationResult.success) {
-            results.push({
-                success: false,
-                id,
-                error: validationResult.error.message,
-            })
-            continue
+const getFoundBatch = async (body) => {
+    const validationResult = validateIdList(body)
+    if (!validationResult.success) {
+        return validationResult
+    }
+    try {
+        const items = await Found.find({ _id: { $in: body } })
+        return {
+            success: true,
+            matches: items,
         }
-        try {
-            const found = await Found.findOne({ _id: id })
-            if (found) {
-                results.push({
-                    success: true,
-                    body: found,
-                })
-            } else {
-                results.push({
-                    success: false,
-                    id,
-                    error: "Item not found for the given id.",
-                })
-            }
-        } catch (error) {
-            results.push({
-                success: false,
-                id,
-                error,
-            })
+    } catch (error) {
+        return {
+            success: false,
+            error: {
+                message: error,
+            },
         }
     }
-    return results
 }
 
-module.exports = { addFound, batch }
+module.exports = { addFound, getFoundBatch }
