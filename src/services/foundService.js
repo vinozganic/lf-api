@@ -26,7 +26,7 @@ const getFoundBatch = async (body) => {
         const items = await Found.find({ _id: { $in: body } })
         return {
             success: true,
-            matches: items,
+            foundItems: items,
         }
     } catch (error) {
         return {
