@@ -10,16 +10,16 @@ const {
     clearMatchesTable,
 } = require("../dbHandler")
 
-let pgConnector = null
+let matchesConnector = null
 
 beforeAll(async () => {
     await connectToItemsDatabase()
-    pgConnector = await connectToMatchesDatabase()
+    matchesConnector = await connectToMatchesDatabase()
 })
 
 afterEach(async () => {
     await dropItemsCollections()
-    await clearMatchesTable(pgConnector)
+    await clearMatchesTable(matchesConnector)
 })
 
 afterAll(async () => {
@@ -38,13 +38,13 @@ describe("GET /matches/<id>", () => {
     })
 
     it("should return 200", async () => {
-        await addMatch(pgConnector)
+        await addMatch(matchesConnector)
         const res = await request(app).get("/matches/a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11")
         expect(res.statusCode).toEqual(200)
     })
 
     it("should have correct response body", async () => {
-        await addMatch(pgConnector)
+        await addMatch(matchesConnector)
         const res = await request(app).get("/matches/a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11")
         expect(res.body.success).toBe(true)
         expect(res.body.match).toHaveProperty("id")
@@ -61,13 +61,13 @@ describe("GET /matches/lost/<lostId>", () => {
     })
 
     it("should return 200", async () => {
-        await addMatch(pgConnector)
+        await addMatch(matchesConnector)
         const res = await request(app).get("/matches/lost/64202be6be38a05973e0c6c7")
         expect(res.statusCode).toEqual(200)
     })
 
     it("should have correct response body", async () => {
-        await addMatches(pgConnector)
+        await addMatches(matchesConnector)
         const res = await request(app).get("/matches/lost/64202be6be38a05973e0c6c7")
         expect(res.body.success).toBe(true)
         expect(res.body.matches).toHaveLength(2)
@@ -85,13 +85,13 @@ describe("GET /matches/found/<foundId>", () => {
     })
 
     it("should return 200", async () => {
-        await addMatch(pgConnector)
+        await addMatch(matchesConnector)
         const res = await request(app).get("/matches/found/64202bd46d22797759e9888c")
         expect(res.statusCode).toEqual(200)
     })
 
     it("should have correct response body", async () => {
-        await addMatches(pgConnector)
+        await addMatches(matchesConnector)
         const res = await request(app).get("/matches/found/64202bd46d22797759e9888c")
         expect(res.body.success).toBe(true)
         expect(res.body.matches).toHaveLength(2)

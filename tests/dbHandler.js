@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const { MongoMemoryServer } = require("mongodb-memory-server")
-const { pgConnector } = require("../src/db")
+const { matchesConnector } = require("../src/db")
 let mongod = null
 
 module.exports.connectToItemsDatabase = async () => {
@@ -31,7 +31,7 @@ module.exports.dropItemsCollections = async () => {
 }
 
 module.exports.connectToMatchesDatabase = async () => {
-    await pgConnector.connect()
+    await matchesConnector.connect()
 
     const createExtensionIfNotExistsQuery = (extensionName) => `
         CREATE EXTENSION IF NOT EXISTS "${extensionName}";
@@ -45,30 +45,30 @@ module.exports.connectToMatchesDatabase = async () => {
         );
     `
 
-    await pgConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
-    await pgConnector.query(createTempTableQuery)
+    await matchesConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
+    await matchesConnector.query(createTempTableQuery)
 
-    return pgConnector
+    return matchesConnector
 }
 
-module.exports.clearMatchesTable = async (pgConnector) => {
+module.exports.clearMatchesTable = async (matchesConnector) => {
     const clearMatchesTableQuery = `
         DELETE FROM matches;
     `
-    await pgConnector.query(clearMatchesTableQuery)
+    await matchesConnector.query(clearMatchesTableQuery)
 }
 
-module.exports.addMatch = async (pgConnector) => {
+module.exports.addMatch = async (matchesConnector) => {
     const addMatchQuery = `
         INSERT INTO matches (id, found_id, lost_id, match_probability)
         VALUES ($1, $2, $3, $4);
     `
     const values = ["a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11", "64202bd46d22797759e9888c", "64202be6be38a05973e0c6c7", 0.5]
 
-    await pgConnector.query(addMatchQuery, values)
+    await matchesConnector.query(addMatchQuery, values)
 }
 
-module.exports.addMatches = async (pgConnector) => {
+module.exports.addMatches = async (matchesConnector) => {
     const addMatchQuery = `
         INSERT INTO matches (id, found_id, lost_id, match_probability)
         VALUES ($1, $2, $3, $4);
@@ -80,6 +80,6 @@ module.exports.addMatches = async (pgConnector) => {
     ]
 
     for await (const value of values) {
-        await pgConnector.query(addMatchQuery, value)
+        await matchesConnector.query(addMatchQuery, value)
     }
 }
