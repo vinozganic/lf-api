@@ -1,5 +1,6 @@
 const { Found } = require("../db")
 const validate = require("../validation/items/validation")
+const validateIdList = require("../validation/matches/validateIdList")
 const { generateKey } = require("../helpers/trackingKey")
 
 const addFound = async (body) => {
@@ -16,4 +17,25 @@ const addFound = async (body) => {
     return { success: true, found: newFound }
 }
 
-module.exports = { addFound }
+const getFoundBatch = async (body) => {
+    const validationResult = validateIdList(body)
+    if (!validationResult.success) {
+        return validationResult
+    }
+    try {
+        const items = await Found.find({ _id: { $in: body } })
+        return {
+            success: true,
+            foundItems: items,
+        }
+    } catch (error) {
+        return {
+            success: false,
+            error: {
+                message: error,
+            },
+        }
+    }
+}
+
+module.exports = { addFound, getFoundBatch }

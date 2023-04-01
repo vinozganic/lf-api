@@ -1,5 +1,6 @@
 const { Lost } = require("../db")
 const validate = require("../validation/items/validation")
+const validateIdList = require("../validation/matches/validateIdList")
 const { generateKey } = require("../helpers/trackingKey")
 
 const addLost = async (body) => {
@@ -16,4 +17,25 @@ const addLost = async (body) => {
     return { success: true, lost: newLost }
 }
 
-module.exports = { addLost }
+const getLostBatch = async (body) => {
+    const validationResult = validateIdList(body)
+    if (!validationResult.success) {
+        return validationResult
+    }
+    try {
+        const items = await Lost.find({ _id: { $in: body } })
+        return {
+            success: true,
+            lostItems: items,
+        }
+    } catch (error) {
+        return {
+            success: false,
+            error: {
+                message: error,
+            },
+        }
+    }
+}
+
+module.exports = { addLost, getLostBatch }
