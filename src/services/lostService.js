@@ -4,11 +4,11 @@ const validateIdList = require("../validation/matches/validateIdList")
 const validateResolvedId = require("../validation/matches/resolvedIdValidation")
 const { generateKey } = require("../helpers/trackingKey")
 
-const removeWhereLostIdQuery = `
-    DELETE FROM matches WHERE lost_id = $1
+const updateResolvedLostQuery = `
+    UPDATE matches SET resolved = true WHERE lost_id = $1
 `
-const removeWhereFoundIdQuery = `
-    DELETE FROM matches WHERE found_id = $1
+const updateResolvedFoundQuery = `
+    UPDATE matches SET resolved = true WHERE found_id = $1
 `
 
 const addLost = async (body) => {
@@ -61,7 +61,7 @@ const resolved = async (body) => {
                 },
             }
         }
-        await matchesConnector.query(removeWhereLostIdQuery, [body.lostId])
+        await matchesConnector.query(updateResolvedLostQuery, [body.lostId])
         if ("foundId" in Object.keys(body)) {
             const foundItem = await Found.findByIdAndUpdate({ _id: body.foundId }, { resolved: true }, { new: true })
             if (!foundItem) {
@@ -72,7 +72,7 @@ const resolved = async (body) => {
                     },
                 }
             }
-            await matchesConnector.query(removeWhereFoundIdQuery, [body.foundId])
+            await matchesConnector.query(updateResolvedFoundQuery, [body.foundId])
             return {
                 success: true,
                 lostItem: lostItem,
