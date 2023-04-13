@@ -31,7 +31,7 @@ const getFoundBatch = async (body) => {
         const items = await Found.find({ _id: { $in: body } })
         return {
             success: true,
-            foundItems: items,
+            data: items,
         }
     } catch (error) {
         return {
@@ -44,4 +44,3 @@ const getFoundBatch = async (body) => {
 }
 
 module.exports = { addFound, getFound, getFoundBatch }
-

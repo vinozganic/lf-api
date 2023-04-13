@@ -1,4 +1,4 @@
-const validateId = require("./idValidation")
+const validateId = require("./idValidator")
 const validateMatchProbability = require("./matchProbabilityValidation")
 
 const validateInsertMatch = (body) => {
