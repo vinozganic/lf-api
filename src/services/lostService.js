@@ -1,14 +1,11 @@
 const { Lost, matchesConnector, Found } = require("../db")
 const validate = require("../validation/items/validation")
 const validateIdList = require("../validation/matches/validateIdList")
-const validateResolvedId = require("../validation/matches/resolvedIdValidation")
+const validateId = require("../validation/matches/idValidation")
 const { generateKey } = require("../helpers/trackingKey")
 
-const updateResolvedLostQuery = `
-    UPDATE matches SET resolved = true WHERE lost_id = $1
-`
-const updateResolvedFoundQuery = `
-    UPDATE matches SET resolved = true WHERE found_id = $1
+const updateResolveQuery = `
+    UPDATE matches SET resolved = true WHERE lost_id = $1 OR found_id = $2
 `
 
 const addLost = async (body) => {
@@ -46,10 +43,19 @@ const getLostBatch = async (body) => {
     }
 }
 
-const resolved = async (body) => {
-    const validationResult = validateResolvedId(body)
-    if (!validationResult.success) {
-        return validationResult
+const resolve = async (body) => {
+    const validateLostId = validateId(body.lostId)
+    const validateFoundId = { success: true }
+    if ("found_id" in Object.keys(body)) {
+        validateFoundId = validateId(body.foundId)
+    }
+    if (!validateLostId.success || !validateFoundId.success) {
+        return {
+            success: false,
+            error: {
+                message: "Invalid id.",
+            },
+        }
     }
     try {
         const lostItem = await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true }, { new: true })
@@ -61,8 +67,9 @@ const resolved = async (body) => {
                 },
             }
         }
-        await matchesConnector.query(updateResolvedLostQuery, [body.lostId])
+        const foundId = "null"
         if ("foundId" in Object.keys(body)) {
+            foundId = body.foundId
             const foundItem = await Found.findByIdAndUpdate({ _id: body.foundId }, { resolved: true }, { new: true })
             if (!foundItem) {
                 return {
@@ -72,16 +79,11 @@ const resolved = async (body) => {
                     },
                 }
             }
-            await matchesConnector.query(updateResolvedFoundQuery, [body.foundId])
-            return {
-                success: true,
-                lostItem: lostItem,
-                foundItem: foundItem,
-            }
         }
+        await matchesConnector.query(updateResolveQuery, [body.lostId, foundId])
         return {
             success: true,
-            lostItem: lostItem,
+            message: `Resolved lost item with id: ${body.lostId}`,
         }
     } catch (error) {
         return {
@@ -93,4 +95,4 @@ const resolved = async (body) => {
     }
 }
 
-module.exports = { addLost, getLostBatch, resolved }
+module.exports = { addLost, getLostBatch, resolve }
