@@ -13,9 +13,9 @@ const validateInsertMatch = (body) => {
     if (errors.length > 0) {
         return {
             success: false,
-            error : {
-                message: `${errors[0]}`
-            }
+            error: {
+                message: `${errors[0]}`,
+            },
         }
     }
     return { success: true }

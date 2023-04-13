@@ -8,8 +8,15 @@ const trackRouter = require("./routes/track")
 const app = express()
 app.use(express.json())
 
+const corsWhitelist = [process.env.FRONTEND_URL, process.env.MATCHER_URL]
 var corsOptions = {
-    origin: process.env.FRONTEND_URL,
+    origin: function (origin, callback) {
+        if (origin === undefined || corsWhitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error("Not allowed by CORS"))
+        }
+    },
 }
 
 app.use(cors(corsOptions))

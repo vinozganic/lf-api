@@ -14,7 +14,12 @@ const addFound = async (body) => {
         ...body,
     })
     await newFound.save()
-    return { success: true, found: newFound }
+    return { success: true, data: newFound }
+}
+
+const getFound = async () => {
+    const founds = await Found.find()
+    return { success: true, data: founds }
 }
 
 const getFoundBatch = async (body) => {
@@ -38,4 +43,5 @@ const getFoundBatch = async (body) => {
     }
 }
 
-module.exports = { addFound, getFoundBatch }
+module.exports = { addFound, getFound, getFoundBatch }
+

@@ -31,7 +31,7 @@ const getMatchById = async (id) => {
                 },
             }
         }
-        return { success: true, match: result.rows[0] }
+        return { success: true, data: result.rows[0] }
     } catch (error) {
         console.log(error)
         return { success: false, error }
@@ -45,7 +45,7 @@ const getMatchesByFoundId = async (id) => {
     }
     try {
         const result = await matchesConnector.query(getMatchesByFoundIdQuery, [id])
-        return { success: true, matches: result.rows }
+        return { success: true, data: result.rows }
     } catch (error) {
         console.log(error)
         return { success: false, error }
@@ -59,7 +59,7 @@ const getMatchesByLostId = async (id) => {
     }
     try {
         const result = await matchesConnector.query(getMatchesByLostIdQuery, [id])
-        return { success: true, matches: result.rows }
+        return { success: true, data: result.rows }
     } catch (error) {
         console.log(error)
         return { success: false, error }
@@ -76,7 +76,7 @@ const insertMatch = async (body) => {
         const insertedValues = result.rows[0]
         return {
             success: true,
-            match: {
+            data: {
                 id: insertedValues.id,
                 foundId: insertedValues.found_id,
                 lostId: insertedValues.lost_id,
