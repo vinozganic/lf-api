@@ -1,8 +1,8 @@
-const { Lost, matchesConnector, Found } = require("../db")
-const validate = require("../validation/items/validation")
-const validateIdList = require("../validation/matches/validateIdList")
-const validateId = require("../validation/matches/idValidation")
-const { generateKey } = require("../helpers/trackingKey")
+const { Lost, matchesConnector, Found } = require('../db')
+const validate = require('../validation/items/validation')
+const validateIdList = require('../validation/matches/validateIdList')
+const validateId = require('../validation/matches/idValidation')
+const { generateKey } = require('../helpers/trackingKey')
 
 const updateResolveQuery = `
     UPDATE matches SET resolved = true WHERE lost_id = $1 OR found_id = $2
@@ -45,37 +45,44 @@ const getLostBatch = async (body) => {
 
 const resolve = async (body) => {
     const validateLostId = validateId(body.lostId)
-    const validateFoundId = { success: true }
-    if ("found_id" in Object.keys(body)) {
+    let validateFoundId = { success: true }
+    if (body.hasOwnProperty('foundId')) {
         validateFoundId = validateId(body.foundId)
     }
     if (!validateLostId.success || !validateFoundId.success) {
         return {
             success: false,
             error: {
-                message: "Invalid id.",
+                message: 'Invalid id.',
             },
         }
     }
     try {
-        const lostItem = await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true }, { new: true })
-        if (!lostItem) {
-            return {
-                success: false,
-                error: {
-                    message: "Lost item not found.",
-                },
-            }
-        }
-        const foundId = "null"
-        if ("foundId" in Object.keys(body)) {
+        const lostItemExists = await Lost.exists({ _id: body.lostId })
+        let foundId = 'null'
+        let foundItemExists = true
+        if (body.hasOwnProperty('foundId')) {
             foundId = body.foundId
-            const foundItem = await Found.findByIdAndUpdate({ _id: body.foundId }, { resolved: true }, { new: true })
-            if (!foundItem) {
+            foundItemExists = await Found.exists({ _id: body.foundId })
+            if (lostItemExists && foundItemExists) {
+                await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true })
+                await Found.findOneAndUpdate({ _id: body.foundId }, { resolved: true })
+            } else {
                 return {
                     success: false,
                     error: {
-                        message: "Found item not found.",
+                        message: 'Item does not exist.',
+                    },
+                }
+            }
+        } else {
+            if (lostItemExists) {
+                await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true })
+            } else {
+                return {
+                    success: false,
+                    error: {
+                        message: 'Item does not exist.',
                     },
                 }
             }
