@@ -58,35 +58,20 @@ const resolve = async (body) => {
         }
     }
     try {
-        const lostItemExists = await Lost.exists({ _id: body.lostId })
         let foundId = 'null'
-        let foundItemExists = true
-        if (body.hasOwnProperty('foundId')) {
-            foundId = body.foundId
-            foundItemExists = await Found.exists({ _id: body.foundId })
-            if (lostItemExists && foundItemExists) {
-                await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true })
-                await Found.findOneAndUpdate({ _id: body.foundId }, { resolved: true })
-            } else {
-                return {
-                    success: false,
-                    error: {
-                        message: 'Item does not exist.',
-                    },
-                }
-            }
-        } else {
-            if (lostItemExists) {
-                await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true })
-            } else {
-                return {
-                    success: false,
-                    error: {
-                        message: 'Item does not exist.',
-                    },
-                }
+        const lostItem = await Lost.findOneAndUpdate({ _id: body.lostId }, { resolved: true }, { new: true })
+        if (!lostItem) {
+            return {
+                success: false,
+                error: {
+                    message: 'Item not found.',
+                },
             }
         }
+        if (body.hasOwnProperty('foundId')) {
+            foundId = body.foundId
+            const foundItem = await Found.findOneAndUpdate({ _id: body.foundId }, { resolved: true }, { new: true })
+        } 
         await matchesConnector.query(updateResolveQuery, [body.lostId, foundId])
         return {
             success: true,
