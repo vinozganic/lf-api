@@ -35,13 +35,13 @@ describe("lost endpoint", () => {
 
         expect(res.statusCode).toBe(201)
         expect(res.body.success).toBe(true)
-        expect(res.body.lost).toHaveProperty("_id")
-        expect(res.body.lost).toHaveProperty("type")
-        expect(res.body.lost).toHaveProperty("subtype")
-        expect(res.body.lost).toHaveProperty("color")
-        expect(res.body.lost).toHaveProperty("date")
-        expect(res.body.lost).toHaveProperty("location")
-        expect(res.body.lost).toHaveProperty("identifiable")
+        expect(res.body.data).toHaveProperty("_id")
+        expect(res.body.data).toHaveProperty("type")
+        expect(res.body.data).toHaveProperty("subtype")
+        expect(res.body.data).toHaveProperty("color")
+        expect(res.body.data).toHaveProperty("date")
+        expect(res.body.data).toHaveProperty("location")
+        expect(res.body.data).toHaveProperty("identifiable")
     })
 
     it("should create a tracking key for lost item", async () => {
@@ -62,6 +62,6 @@ describe("lost endpoint", () => {
 
         expect(res.statusCode).toBe(201)
         expect(res.body.success).toBe(true)
-        expect(res.body.lost).toHaveProperty("trackingKey")
+        expect(res.body.data).toHaveProperty("trackingKey")
     })
 })

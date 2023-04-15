@@ -14,7 +14,12 @@ const addLost = async (body) => {
         ...body,
     })
     await newLost.save()
-    return { success: true, lost: newLost }
+    return { success: true, data: newLost }
+}
+
+const getLost = async () => {
+    const losts = await Lost.find()
+    return { success: true, data: losts }
 }
 
 const getLostBatch = async (body) => {
@@ -26,7 +31,7 @@ const getLostBatch = async (body) => {
         const items = await Lost.find({ _id: { $in: body } })
         return {
             success: true,
-            lostItems: items,
+            data: items,
         }
     } catch (error) {
         return {
@@ -38,4 +43,4 @@ const getLostBatch = async (body) => {
     }
 }
 
-module.exports = { addLost, getLostBatch }
+module.exports = { addLost, getLostBatch, getLost }

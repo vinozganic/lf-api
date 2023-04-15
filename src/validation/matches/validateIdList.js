@@ -1,4 +1,4 @@
-const validateId = require("./idValidation")
+const validateId = require("./idValidator")
 
 const validateIdList = (idList) => {
     if (!Array.isArray(idList)) {
@@ -16,7 +16,7 @@ const validateIdList = (idList) => {
                 success: false,
                 error: {
                     message: result.error.message,
-                }
+                },
             }
         }
     }

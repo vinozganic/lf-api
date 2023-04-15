@@ -1,5 +1,5 @@
 const express = require("express")
-const { getMatchesByFoundId, getMatchesByLostId, insertMatch, getMatchById } = require("../services/matchesService")
+const { getMatchesByFoundId, getMatchesByLostId, insertMatch, getMatchById, insertMatchesBatch } = require("../services/matchesService")
 
 const router = express.Router()
 
@@ -32,6 +32,14 @@ router.get("/:matchId", async (req, res) => {
 
 router.post("/", async (req, res) => {
     const data = await insertMatch(req.body)
+    if (data.success === false) {
+        return res.status(400).json(data)
+    }
+    res.status(201).json(data)
+})
+
+router.post("/batch", async (req, res) => {
+    const data = await insertMatchesBatch(req.body)
     if (data.success === false) {
         return res.status(400).json(data)
     }
