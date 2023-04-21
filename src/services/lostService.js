@@ -1,7 +1,7 @@
 const { Lost, matchesConnector, Found } = require('../db')
 const validate = require('../validation/items/validation')
 const validateIdList = require('../validation/matches/validateIdList')
-const validateId = require('../validation/matches/idValidation')
+const validateId = require('../validation/matches/idValidator')
 const { generateKey } = require('../helpers/trackingKey')
 
 const updateResolveQuery = `
@@ -19,7 +19,12 @@ const addLost = async (body) => {
         ...body,
     })
     await newLost.save()
-    return { success: true, lost: newLost }
+    return { success: true, data: newLost }
+}
+
+const getLost = async () => {
+    const losts = await Lost.find()
+    return { success: true, data: losts }
 }
 
 const getLostBatch = async (body) => {
@@ -31,7 +36,7 @@ const getLostBatch = async (body) => {
         const items = await Lost.find({ _id: { $in: body } })
         return {
             success: true,
-            lostItems: items,
+            data: items,
         }
     } catch (error) {
         return {
@@ -87,4 +92,4 @@ const resolve = async (body) => {
     }
 }
 
-module.exports = { addLost, getLostBatch, resolve }
+module.exports = { addLost, getLostBatch, getLost, resolve }

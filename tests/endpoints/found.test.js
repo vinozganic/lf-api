@@ -35,13 +35,13 @@ describe("Found endpoint", () => {
 
         expect(res.statusCode).toBe(201)
         expect(res.body.success).toBe(true)
-        expect(res.body.found).toHaveProperty("_id")
-        expect(res.body.found).toHaveProperty("type")
-        expect(res.body.found).toHaveProperty("subtype")
-        expect(res.body.found).toHaveProperty("color")
-        expect(res.body.found).toHaveProperty("date")
-        expect(res.body.found).toHaveProperty("location")
-        expect(res.body.found).toHaveProperty("identifiable")
+        expect(res.body.data).toHaveProperty("_id")
+        expect(res.body.data).toHaveProperty("type")
+        expect(res.body.data).toHaveProperty("subtype")
+        expect(res.body.data).toHaveProperty("color")
+        expect(res.body.data).toHaveProperty("date")
+        expect(res.body.data).toHaveProperty("location")
+        expect(res.body.data).toHaveProperty("identifiable")
     })
 
     it("should create a tracking key for found item", async () => {
@@ -62,6 +62,6 @@ describe("Found endpoint", () => {
 
         expect(res.statusCode).toBe(201)
         expect(res.body.success).toBe(true)
-        expect(res.body.found).toHaveProperty("trackingKey")
+        expect(res.body.data).toHaveProperty("trackingKey")
     })
 })

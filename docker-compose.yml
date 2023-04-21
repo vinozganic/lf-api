@@ -15,12 +15,16 @@ services:
             - MATCHES_URI=postgres://user:password@matches:5432/matches
             - CONFIG_URI=postgres://user:password@config:5432/config
             - FRONTEND_URL=http://localhost:5173
+            - MATCHER_URL=http://matcher:5000
         volumes:
             - ./src:/app/src
         depends_on:
             - mongo
             - matches
             - config
+        networks:
+            - lf-dev
+
     mongo:
         image: mongo:6.0
         container_name: mongo
@@ -32,7 +36,10 @@ services:
         ports:
             - 27017:27017
         volumes:
-            - ./data:/data/db
+            - ./data/items:/data/db
+        networks:
+            - lf-dev
+
     matches:
         image: postgres:15.0
         container_name: matches
@@ -43,8 +50,13 @@ services:
             - POSTGRES_USER=user
             - POSTGRES_PASSWORD=password
             - POSTGRES_DB=matches
+        volumes:
+            - ./data/matches:/data/db
+        networks:
+            - lf-dev
+            
     config:
-        image: postgres:15.0	
+        image: postgres:15.0
         container_name: config
         restart: always
         ports:
@@ -53,3 +65,12 @@ services:
             - POSTGRES_USER=user
             - POSTGRES_PASSWORD=password
             - POSTGRES_DB=config
+        volumes:
+            - ./data/config:/data/db
+        networks:
+            - lf-dev
+
+networks:
+    lf-dev:
+        name: lf-dev
+        driver: bridge
