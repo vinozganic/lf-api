@@ -1,5 +1,7 @@
 const express = require("express")
 const { addLost, getLost, getLostBatch, resolve } = require("../services/lostService")
+const { generateItemToProcessMessage } = require("../helpers/generateMessage")
+const { sendToQueue } = require("../db")
 
 const router = express.Router()
 
@@ -8,6 +10,8 @@ router.post("/", async (req, res) => {
     if (data.success === false) {
         return res.status(400).json(data)
     }
+    const message = generateItemToProcessMessage(result.data, "found")
+    await sendToQueue(message)
     res.status(201).json(data)
 })
 

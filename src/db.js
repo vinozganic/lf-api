@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const { Pool } = require("pg")
+const amqplib = require("amqplib")
 
 const createExtensionIfNotExistsQuery = (extensionName) => `
     CREATE EXTENSION IF NOT EXISTS "${extensionName}";
@@ -38,10 +39,14 @@ const createConnectionStringsTableIfNotExistsQuery = `
         value VARCHAR(255) NOT NULL
     );
 `
-        
+
 const Schema = mongoose.Schema
 
 const itemSchema = new Schema({}, { strict: false })
+itemSchema.set("toJSON", {
+    virtuals: true,
+})
+
 itemSchema.index({ location: "2dsphere" })
 
 const Found = mongoose.model("found", itemSchema)
@@ -93,5 +98,27 @@ const connectToConfig = async () => {
     }
 }
 
+let rabbitConnector = null
+let rabbitChannel = null
 
-module.exports = { Found, Lost, connectToMongo, connectToMatches, connectToConfig, matchesConnector, configConnector }
+const connectToQueue = async () => {
+    rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
+    rabbitChannel = await rabbitConnector.createChannel()
+    console.log("Connected to RabbitMQ")
+}
+
+const sendToQueue = async (message) => {
+    await rabbitChannel.sendToQueue("matcher.item_to_process", Buffer.from(message))
+}
+
+module.exports = {
+    Found,
+    Lost,
+    connectToMongo,
+    connectToMatches,
+    connectToConfig,
+    connectToQueue,
+    matchesConnector,
+    configConnector,
+    sendToQueue,
+}
