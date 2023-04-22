@@ -29,7 +29,6 @@ describe("Found endpoint", () => {
                     type: "Point",
                     coordinates: [1, 2],
                 },
-                identifiable: true,
                 phoneNumber: "+385981234567",
             })
 
@@ -41,7 +40,6 @@ describe("Found endpoint", () => {
         expect(res.body.data).toHaveProperty("color")
         expect(res.body.data).toHaveProperty("date")
         expect(res.body.data).toHaveProperty("location")
-        expect(res.body.data).toHaveProperty("identifiable")
     })
 
     it("should create a tracking key for found item", async () => {
@@ -56,7 +54,6 @@ describe("Found endpoint", () => {
                     type: "Point",
                     coordinates: [1, 2],
                 },
-                identifiable: true,
                 phoneNumber: "+385981234567",
             })
 

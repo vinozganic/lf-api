@@ -22,7 +22,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -44,7 +43,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -57,7 +55,6 @@ describe("validate", () => {
             subtype: "laptop",
             color: [100, 200, 50],
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -79,33 +76,10 @@ describe("validate", () => {
                 ],
                 publicTransportLines: [1, 2, 3],
             },
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing date.")
-    })
-
-    test("returns an error for missing identifiable", () => {
-        const result = validate({
-            type: "tech",
-            subtype: "laptop",
-            color: [100, 200, 50],
-            location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
-                    ],
-                ],
-                publicTransportLines: [1, 2, 3],
-            },
-            date: Date("21.02.2021. 12:00"),
-            phoneNumber: "+385911125672",
-        })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing identifiable.")
     })
 
     test("returns an error for missing phoneNumber", () => {
@@ -124,7 +98,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toBe("Missing phoneNumber.")
@@ -144,7 +117,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -167,7 +139,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -190,7 +161,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -213,7 +183,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -227,34 +196,10 @@ describe("validate", () => {
             color: [100, 200, 50],
             location: "wrong format",
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
         expect(result.error.message).toEqual("Invalid location.")
-    })
-
-    test("returns an error for invalid identifiable", () => {
-        const result = validate({
-            type: "tech",
-            subtype: "laptop",
-            color: [100, 200, 50],
-            location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
-                    ],
-                ],
-                publicTransportLines: [1, 2, 3],
-            },
-            date: Date("21.02.2021. 12:00"),
-            identifiable: "true",
-            phoneNumber: "+385911125672",
-        })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toEqual("Invalid identifiable.")
     })
 
     test("returns an error for invalid phoneNumber", () => {
@@ -273,7 +218,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: 23,
         })
         expect(result.success).toBe(false)
@@ -296,7 +240,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: "wrong format",
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -310,7 +253,6 @@ describe("validate", () => {
             color: [100, 200, 50],
             location: "wrong format",
             date: "wrong format",
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(false)
@@ -324,7 +266,6 @@ describe("validate", () => {
             color: "red",
             location: "wrong format",
             date: "wrong format",
-            identifiable: "true",
             phoneNumber: 23,
         })
         expect(result.success).toBe(false)
@@ -347,7 +288,6 @@ describe("validate", () => {
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
-            identifiable: true,
             phoneNumber: "+385911125672",
         })
         expect(result.success).toBe(true)
