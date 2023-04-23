@@ -130,3 +130,28 @@ describe("POST /matches", () => {
         expect(res.body.data).toHaveProperty("matchProbability")
     })
 })
+
+describe("POST /matches/batch", () => {
+    it("should return 400", async () => {
+        const res = await request(app).post("/matches/batch")
+        expect(res.statusCode).toEqual(400)
+    })
+
+    it("should return 201", async () => {
+        const res = await request(app)
+            .post("/matches/batch")
+            .send([
+                {
+                    foundId: "64202bd46d22797759e9888c",
+                    lostId: "64202be6be38a05973e0c6c7",
+                    matchProbability: 0.5,
+                },
+                {
+                    foundId: "64202be6be38a05973e0c6c7",
+                    lostId: "64202bd46d22797759e9888c",
+                    matchProbability: 0.3,
+                },
+            ])
+        expect(res.statusCode).toEqual(201)
+    })
+})

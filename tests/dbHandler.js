@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const { MongoMemoryServer } = require("mongodb-memory-server")
-const { matchesConnector } = require("../src/db")
+const { matchesConnector, configConnector } = require("../src/db")
 let mongod = null
 
 module.exports.connectToItemsDatabase = async () => {
@@ -82,4 +82,115 @@ module.exports.addMatches = async (matchesConnector) => {
     for await (const value of values) {
         await matchesConnector.query(addMatchQuery, value)
     }
+}
+
+module.exports.connectToConfigDatabase = async () => {
+    await configConnector.connect()
+
+    const createExtensionIfNotExistsQuery = (extensionName) => `
+        CREATE EXTENSION IF NOT EXISTS "${extensionName}";
+    `
+    const createTempTablesQuery = `
+        CREATE TEMPORARY TABLE areas (
+            id SERIAL PRIMARY KEY NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            geo_json JSONB NOT NULL
+        );
+        CREATE TEMPORARY TABLE types (
+            id SERIAL PRIMARY KEY NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            nice_name VARCHAR(255) NOT NULL
+        );
+        CREATE TEMPORARY TABLE subtypes (
+            id SERIAL PRIMARY KEY NOT NULL,
+            type_id INTEGER NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            nice_name VARCHAR(255) NOT NULL
+        );
+        CREATE TEMPORARY TABLE transport_lines (
+            id SERIAL PRIMARY KEY NOT NULL,
+            area_id INTEGER NOT NULL,
+            type VARCHAR(255) NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            number VARCHAR(255) NOT NULL,
+            geo_json JSONB NOT NULL
+        );
+    `
+
+    await configConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
+    await configConnector.query(createTempTablesQuery)
+
+    return configConnector
+}
+
+module.exports.clearConfigTables = async (configConnector) => {
+    const clearConfigTablesQuery = `
+        DELETE FROM areas;
+        DELETE FROM types;
+        DELETE FROM subtypes;
+        DELETE FROM transport_lines;
+    `
+    await configConnector.query(clearConfigTablesQuery)
+}
+
+module.exports.addArea = async (configConnector) => {
+    const addAreaQuery = `
+        INSERT INTO areas (name, geo_json)
+        VALUES ($1, $2);
+    `
+
+    const geoJson = JSON.stringify({
+        type: "Polygon",
+        coordinates: [
+            [
+                [0, 0],
+                [0, 1],
+                [1, 1],
+                [1, 0],
+                [0, 0],
+            ],
+        ],
+    })
+
+    const values = ["test_area", geoJson]
+
+    await configConnector.query(addAreaQuery, values)
+}
+
+module.exports.addTypesAndSubtypes = async (configConnector) => {
+    const addTypeQuery = `
+        INSERT INTO types (name, nice_name)
+        VALUES ($1, $2);
+    `
+    const addSubtypeQuery = `
+        INSERT INTO subtypes (type_id, name, nice_name)
+        VALUES ($1, $2, $3);
+    `
+    const typeValues = ["test_type", "Test type"]
+    const subtypeValues = [1, "test_subtype", "Test subtype"]
+
+    await configConnector.query(addTypeQuery, typeValues)
+    await configConnector.query(addSubtypeQuery, subtypeValues)
+}
+
+module.exports.addTransportLine = async (configConnector) => {
+    const addTransportLineQuery = `
+        INSERT INTO transport_lines (area_id, type, name, number, geo_json)
+        VALUES ($1, $2, $3, $4, $5);
+    `
+    const values = [
+        1,
+        "test_type",
+        "test_name",
+        "test_number",
+        {
+            type: "LineString",
+            coordinates: [
+                [0, 0],
+                [1, 1],
+            ],
+        },
+    ]
+
+    await configConnector.query(addTransportLineQuery, values)
 }
