@@ -6,6 +6,11 @@ beforeAll(async () => await connectToItemsDatabase())
 afterEach(async () => await dropItemsCollections())
 afterAll(async () => await dropItemsDatabase())
 
+jest.mock("../../src/db", () => ({
+    ...jest.requireActual("../../src/db"),
+    sendToQueue: jest.fn(),
+}))
+
 describe("POST /found", () => {
     it("should raise an error for invalid payload", async () => {
         const res = await request(app).post("/found").send({
