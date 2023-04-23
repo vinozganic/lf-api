@@ -4,6 +4,7 @@ const foundRouter = require("./routes/found")
 const lostRouter = require("./routes/lost")
 const matchesRouter = require("./routes/matches")
 const trackRouter = require("./routes/track")
+const configRouter = require("./routes/config")
 
 const app = express()
 app.use(express.json())
@@ -25,5 +26,6 @@ app.use("/found", foundRouter)
 app.use("/lost", lostRouter)
 app.use("/matches", matchesRouter)
 app.use("/track", trackRouter)
+app.use("/config", configRouter)
 
 module.exports = app
