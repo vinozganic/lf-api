@@ -17,21 +17,23 @@ const createMatchesTableIfNotExistsQuery = `
 
 const createAreasTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS areas (
-        id SERIAL PRIMARY KEY NOT NULL,
-        name VARCHAR(255) NOT NULL,
+        name VARCHAR(255) PRIMARY KEY NOT NULL,
         geo_json JSONB NOT NULL
     );
+
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_areas_name ON areas(name);
 `
 
 const createTransportLinesTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS transport_lines (
         id SERIAL PRIMARY KEY NOT NULL,
-        area_id INTEGER NOT NULL,
+        area_name VARCHAR(255) NOT NULL,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         number VARCHAR(255) NOT NULL,
-        geo_json JSONB NOT NULL
-    );
+        geo_json JSONB NOT NULL);
+
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_transport_lines_area_name_type_number ON transport_lines(area_name, type, number);
 `
 
 const createConnectionStringsTableIfNotExistsQuery = `
@@ -43,20 +45,12 @@ const createConnectionStringsTableIfNotExistsQuery = `
 
 const createTypesTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS types (
-        id SERIAL PRIMARY KEY NOT NULL,
-        name VARCHAR(255) NOT NULL,
+        name VARCHAR(255) PRIMARY KEY NOT NULL,
         nice_name VARCHAR(255) NOT NULL
     );
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_types_name ON types(name);
 `
 
-const createSubtypesTableIfNotExistsQuery = `
-    CREATE TABLE IF NOT EXISTS subtypes (
-        id SERIAL PRIMARY KEY NOT NULL,
-        type_id INTEGER NOT NULL,
-        name VARCHAR(255) NOT NULL,
-        nice_name VARCHAR(255) NOT NULL
-    );
-`
 
 const Schema = mongoose.Schema
 
@@ -122,9 +116,16 @@ let rabbitConnector = null
 let rabbitChannel = null
 
 const connectToQueue = async () => {
-    rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
-    rabbitChannel = await rabbitConnector.createChannel()
-    console.log("Connected to RabbitMQ")
+    while(!rabbitChannel){
+        try{
+            rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
+            rabbitChannel = await rabbitConnector.createChannel()
+            console.log("Connected to RabbitMQ")
+        } catch {
+            console.log("rabbitmq not up, waiting 10 seconds")
+            await new Promise(r => setTimeout(r, 5000))
+        }
+    }
 }
 
 const sendToQueue = async (message) => {
