@@ -17,6 +17,8 @@ services:
             - FRONTEND_URL=http://localhost:5173
             - MATCHER_URL=http://matcher:5000
             - AMQP_ENDPOINT=amqp://guest:guest@rabbitmq:5672
+            - STREAM_CHAT_API_KEY=smqmafukudwa
+            - STREAM_CHAT_SECRET=x4dryurjjjzsxcv6xeu2qjndm2zyway6rc7uvn8qsn57p4xwun2gh3t558kmx69t
         volumes:
             - ./src:/app/src
         depends_on:
