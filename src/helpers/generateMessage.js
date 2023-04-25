@@ -7,7 +7,6 @@ const generateItemToProcessMessage = (item, type) => {
         color: item.color,
         location: item.location,
         date: item.date,
-        identifiable: item.identifiable,
     })
 }
 
