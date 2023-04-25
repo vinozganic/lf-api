@@ -61,7 +61,8 @@ const getMatchesByFoundId = async (id) => {
                 id: row.id,
                 foundId: row.found_id,
                 lostId: row.lost_id,
-                matchProbability: row.match_probability,
+                matchProbability: Number(row.match_probability),
+                resolved: row.resolved,
             })
         }
         return { success: true, data: values }
@@ -84,7 +85,8 @@ const getMatchesByLostId = async (id) => {
                 id: row.id,
                 foundId: row.found_id,
                 lostId: row.lost_id,
-                matchProbability: row.match_probability,
+                matchProbability: Number(row.match_probability),
+                resolved: row.resolved,
             })
         }
         return { success: true, data: values }

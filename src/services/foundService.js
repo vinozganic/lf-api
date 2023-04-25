@@ -1,3 +1,5 @@
+const { StreamChat } = require("stream-chat")
+
 const { Found } = require("../db")
 const validate = require("../validation/items/validation")
 const validateIdList = require("../validation/matches/validateIdList")
@@ -11,8 +13,14 @@ const addFound = async (body) => {
 
     const newFound = new Found({
         trackingKey: generateKey(),
+        streamChatToken: "",
         ...body,
     })
+
+    const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)
+    const token = serverClient.createToken(newFound.id)
+    newFound.streamChatToken = token
+
     await newFound.save()
     return { success: true, data: newFound }
 }
