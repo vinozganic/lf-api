@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const { Pool } = require("pg")
+const amqplib = require("amqplib")
 
 const createExtensionIfNotExistsQuery = (extensionName) => `
     CREATE EXTENSION IF NOT EXISTS "${extensionName}";
@@ -23,11 +24,12 @@ const createAreasTableIfNotExistsQuery = `
 `
 
 const createTransportLinesTableIfNotExistsQuery = `
-    CREATE TABLE IF NOT EXISTS transit_lines (
+    CREATE TABLE IF NOT EXISTS transport_lines (
         id SERIAL PRIMARY KEY NOT NULL,
         area_id INTEGER NOT NULL,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
+        number VARCHAR(255) NOT NULL,
         geo_json JSONB NOT NULL
     );
 `
@@ -38,10 +40,31 @@ const createConnectionStringsTableIfNotExistsQuery = `
         value VARCHAR(255) NOT NULL
     );
 `
-        
+
+const createTypesTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS types (
+        id SERIAL PRIMARY KEY NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        nice_name VARCHAR(255) NOT NULL
+    );
+`
+
+const createSubtypesTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS subtypes (
+        id SERIAL PRIMARY KEY NOT NULL,
+        type_id INTEGER NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        nice_name VARCHAR(255) NOT NULL
+    );
+`
+
 const Schema = mongoose.Schema
 
 const itemSchema = new Schema({}, { strict: false })
+itemSchema.set("toJSON", {
+    virtuals: true,
+})
+
 itemSchema.index({ location: "2dsphere" })
 
 const Found = mongoose.model("found", itemSchema)
@@ -87,11 +110,35 @@ const connectToConfig = async () => {
             await configConnector.query(createAreasTableIfNotExistsQuery)
             await configConnector.query(createTransportLinesTableIfNotExistsQuery)
             await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
+            await configConnector.query(createTypesTableIfNotExistsQuery)
+            await configConnector.query(createSubtypesTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
     }
 }
 
+let rabbitConnector = null
+let rabbitChannel = null
 
-module.exports = { Found, Lost, connectToMongo, connectToMatches, connectToConfig, matchesConnector, configConnector }
+const connectToQueue = async () => {
+    rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
+    rabbitChannel = await rabbitConnector.createChannel()
+    console.log("Connected to RabbitMQ")
+}
+
+const sendToQueue = async (message) => {
+    await rabbitChannel.sendToQueue("matcher.item_to_process", Buffer.from(message))
+}
+
+module.exports = {
+    Found,
+    Lost,
+    connectToMongo,
+    connectToMatches,
+    connectToConfig,
+    connectToQueue,
+    matchesConnector,
+    configConnector,
+    sendToQueue,
+}

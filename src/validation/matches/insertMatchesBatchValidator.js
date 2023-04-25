@@ -6,7 +6,7 @@ const validateBatchInsertMatches = (body) => {
         return {
             success: false,
             error: {
-                message: "Body must be an array",
+                message: "Body must be an array.",
             },
         }
     }

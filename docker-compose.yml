@@ -16,12 +16,14 @@ services:
             - CONFIG_URI=postgres://user:password@config:5432/config
             - FRONTEND_URL=http://localhost:5173
             - MATCHER_URL=http://matcher:5000
+            - AMQP_ENDPOINT=amqp://guest:guest@rabbitmq:5672
         volumes:
             - ./src:/app/src
         depends_on:
             - mongo
             - matches
             - config
+            - rabbitmq
         networks:
             - lf-dev
 
@@ -54,7 +56,7 @@ services:
             - ./data/matches:/data/db
         networks:
             - lf-dev
-            
+
     config:
         image: postgres:15.0
         container_name: config
@@ -67,6 +69,17 @@ services:
             - POSTGRES_DB=config
         volumes:
             - ./data/config:/data/db
+        networks:
+            - lf-dev
+
+    rabbitmq:
+        image: rabbitmq:3.11-alpine
+        container_name: rabbitmq
+        hostname: rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
+        restart: always
         networks:
             - lf-dev
 
