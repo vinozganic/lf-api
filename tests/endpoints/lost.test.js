@@ -34,7 +34,6 @@ describe("POST /lost", () => {
                     type: "Point",
                     coordinates: [1, 2],
                 },
-                identifiable: true,
                 phoneNumber: "+385981234567",
             })
 
@@ -46,7 +45,6 @@ describe("POST /lost", () => {
         expect(res.body.data).toHaveProperty("color")
         expect(res.body.data).toHaveProperty("date")
         expect(res.body.data).toHaveProperty("location")
-        expect(res.body.data).toHaveProperty("identifiable")
     })
 
     it("should create a tracking key for lost item", async () => {
@@ -61,7 +59,6 @@ describe("POST /lost", () => {
                     type: "Point",
                     coordinates: [1, 2],
                 },
-                identifiable: true,
                 phoneNumber: "+385981234567",
             })
 
