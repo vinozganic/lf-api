@@ -31,9 +31,10 @@ const createTransportLinesTableIfNotExistsQuery = `
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         number VARCHAR(255) NOT NULL,
-        geo_json JSONB NOT NULL);
+        geo_json JSONB NOT NULL
+    );
 
-        CREATE UNIQUE INDEX IF NOT EXISTS idx_transport_lines_area_name_type_number ON transport_lines(area_name, type, number);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_transport_lines_area_name_type_number ON transport_lines(area_name, type, number);
 `
 
 const createConnectionStringsTableIfNotExistsQuery = `
@@ -50,7 +51,6 @@ const createTypesTableIfNotExistsQuery = `
     );
     CREATE UNIQUE INDEX IF NOT EXISTS idx_types_name ON types(name);
 `
-
 
 const Schema = mongoose.Schema
 
@@ -105,7 +105,6 @@ const connectToConfig = async () => {
             await configConnector.query(createTransportLinesTableIfNotExistsQuery)
             await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
             await configConnector.query(createTypesTableIfNotExistsQuery)
-            await configConnector.query(createSubtypesTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
@@ -116,14 +115,14 @@ let rabbitConnector = null
 let rabbitChannel = null
 
 const connectToQueue = async () => {
-    while(!rabbitChannel){
-        try{
+    while (!rabbitChannel) {
+        try {
             rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
             rabbitChannel = await rabbitConnector.createChannel()
             console.log("Connected to RabbitMQ")
         } catch {
             console.log("rabbitmq not up, waiting 10 seconds")
-            await new Promise(r => setTimeout(r, 5000))
+            await new Promise((r) => setTimeout(r, 5000))
         }
     }
 }
