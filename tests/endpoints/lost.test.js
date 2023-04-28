@@ -42,6 +42,7 @@ describe("POST /lost", () => {
         expect(res.body.data).toHaveProperty("type")
         expect(res.body.data).toHaveProperty("color")
         expect(res.body.data).toHaveProperty("date")
+        expect(new Date(res.body.data.date)).toBeInstanceOf(Date)
         expect(res.body.data).toHaveProperty("location")
     })
 

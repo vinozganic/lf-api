@@ -54,7 +54,14 @@ const createTypesTableIfNotExistsQuery = `
 
 const Schema = mongoose.Schema
 
-const itemSchema = new Schema({}, { strict: false })
+const itemSchema = new Schema(
+    {
+        date: {
+            type: Date,
+        },
+    },
+    { strict: false }
+)
 itemSchema.set("toJSON", {
     virtuals: true,
 })

@@ -26,7 +26,7 @@ describe("GET /config/areas", () => {
         expect(res.body.data).toBeInstanceOf(Array)
         res.body.data.forEach((area) => {
             expect(area).toHaveProperty("name")
-            expect(area).toHaveProperty("geo_json")
+            expect(area).toHaveProperty("geoJson")
         })
     })
 })
@@ -43,6 +43,10 @@ describe("GET /config/types", () => {
         const res = await request(app).get("/config/types")
         expect(res.body.success).toBe(true)
         expect(res.body.data).toBeInstanceOf(Array)
+        res.body.data.forEach((type) => {
+            expect(type).toHaveProperty("name")
+            expect(type).toHaveProperty("niceName")
+        })
     })
 })
 

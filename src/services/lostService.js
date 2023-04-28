@@ -16,9 +16,12 @@ const addLost = async (body) => {
         return validationResult
     }
 
+    const date = new Date(body.date)
+
     const newLost = new Lost({
         trackingKey: generateKey(),
         streamChatToken: "",
+        date,
         ...body,
     })
 

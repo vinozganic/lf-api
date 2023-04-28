@@ -6,8 +6,6 @@ const { Pool } = require("pg")
 const files = fs.readdirSync(__dirname + "\\transport-lines")
 const filteredFiles = files.filter((file) => file !== "scriptTram.js")
 
-console.log(filteredFiles)
-
 let insertTransportLinesValues = `
     INSERT INTO transport_lines (area_name, type, name, number, geo_json) VALUES 
 `

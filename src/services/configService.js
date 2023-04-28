@@ -17,12 +17,28 @@ const getTransportLinesQuery = `
 
 const getAreas = async () => {
     const result = await configConnector.query(getAreasQuery)
-    return { success: true, data: result.rows }
+    return {
+        success: true,
+        data: result.rows.map((row) => {
+            return {
+                name: row.name,
+                geoJson: row.geo_json,
+            }
+        }),
+    }
 }
 
 const getTypes = async () => {
     const typesResult = await configConnector.query(getTypesQuery)
-    return { success: true, data: typesResult.rows }
+    return {
+        success: true,
+        data: typesResult.rows.map((row) => {
+            return {
+                name: row.name,
+                niceName: row.nice_name,
+            }
+        }),
+    }
 }
 
 const getTransportLines = async (areaId) => {
