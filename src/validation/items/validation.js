@@ -5,7 +5,7 @@ const validateDate = require("./dateValidation")
 const validatePhoneNumber = require("./phoneNumberValidation")
 
 const validate = (body) => {
-    const requiredFields = ["type", "subtype", "color", "location", "date", "phoneNumber"]
+    const requiredFields = ["type", "color", "location", "date", "phoneNumber"]
     const fields = Object.keys(body)
     const missingFields = requiredFields.filter((field) => !fields.includes(field))
     if (missingFields.length > 0) {

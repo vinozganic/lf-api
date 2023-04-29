@@ -1,64 +1,53 @@
 const { configConnector } = require("../db")
-const validateAreaId = require("../validation/config/areaIdValidator")
-
 const getAreasQuery = `
     SELECT * FROM areas;
 `
 
-const getAreaByIdQuery = `
-    SELECT * FROM areas WHERE id = $1;
+const getAreaByNameQuery = `
+    SELECT * FROM areas WHERE name = $1;
 `
 
 const getTypesQuery = `
     SELECT * FROM types;   
 `
 
-const getSubtypesQuery = `
-    SELECT * FROM subtypes;
-`
-
 const getTransportLinesQuery = `
-    SELECT * FROM transport_lines WHERE area_id = $1;
+    SELECT * FROM transport_lines WHERE area_name = $1;
 `
 
 const getAreas = async () => {
     const result = await configConnector.query(getAreasQuery)
-    return { success: true, data: result.rows }
+    return {
+        success: true,
+        data: result.rows.map((row) => {
+            return {
+                name: row.name,
+                geoJson: row.geo_json,
+            }
+        }),
+    }
 }
 
-const getTypesAndSubtypes = async () => {
+const getTypes = async () => {
     const typesResult = await configConnector.query(getTypesQuery)
-    const subtypesResult = await configConnector.query(getSubtypesQuery)
-
-    const types = {}
-    typesResult.rows.forEach((type) => {
-        types[type.id] = type.name
-    })
-
-    const typesWithSubtypes = {}
-
-    subtypesResult.rows.forEach((subtype) => {
-        const typeName = types[subtype.type_id]
-        if (!typesWithSubtypes[typeName]) {
-            typesWithSubtypes[typeName] = []
-        }
-        typesWithSubtypes[typeName].push(subtype.name)
-    })
-
-    return { success: true, data: typesWithSubtypes }
+    return {
+        success: true,
+        data: typesResult.rows.map((row) => {
+            return {
+                name: row.name,
+                niceName: row.nice_name,
+            }
+        }),
+    }
 }
 
 const getTransportLines = async (areaId) => {
-    const validationResult = validateAreaId(areaId)
-    if (!validationResult.success) {
-        return validationResult
-    }
-    const areaNameResult = await configConnector.query(getAreaByIdQuery, [areaId])
+    const areaNameResult = await configConnector.query(getAreaByNameQuery, [areaId])
     if (areaNameResult.rows.length === 0) {
         return {
             success: false,
             error: {
-                message: "Area with given id does not exist",
+                message: "Area with that name does not exist",
             },
         }
     }
@@ -66,7 +55,7 @@ const getTransportLines = async (areaId) => {
     const transportLines = transportLinesResult.rows.map((line) => {
         return {
             id: line.id,
-            areaId: line.area_id,
+            areaName: line.area_name,
             type: line.type,
             name: line.name,
             number: line.number,
@@ -83,4 +72,4 @@ const getTransportLines = async (areaId) => {
     }
 }
 
-module.exports = { getAreas, getTypesAndSubtypes, getTransportLines }
+module.exports = { getAreas, getTypes, getTransportLines }

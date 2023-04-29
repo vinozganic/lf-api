@@ -14,7 +14,7 @@ jest.mock("../../src/db", () => ({
 describe("POST /lost", () => {
     it("should raise an error for invalid payload", async () => {
         const res = await request(app).post("/lost").send({
-            type: "tech",
+            type: "mobilePhone",
         })
 
         expect(res.statusCode).toBe(400)
@@ -26,8 +26,7 @@ describe("POST /lost", () => {
         const res = await request(app)
             .post("/lost")
             .send({
-                type: "tech",
-                subtype: "mobilePhone",
+                type: "mobilePhone",
                 color: [1, 2, 3],
                 date: new Date(),
                 location: {
@@ -41,9 +40,9 @@ describe("POST /lost", () => {
         expect(res.body.success).toBe(true)
         expect(res.body.data).toHaveProperty("_id")
         expect(res.body.data).toHaveProperty("type")
-        expect(res.body.data).toHaveProperty("subtype")
         expect(res.body.data).toHaveProperty("color")
         expect(res.body.data).toHaveProperty("date")
+        expect(new Date(res.body.data.date)).toBeInstanceOf(Date)
         expect(res.body.data).toHaveProperty("location")
     })
 
@@ -51,8 +50,7 @@ describe("POST /lost", () => {
         const res = await request(app)
             .post("/lost")
             .send({
-                type: "tech",
-                subtype: "mobilePhone",
+                type: "mobilePhone",
                 color: [1, 2, 3],
                 date: new Date(),
                 location: {
@@ -81,7 +79,6 @@ describe("GET /lost", () => {
         res.body.data.forEach((item) => {
             expect(item).toHaveProperty("_id")
             expect(item).toHaveProperty("type")
-            expect(item).toHaveProperty("subtype")
             expect(item).toHaveProperty("color")
             expect(item).toHaveProperty("date")
             expect(item).toHaveProperty("location")

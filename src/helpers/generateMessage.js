@@ -3,7 +3,6 @@ const generateItemToProcessMessage = (item, type) => {
         item_type: type,
         id: item.id,
         type: item.type,
-        subtype: item.subtype,
         color: item.color,
         location: item.location,
         date: item.date,

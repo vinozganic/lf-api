@@ -91,30 +91,27 @@ module.exports.connectToConfigDatabase = async () => {
         CREATE EXTENSION IF NOT EXISTS "${extensionName}";
     `
     const createTempTablesQuery = `
-        CREATE TEMPORARY TABLE areas (
-            id SERIAL PRIMARY KEY NOT NULL,
-            name VARCHAR(255) NOT NULL,
+        CREATE TEMPORARY TABLE IF NOT EXISTS areas (
+            name VARCHAR(255) PRIMARY KEY NOT NULL,
             geo_json JSONB NOT NULL
         );
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_areas_name ON areas(name);
+
         CREATE TEMPORARY TABLE types (
-            id SERIAL PRIMARY KEY NOT NULL,
-            name VARCHAR(255) NOT NULL,
+            name VARCHAR(255) PRIMARY KEY NOT NULL,
             nice_name VARCHAR(255) NOT NULL
         );
-        CREATE TEMPORARY TABLE subtypes (
-            id SERIAL PRIMARY KEY NOT NULL,
-            type_id INTEGER NOT NULL,
-            name VARCHAR(255) NOT NULL,
-            nice_name VARCHAR(255) NOT NULL
-        );
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_types_name ON types(name);
+
         CREATE TEMPORARY TABLE transport_lines (
             id SERIAL PRIMARY KEY NOT NULL,
-            area_id INTEGER NOT NULL,
+            area_name VARCHAR(255) NOT NULL,
             type VARCHAR(255) NOT NULL,
             name VARCHAR(255) NOT NULL,
             number VARCHAR(255) NOT NULL,
             geo_json JSONB NOT NULL
         );
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_transport_lines_area_name_type_number ON transport_lines(area_name, type, number);
     `
 
     await configConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
@@ -127,7 +124,6 @@ module.exports.clearConfigTables = async (configConnector) => {
     const clearConfigTablesQuery = `
         DELETE FROM areas;
         DELETE FROM types;
-        DELETE FROM subtypes;
         DELETE FROM transport_lines;
     `
     await configConnector.query(clearConfigTablesQuery)
@@ -152,37 +148,32 @@ module.exports.addArea = async (configConnector) => {
         ],
     })
 
-    const values = ["test_area", geoJson]
+    const values = ["Zagreb", geoJson]
 
     await configConnector.query(addAreaQuery, values)
 }
 
-module.exports.addTypesAndSubtypes = async (configConnector) => {
+module.exports.addTypes = async (configConnector) => {
     const addTypeQuery = `
         INSERT INTO types (name, nice_name)
         VALUES ($1, $2);
     `
-    const addSubtypeQuery = `
-        INSERT INTO subtypes (type_id, name, nice_name)
-        VALUES ($1, $2, $3);
-    `
-    const typeValues = ["test_type", "Test type"]
-    const subtypeValues = [1, "test_subtype", "Test subtype"]
 
-    await configConnector.query(addTypeQuery, typeValues)
-    await configConnector.query(addSubtypeQuery, subtypeValues)
+    const values = ["mobilePhone", "Mobitel"]
+
+    await configConnector.query(addTypeQuery, values)
 }
 
 module.exports.addTransportLine = async (configConnector) => {
     const addTransportLineQuery = `
-        INSERT INTO transport_lines (area_id, type, name, number, geo_json)
+        INSERT INTO transport_lines (area_name, type, name, number, geo_json)
         VALUES ($1, $2, $3, $4, $5);
     `
     const values = [
-        1,
-        "test_type",
-        "test_name",
-        "test_number",
+        "Zagreb",
+        "tram",
+        "Borongaj - Prečko",
+        "32",
         {
             type: "LineString",
             coordinates: [

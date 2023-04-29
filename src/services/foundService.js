@@ -11,9 +11,12 @@ const addFound = async (body) => {
         return validationResult
     }
 
+    const date = new Date(body.date)
+
     const newFound = new Found({
         trackingKey: generateKey(),
         streamChatToken: "",
+        date,
         ...body,
     })
 
