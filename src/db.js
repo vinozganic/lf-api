@@ -15,6 +15,20 @@ const createMatchesTableIfNotExistsQuery = `
     );
 `
 
+const createNounsTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS nouns (
+        noun VARCHAR(255) PRIMARY KEY NOT NULL,
+        gender CHAR(1) NOT NULL CHECK (gender IN ('m', 'f'))
+    );
+`
+
+const createAdjectivesTableIfNotExistsQuery = `
+    CREATE TABLE IF NOT EXISTS adjectives (
+        adjective VARCHAR(255) PRIMARY KEY NOT NULL,
+        gender CHAR(1) NOT NULL CHECK (gender IN ('m', 'f')) 
+    );
+`
+
 const createAreasTableIfNotExistsQuery = `
     CREATE TABLE IF NOT EXISTS areas (
         name VARCHAR(255) PRIMARY KEY NOT NULL,
@@ -112,6 +126,8 @@ const connectToConfig = async () => {
             await configConnector.query(createTransportLinesTableIfNotExistsQuery)
             await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
             await configConnector.query(createTypesTableIfNotExistsQuery)
+            await configConnector.query(createNounsTableIfNotExistsQuery)
+            await configConnector.query(createAdjectivesTableIfNotExistsQuery)
         }
     } catch (error) {
         console.log(error)
