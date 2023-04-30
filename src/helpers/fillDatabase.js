@@ -38,6 +38,77 @@ const insertAreasValues = `
     ON CONFLICT (name) DO UPDATE SET geo_json = EXCLUDED.geo_json;
 `
 
+const insertNounsValues = `
+    INSERT INTO nouns (noun, gender) VALUES
+    ('ptica', 'f'),
+    ('mačka', 'f'),
+    ('pas', 'm'),
+    ('konj', 'm'),
+    ('žaba', 'f'),
+    ('riba', 'f'),
+    ('kornjača', 'f'),
+    ('kokoš', 'f'),
+    ('golub', 'm'),
+    ('lisica', 'f'),
+    ('medvjed', 'm'),
+    ('vuk', 'm'),
+    ('lav', 'm'),
+    ('tigar', 'm'),
+    ('slon', 'm'),
+    ('žirafa', 'f'),
+    ('zebra', 'f'),
+    ('krokodil', 'm'),
+    ('pingvin', 'm'),
+    ('ždral', 'm'),
+    ('žohar', 'm'),
+    ('pčela', 'f'),
+    ('mrav', 'm'),
+    ('puž', 'm'),
+    ('zmija', 'f'),
+    ('magarac', 'm'),
+    ('svinja', 'f'),
+    ('krava', 'f'),
+    ('ovca', 'f'),
+    ('koza', 'f')
+    ON CONFLICT (noun) DO NOTHING;
+`
+
+const insertAdjectivesValues = `
+    INSERT INTO adjectives (adjective, gender) VALUES
+    ('Crni', 'm'),
+    ('Crna', 'f'),
+    ('Bijeli', 'm'),
+    ('Bijela', 'f'),
+    ('Žuti', 'm'),
+    ('Žuta', 'f'),
+    ('Plavi', 'm'),
+    ('Plava', 'f'),
+    ('Crveni', 'm'),
+    ('Crvena', 'f'),
+    ('Zeleni', 'm'),
+    ('Zelena', 'f'),
+    ('Sivi', 'm'),
+    ('Siva', 'f'),
+    ('Ljubičasti', 'm'),
+    ('Ljubičasta', 'f'),
+    ('Narančasti', 'm'),
+    ('Narančasta', 'f'),
+    ('Rozi', 'm'),
+    ('Roza', 'f'),
+    ('Smeđi', 'm'),
+    ('Smeđa', 'f'),
+    ('Veliki', 'm'),
+    ('Velika', 'f'),
+    ('Mali', 'm'),
+    ('Mala', 'f'),
+    ('Brzi', 'm'),
+    ('Brza', 'f'),
+    ('Spori', 'm'),
+    ('Spora', 'f')
+    ON CONFLICT (adjective) DO NOTHING;
+`
+
+
 const insertTypesValues = `
     INSERT INTO types (name, nice_name) VALUES
     ('tshirt', 'Majica kratkih rukava'),
@@ -106,3 +177,5 @@ insert(insertConnectionStrings)
 insert(insertAreasValues)
 insert(insertTypesValues)
 insert(insertTransportLinesValues)
+insert(insertNounsValues)
+insert(insertAdjectivesValues)
