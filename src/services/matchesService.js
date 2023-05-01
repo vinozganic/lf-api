@@ -1,4 +1,4 @@
-const { matchesConnector } = require("../db")
+const { matchesConnector, configConnector } = require("../db")
 const validateInsertMatch = require("../validation/matches/insertMatchValidator")
 const validateId = require("../validation/matches/idValidator")
 const validateUuid = require("../validation/matches/uuidValidator")
@@ -14,7 +14,13 @@ const getMatchesByLostIdQuery = `
     SELECT * FROM matches WHERE lost_id=$1 ORDER BY match_probability DESC;
 `
 const insertMatchQuery = `
-    INSERT INTO matches (found_id, lost_id, match_probability) VALUES ($1, $2, $3) RETURNING id, found_id, lost_id, match_probability;
+    INSERT INTO matches (found_id, lost_id, match_probability, nickname) VALUES ($1, $2, $3, $4) RETURNING id, found_id, lost_id, match_probability, nickname;
+`
+const getNounsByGenderQuery = `
+    SELECT noun FROM nouns WHERE gender = $1;
+`
+const getAdjectivesByGenderQuery = `
+    SELECT adjective FROM adjectives WHERE gender = $1;
 `
 
 const getMatchById = async (id) => {
@@ -40,6 +46,8 @@ const getMatchById = async (id) => {
                 foundId: result.rows[0].found_id,
                 lostId: result.rows[0].lost_id,
                 matchProbability: result.rows[0].match_probability,
+                resolved: result.rows[0].resolved,
+                nickname: result.rows[0].nickname,
             },
         }
     } catch (error) {
@@ -63,6 +71,7 @@ const getMatchesByFoundId = async (id) => {
                 lostId: row.lost_id,
                 matchProbability: Number(row.match_probability),
                 resolved: row.resolved,
+                nickname: row.nickname,
             })
         }
         return { success: true, data: values }
@@ -87,6 +96,7 @@ const getMatchesByLostId = async (id) => {
                 lostId: row.lost_id,
                 matchProbability: Number(row.match_probability),
                 resolved: row.resolved,
+                nickname: row.nickname,
             })
         }
         return { success: true, data: values }
@@ -102,7 +112,13 @@ const insertMatch = async (body) => {
         return validationResult
     }
     try {
-        const result = await matchesConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability])
+        const gender = Math.random() < 0.5 ? "m" : "f"
+        const nouns = await configConnector.query(getNounsByGenderQuery, [gender])
+        const adjectives = await configConnector.query(getAdjectivesByGenderQuery, [gender])
+        const noun = nouns.rows[Math.floor(Math.random() * nouns.rows.length)].noun
+        const adjective = adjectives.rows[Math.floor(Math.random() * adjectives.rows.length)].adjective
+        const nickname = `${adjective} ${noun}`
+        const result = await matchesConnector.query(insertMatchQuery, [body.foundId, body.lostId, body.matchProbability, nickname])
         const insertedValues = result.rows[0]
         return {
             success: true,
@@ -111,6 +127,7 @@ const insertMatch = async (body) => {
                 foundId: insertedValues.found_id,
                 lostId: insertedValues.lost_id,
                 matchProbability: insertedValues.match_probability,
+                resolved: insertedValues.resolved,
             },
         }
     } catch (error) {

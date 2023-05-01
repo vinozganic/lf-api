@@ -11,7 +11,8 @@ const createMatchesTableIfNotExistsQuery = `
         found_id VARCHAR(24) NOT NULL,
         lost_id VARCHAR(24) NOT NULL,
         match_probability NUMERIC(7,6) NOT NULL,
-        resolved BOOLEAN NOT NULL DEFAULT FALSE
+        resolved BOOLEAN NOT NULL DEFAULT FALSE,
+        nickname VARCHAR(255) NOT NULL
     );
 `
 
