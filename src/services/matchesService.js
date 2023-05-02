@@ -14,13 +14,19 @@ const getMatchesByLostIdQuery = `
     SELECT * FROM matches WHERE lost_id=$1 ORDER BY match_probability DESC;
 `
 const insertMatchQuery = `
-    INSERT INTO matches (found_id, lost_id, match_probability, nickname) VALUES ($1, $2, $3, $4) RETURNING id, found_id, lost_id, match_probability, nickname;
+    INSERT INTO matches (found_id, lost_id, match_probability, nickname) VALUES ($1, $2, $3, $4) RETURNING id, found_id, lost_id, match_probability, resolved, nickname;
 `
 const getNounsByGenderQuery = `
     SELECT noun FROM nouns WHERE gender = $1;
 `
 const getAdjectivesByGenderQuery = `
     SELECT adjective FROM adjectives WHERE gender = $1;
+`
+const getNounsQuery = `
+    SELECT * FROM nouns;
+`
+const getAdjectivesQuery = `
+    SELECT * FROM adjectives;
 `
 
 const getMatchById = async (id) => {
@@ -38,7 +44,6 @@ const getMatchById = async (id) => {
                 },
             }
         }
-
         return {
             success: true,
             data: {
@@ -128,6 +133,7 @@ const insertMatch = async (body) => {
                 lostId: insertedValues.lost_id,
                 matchProbability: insertedValues.match_probability,
                 resolved: insertedValues.resolved,
+                nickname: insertedValues.nickname,
             },
         }
     } catch (error) {
@@ -143,14 +149,22 @@ const insertMatchesBatch = async (body) => {
     }
     try {
         let insertedValuesList = []
+        const nouns = await configConnector.query(getNounsQuery)
+        const adjectives = await configConnector.query(getAdjectivesQuery)
         for (const match of body) {
-            const result = await matchesConnector.query(insertMatchQuery, [match.foundId, match.lostId, match.matchProbability])
+            const gender = Math.random() < 0.5 ? "m" : "f"
+            const noun = nouns.rows.filter((noun) => noun.gender === gender)[Math.floor(Math.random() * nouns.rows.filter((noun) => noun.gender === gender).length)].noun
+            const adjective = adjectives.rows.filter((adjective) => adjective.gender === gender)[Math.floor(Math.random() * adjectives.rows.filter((adjective) => adjective.gender === gender).length)].adjective
+            const nickname = `${adjective} ${noun}`
+            const result = await matchesConnector.query(insertMatchQuery, [match.foundId, match.lostId, match.matchProbability, nickname])
             const insertedValues = result.rows[0]
             insertedValuesList.push({
                 id: insertedValues.id,
                 foundId: insertedValues.found_id,
                 lostId: insertedValues.lost_id,
                 matchProbability: insertedValues.match_probability,
+                resolved: insertedValues.resolved,
+                nickname: insertedValues.nickname,
             })
         }
         return {
