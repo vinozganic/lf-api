@@ -5,21 +5,28 @@ const {
     dropItemsCollections,
     dropItemsDatabase,
     connectToMatchesDatabase,
+    connectToConfigDatabase,
     addMatch,
     addMatches,
+    addNouns,
+    addAdjectives,
     clearMatchesTable,
+    clearConfigTables,
 } = require("../dbHandler")
 
 let matchesConnector = null
+let configConnector = null
 
 beforeAll(async () => {
     await connectToItemsDatabase()
     matchesConnector = await connectToMatchesDatabase()
+    configConnector = await connectToConfigDatabase()
 })
 
 afterEach(async () => {
     await dropItemsCollections()
     await clearMatchesTable(matchesConnector)
+    await clearConfigTables(configConnector)
 })
 
 afterAll(async () => {
@@ -115,6 +122,8 @@ describe("POST /matches", () => {
     })
 
     it("should return 201", async () => {
+        await addNouns(configConnector)
+        await addAdjectives(configConnector)
         const res = await request(app).post("/matches").send({
             foundId: "64202bd46d22797759e9888c",
             lostId: "64202be6be38a05973e0c6c7",
@@ -124,6 +133,8 @@ describe("POST /matches", () => {
     })
 
     it("should have correct response body", async () => {
+        await addNouns(configConnector)
+        await addAdjectives(configConnector)
         const res = await request(app).post("/matches").send({
             foundId: "64202bd46d22797759e9888c",
             lostId: "64202be6be38a05973e0c6c7",
@@ -146,6 +157,8 @@ describe("POST /matches/batch", () => {
     })
 
     it("should return 201", async () => {
+        await addNouns(configConnector)
+        await addAdjectives(configConnector)
         const res = await request(app)
             .post("/matches/batch")
             .send([

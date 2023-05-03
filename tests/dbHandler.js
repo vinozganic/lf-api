@@ -65,13 +65,7 @@ module.exports.addMatch = async (matchesConnector) => {
         INSERT INTO matches (id, found_id, lost_id, match_probability, nickname)
         VALUES ($1, $2, $3, $4, $5);
     `
-    const values = [
-        'a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11',
-        '64202bd46d22797759e9888c',
-        '64202be6be38a05973e0c6c7',
-        0.5,
-        'Smeđa kokoš',
-    ]
+    const values = ["a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11", "64202bd46d22797759e9888c", "64202be6be38a05973e0c6c7", 0.5, "Smeđa kokoš"]
 
     await matchesConnector.query(addMatchQuery, values)
 }
@@ -82,9 +76,9 @@ module.exports.addMatches = async (matchesConnector) => {
         VALUES ($1, $2, $3, $4, $5);
     `
     const values = [
-        ['3c5616a0-a9a2-4303-b7f8-7d98c8835a9c', '64202bd46d22797759e9888c', '64202be6be38a05973e0c6c7', 0.1, 'Smeđa kokoš'],
-        ['c055076d-352a-4faf-8885-d2053fd1e331', '64202bd46d22797759e9888c', '64202c0406f3608e8a18ecb2', 0.2, 'Smeđa kokoš'],
-        ['a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a13', '64202c0a63e40776a602a32c', '64202be6be38a05973e0c6c7', 0.3, 'Smeđa kokoš'],
+        ["3c5616a0-a9a2-4303-b7f8-7d98c8835a9c", "64202bd46d22797759e9888c", "64202be6be38a05973e0c6c7", 0.1, "Smeđa kokoš"],
+        ["c055076d-352a-4faf-8885-d2053fd1e331", "64202bd46d22797759e9888c", "64202c0406f3608e8a18ecb2", 0.2, "Smeđa kokoš"],
+        ["a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a13", "64202c0a63e40776a602a32c", "64202be6be38a05973e0c6c7", 0.3, "Smeđa kokoš"],
     ]
 
     for await (const value of values) {
@@ -211,9 +205,42 @@ module.exports.addNouns = async (configConnector) => {
         INSERT INTO nouns (noun, gender)
         VALUES ($1, $2);
     `
-    const values = ["kokoš", "f"]
+    const values = [
+        ["ptica", "f"],
+        ["mačka", "f"],
+        ["pas", "m"],
+        ["konj", "m"],
+        ["žaba", "f"],
+        ["riba", "f"],
+        ["kornjača", "f"],
+        ["kokoš", "f"],
+        ["golub", "m"],
+        ["lisica", "f"],
+        ["medvjed", "m"],
+        ["vuk", "m"],
+        ["lav", "m"],
+        ["tigar", "m"],
+        ["slon", "m"],
+        ["žirafa", "f"],
+        ["zebra", "f"],
+        ["krokodil", "m"],
+        ["pingvin", "m"],
+        ["ždral", "m"],
+        ["žohar", "m"],
+        ["pčela", "f"],
+        ["mrav", "m"],
+        ["puž", "m"],
+        ["zmija", "f"],
+        ["magarac", "m"],
+        ["svinja", "f"],
+        ["krava", "f"],
+        ["ovca", "f"],
+        ["koza", "f"],
+    ]
 
-    await configConnector.query(addNounQuery, values)
+    for await (const value of values) {
+        await configConnector.query(addNounQuery, value)
+    }
 }
 
 module.exports.addAdjectives = async (configConnector) => {
@@ -222,7 +249,40 @@ module.exports.addAdjectives = async (configConnector) => {
         VALUES ($1, $2);
     `
 
-    const values = ["smeđa", "f"]
+    const values = [
+        ["Crni", "m"],
+        ["Crna", "f"],
+        ["Bijeli", "m"],
+        ["Bijela", "f"],
+        ["Žuti", "m"],
+        ["Žuta", "f"],
+        ["Plavi", "m"],
+        ["Plava", "f"],
+        ["Crveni", "m"],
+        ["Crvena", "f"],
+        ["Zeleni", "m"],
+        ["Zelena", "f"],
+        ["Sivi", "m"],
+        ["Siva", "f"],
+        ["Ljubičasti", "m"],
+        ["Ljubičasta", "f"],
+        ["Narančasti", "m"],
+        ["Narančasta", "f"],
+        ["Rozi", "m"],
+        ["Roza", "f"],
+        ["Smeđi", "m"],
+        ["Smeđa", "f"],
+        ["Veliki", "m"],
+        ["Velika", "f"],
+        ["Mali", "m"],
+        ["Mala", "f"],
+        ["Brzi", "m"],
+        ["Brza", "f"],
+        ["Spori", "m"],
+        ["Spora", "f"],
+    ]
 
-    await configConnector.query(addAdjectiveQuery, values)
+    for await (const value of values) {
+        await configConnector.query(addAdjectiveQuery, value)
+    }
 }
