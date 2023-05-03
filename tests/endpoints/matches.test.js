@@ -51,6 +51,8 @@ describe("GET /matches/<id>", () => {
         expect(res.body.data).toHaveProperty("foundId")
         expect(res.body.data).toHaveProperty("lostId")
         expect(res.body.data).toHaveProperty("matchProbability")
+        expect(res.body.data).toHaveProperty("resolved")
+        expect(res.body.data).toHaveProperty("nickname")
     })
 })
 
@@ -75,6 +77,8 @@ describe("GET /matches/lost/<lostId>", () => {
         expect(res.body.data[0]).toHaveProperty("foundId")
         expect(res.body.data[0]).toHaveProperty("lostId")
         expect(res.body.data[0]).toHaveProperty("matchProbability")
+        expect(res.body.data[0]).toHaveProperty("resolved")
+        expect(res.body.data[0]).toHaveProperty("nickname")
     })
 })
 
@@ -99,6 +103,8 @@ describe("GET /matches/found/<foundId>", () => {
         expect(res.body.data[0]).toHaveProperty("foundId")
         expect(res.body.data[0]).toHaveProperty("lostId")
         expect(res.body.data[0]).toHaveProperty("matchProbability")
+        expect(res.body.data[0]).toHaveProperty("resolved")
+        expect(res.body.data[0]).toHaveProperty("nickname")
     })
 })
 
@@ -128,6 +134,8 @@ describe("POST /matches", () => {
         expect(res.body.data).toHaveProperty("foundId")
         expect(res.body.data).toHaveProperty("lostId")
         expect(res.body.data).toHaveProperty("matchProbability")
+        expect(res.body.data).toHaveProperty("resolved")
+        expect(res.body.data).toHaveProperty("nickname")
     })
 })
 
