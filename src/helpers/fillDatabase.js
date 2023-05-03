@@ -12,7 +12,7 @@ let insertTransportLinesValues = `
 
 filteredFiles.forEach((file) => {
     const data = JSON.parse(fs.readFileSync(path.join(__dirname, "transport-lines", file)))
-    const value = `(${1}, 'tram', '${data.routeLongName}', '${data.routeShortName}', '${JSON.stringify(data.features[0].geometry)}'),`
+    const value = `('Zagreb', 'tram', '${data.routeLongName}', '${data.routeShortName}', '${JSON.stringify(data.features[0].geometry)}'),`
     insertTransportLinesValues += value
 })
 insertTransportLinesValues = insertTransportLinesValues.slice(0, -1)

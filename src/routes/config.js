@@ -19,8 +19,8 @@ router.get("/types", async (req, res) => {
     res.status(200).json(data)
 })
 
-router.get("/transportLines/:areaId", async (req, res) => {
-    const data = await getTransportLines(req.params.areaId)
+router.get("/transportLines/:areaName", async (req, res) => {
+    const data = await getTransportLines(req.params.areaName)
     if (data.success === false) {
         return res.status(400).json(data)
     }
