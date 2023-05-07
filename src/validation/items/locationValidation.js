@@ -1,6 +1,5 @@
 const locationValidation = (body) => {
     const { location } = body
-    const validPublicTransportLines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
     if (!location.type || !location.coordinates) {
         return {
@@ -111,15 +110,6 @@ const locationValidation = (body) => {
 
             for (let i = 0; i < location.publicTransportLines.length; i++) {
                 if (typeof location.publicTransportLines[i] !== "number") {
-                    return {
-                        success: false,
-                        error: {
-                            message: "Invalid public transport lines.",
-                        },
-                    }
-                }
-
-                if (!validPublicTransportLines.includes(location.publicTransportLines[i])) {
                     return {
                         success: false,
                         error: {

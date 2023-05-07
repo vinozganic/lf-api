@@ -153,8 +153,12 @@ const insertMatchesBatch = async (body) => {
         const adjectives = await configConnector.query(getAdjectivesQuery)
         for (const match of body) {
             const gender = Math.random() < 0.5 ? "m" : "f"
-            const noun = nouns.rows.filter((noun) => noun.gender === gender)[Math.floor(Math.random() * nouns.rows.filter((noun) => noun.gender === gender).length)].noun
-            const adjective = adjectives.rows.filter((adjective) => adjective.gender === gender)[Math.floor(Math.random() * adjectives.rows.filter((adjective) => adjective.gender === gender).length)].adjective
+            const noun = nouns.rows.filter((noun) => noun.gender === gender)[
+                Math.floor(Math.random() * nouns.rows.filter((noun) => noun.gender === gender).length)
+            ].noun
+            const adjective = adjectives.rows.filter((adjective) => adjective.gender === gender)[
+                Math.floor(Math.random() * adjectives.rows.filter((adjective) => adjective.gender === gender).length)
+            ].adjective
             const nickname = `${adjective} ${noun}`
             const result = await matchesConnector.query(insertMatchQuery, [match.foundId, match.lostId, match.matchProbability, nickname])
             const insertedValues = result.rows[0]

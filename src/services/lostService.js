@@ -1,10 +1,14 @@
 const { StreamChat } = require("stream-chat")
 
-const { Lost, matchesConnector, Found } = require("../db")
+const { Lost, Found, configConnector, matchesConnector } = require("../db")
 const validate = require("../validation/items/validation")
 const validateIdList = require("../validation/matches/validateIdList")
 const validateId = require("../validation/matches/idValidator")
 const { generateKey } = require("../helpers/trackingKey")
+
+const getTransportLineQuery = `
+    SELECT * FROM transport_lines WHERE id = ANY($1);
+`
 
 const updateResolveQuery = `
     UPDATE matches SET resolved = true WHERE lost_id = $1 OR found_id = $2
@@ -18,11 +22,24 @@ const addLost = async (body) => {
 
     const date = new Date(body.date)
 
+    let location = body.location
+    if (body.location.publicTransportLines) {
+        const transportLines = await configConnector.query(getTransportLineQuery, [body.location.publicTransportLines])
+
+        const transportLineGeoJsons = transportLines.rows.map((line) => line.geo_json)
+
+        location = {
+            ...body.location,
+            publicTransportLines: transportLineGeoJsons,
+        }
+    }
+
     const newLost = new Lost({
+        ...body,
         trackingKey: generateKey(),
         streamChatToken: "",
         date,
-        ...body,
+        location,
     })
 
     const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)

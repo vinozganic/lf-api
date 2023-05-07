@@ -87,11 +87,12 @@ const Found = mongoose.model("found", itemSchema)
 const Lost = mongoose.model("lost", itemSchema)
 
 const connectToMongo = async () => {
+    if (process.env.NODE_ENV === "test") {
+        return
+    }
     try {
-        if (process.env.NODE_ENV === "development") {
-            await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-            console.log("Connected to MongoDB")
-        }
+        await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+        console.log("Connected to MongoDB")
     } catch (error) {
         console.log(error)
     }
@@ -102,13 +103,14 @@ const matchesConnector = new Pool({
 })
 
 const connectToMatches = async () => {
+    if (process.env.NODE_ENV === "test") {
+        return
+    }
     try {
-        if (process.env.NODE_ENV === "development") {
-            await matchesConnector.connect()
-            console.log("Connected to matches db")
-            await matchesConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
-            await matchesConnector.query(createMatchesTableIfNotExistsQuery)
-        }
+        await matchesConnector.connect()
+        console.log("Connected to matches db")
+        await matchesConnector.query(createExtensionIfNotExistsQuery("uuid-ossp"))
+        await matchesConnector.query(createMatchesTableIfNotExistsQuery)
     } catch (error) {
         console.log(error)
     }
@@ -119,17 +121,18 @@ const configConnector = new Pool({
 })
 
 const connectToConfig = async () => {
+    if (process.env.NODE_ENV === "test") {
+        return
+    }
     try {
-        if (process.env.NODE_ENV === "development") {
-            await configConnector.connect()
-            console.log("Connected to config db")
-            await configConnector.query(createAreasTableIfNotExistsQuery)
-            await configConnector.query(createTransportLinesTableIfNotExistsQuery)
-            await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
-            await configConnector.query(createTypesTableIfNotExistsQuery)
-            await configConnector.query(createNounsTableIfNotExistsQuery)
-            await configConnector.query(createAdjectivesTableIfNotExistsQuery)
-        }
+        await configConnector.connect()
+        console.log("Connected to config db")
+        await configConnector.query(createAreasTableIfNotExistsQuery)
+        await configConnector.query(createTransportLinesTableIfNotExistsQuery)
+        await configConnector.query(createConnectionStringsTableIfNotExistsQuery)
+        await configConnector.query(createTypesTableIfNotExistsQuery)
+        await configConnector.query(createNounsTableIfNotExistsQuery)
+        await configConnector.query(createAdjectivesTableIfNotExistsQuery)
     } catch (error) {
         console.log(error)
     }
@@ -141,11 +144,23 @@ let rabbitChannel = null
 const connectToQueue = async () => {
     while (!rabbitChannel) {
         try {
-            rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
+            if (process.env.NODE_ENV != "production") {
+                rabbitConnector = await amqplib.connect(process.env.AMQP_ENDPOINT)
+            } else {
+                rabbitConnector = await amqplib.connect({
+                    protocol: "amqp",
+                    hostname: process.env.RABBITMQ_HOST,
+                    port: process.env.RABBITMQ_PORT,
+                    username: process.env.RABBITMQ_USERNAME,
+                    password: process.env.RABBITMQ_PASSWORD,
+                })
+            }
             rabbitChannel = await rabbitConnector.createChannel()
             console.log("Connected to RabbitMQ")
-        } catch {
-            console.log("rabbitmq not up, waiting 10 seconds")
+        } catch (error) {
+            console.log(error)
+            console.log("RabbitMQ not up, waiting 10 seconds")
+            console.log("--------------------")
             await new Promise((r) => setTimeout(r, 5000))
         }
     }

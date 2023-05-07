@@ -19,9 +19,9 @@ insertTransportLinesValues = insertTransportLinesValues.slice(0, -1)
 insertTransportLinesValues += `ON CONFLICT (area_name, type, number) DO UPDATE SET geo_json = EXCLUDED.geo_json;`
 
 const pool = new Pool({
-    connectionString: "postgres://user:password@localhost:5433/config",
-    user: "user",
-    password: "password",
+    connectionString: "postgres://postgres:Pucon123@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
+    user: "postgres",
+    password: "Pucon123",
 })
 
 const insertConnectionStrings = `
@@ -107,7 +107,6 @@ const insertAdjectivesValues = `
     ('Spora', 'f')
     ON CONFLICT (adjective) DO NOTHING;
 `
-
 
 const insertTypesValues = `
     INSERT INTO types (name, nice_name) VALUES

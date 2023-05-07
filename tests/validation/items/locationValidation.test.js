@@ -244,23 +244,6 @@ describe("validateLocation", () => {
         expect(result.error.message).toBe("Invalid public transport lines.")
     })
 
-    test("returns an error if publicTransportLines are not in validPublicTransportLines", () => {
-        const result = validateLocation({
-            location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
-                    ],
-                ],
-                publicTransportLines: [99],
-            },
-        })
-        expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Invalid public transport lines.")
-    })
-
     test("returns success for valid Points location", () => {
         const result = validateLocation({
             location: {
