@@ -87,6 +87,13 @@ describe("GET /matches/lost/<lostId>", () => {
         expect(res.body.data[0]).toHaveProperty("resolved")
         expect(res.body.data[0]).toHaveProperty("nickname")
     })
+
+    it("should return empty when resolved is true", async () => {
+        await addMatches(matchesConnector)
+        const res = await request(app).get("/matches/lost/64202c1111f3608e8a18ecb2")
+        expect(res.body.success).toBe(true)
+        expect(res.body.data).toHaveLength(0)
+    })
 })
 
 describe("GET /matches/found/<foundId>", () => {
@@ -112,6 +119,13 @@ describe("GET /matches/found/<foundId>", () => {
         expect(res.body.data[0]).toHaveProperty("matchProbability")
         expect(res.body.data[0]).toHaveProperty("resolved")
         expect(res.body.data[0]).toHaveProperty("nickname")
+    })
+
+    it("should return empty when resolved is true", async () => {
+        await addMatches(matchesConnector)
+        const res = await request(app).get("/matches/found/64202c0a63e40776a111a32c")
+        expect(res.body.success).toBe(true)
+        expect(res.body.data).toHaveLength(0)
     })
 })
 

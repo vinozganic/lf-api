@@ -72,13 +72,14 @@ module.exports.addMatch = async (matchesConnector) => {
 
 module.exports.addMatches = async (matchesConnector) => {
     const addMatchQuery = `
-        INSERT INTO matches (id, found_id, lost_id, match_probability, nickname)
-        VALUES ($1, $2, $3, $4, $5);
+        INSERT INTO matches (id, found_id, lost_id, match_probability, resolved, nickname)
+        VALUES ($1, $2, $3, $4, $5, $6);
     `
     const values = [
-        ["3c5616a0-a9a2-4303-b7f8-7d98c8835a9c", "64202bd46d22797759e9888c", "64202be6be38a05973e0c6c7", 0.1, "Smeđa kokoš"],
-        ["c055076d-352a-4faf-8885-d2053fd1e331", "64202bd46d22797759e9888c", "64202c0406f3608e8a18ecb2", 0.2, "Smeđa kokoš"],
-        ["a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a13", "64202c0a63e40776a602a32c", "64202be6be38a05973e0c6c7", 0.3, "Smeđa kokoš"],
+        ["3c5616a0-a9a2-4303-b7f8-7d98c8835a9c", "64202bd46d22797759e9888c", "64202be6be38a05973e0c6c7", 0.1, false, "Smeđa kokoš"],
+        ["c055076d-352a-4faf-8885-d2053fd1e331", "64202bd46d22797759e9888c", "64202c0406f3608e8a18ecb2", 0.2, false, "Smeđa kokoš"],
+        ["a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a13", "64202c0a63e40776a602a32c", "64202be6be38a05973e0c6c7", 0.3, false, "Smeđa kokoš"],
+        ["0819f165-478e-4dcd-a6de-129f7c3f82d3", "64202c0a63e40776a111a32c", "64202c1111f3608e8a18ecb2", 0.4, true, "Smeđa kokoš"],
     ]
 
     for await (const value of values) {
