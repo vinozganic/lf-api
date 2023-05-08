@@ -8,10 +8,10 @@ const getMatchByIdQuery = `
     SELECT * FROM matches WHERE id=$1;
 `
 const getMatchesByFoundIdQuery = `
-    SELECT * FROM matches WHERE found_id=$1 ORDER BY match_probability DESC;
+    SELECT * FROM matches WHERE found_id=$1 AND resolved=false ORDER BY match_probability DESC;
 `
 const getMatchesByLostIdQuery = `
-    SELECT * FROM matches WHERE lost_id=$1 ORDER BY match_probability DESC;
+    SELECT * FROM matches WHERE lost_id=$1 AND resolved=false ORDER BY match_probability DESC;
 `
 const insertMatchQuery = `
     INSERT INTO matches (found_id, lost_id, match_probability, nickname) VALUES ($1, $2, $3, $4) RETURNING id, found_id, lost_id, match_probability, resolved, nickname;
