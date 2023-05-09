@@ -23,11 +23,17 @@ let connectionString =
         ? "postgres://postgres:Pucon123@lf-pgsql.postgres.database.azure.com/config?sslmode=require"
         : "postgres://user:password@localhost:5433/config"
 
-const pool = new Pool({
-    connectionString: connectionString,
-    user: NODE_ENV === "production" ? "postgres" : "user",
-    password: NODE_ENV === "production" ? "Pucon123" : "password",
-})
+const developmentPoolOptions = {
+    connectionString: "postgres://user:password@localhost:5433/config",
+}
+
+// change <username> and <password> with credentials
+const productionPoolOptions = {
+    connectionString: "postgres://<username>:<password>@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
+}
+
+// change to const pool = new Pool(productionPoolOptions) if you want to fill production database
+const pool = new Pool(developmentPoolOptions)
 
 const insertConnectionStrings = `
     INSERT INTO connection_strings (name, value) VALUES  
