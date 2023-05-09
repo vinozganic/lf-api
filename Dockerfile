@@ -1,4 +1,4 @@
-FROM node:18-bullseye as base
+FROM --platform=linux/amd64 node:18-bullseye as base
 
 WORKDIR /app
 COPY package*.json ./
