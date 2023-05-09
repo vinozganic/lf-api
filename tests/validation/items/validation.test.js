@@ -11,13 +11,15 @@ describe("validate", () => {
         const result = validate({
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -31,13 +33,15 @@ describe("validate", () => {
         const result = validate({
             type: "laptop",
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -63,13 +67,15 @@ describe("validate", () => {
             type: "laptop",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             phoneNumber: "+385911125672",
@@ -83,13 +89,15 @@ describe("validate", () => {
             type: "laptop",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -101,13 +109,15 @@ describe("validate", () => {
     test("returns an error for missing type and color", () => {
         const result = validate({
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -122,13 +132,15 @@ describe("validate", () => {
             type: "wrong type",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -143,13 +155,15 @@ describe("validate", () => {
             type: "laptop",
             color: "red",
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -176,13 +190,15 @@ describe("validate", () => {
             type: "laptop",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),
@@ -197,13 +213,15 @@ describe("validate", () => {
             type: "laptop",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: "wrong format",
@@ -242,13 +260,15 @@ describe("validate", () => {
             type: "laptop",
             color: [100, 200, 50],
             location: {
-                type: "MultiLineString",
-                coordinates: [
-                    [
-                        [179, 75],
-                        [179, 75],
+                path: {
+                    type: "MultiLineString",
+                    coordinates: [
+                        [
+                            [179, 75],
+                            [179, 75],
+                        ],
                     ],
-                ],
+                },
                 publicTransportLines: [1, 2, 3],
             },
             date: Date("21.02.2021. 12:00"),

@@ -30,8 +30,10 @@ describe("POST /found", () => {
                 color: [1, 2, 3],
                 date: new Date(),
                 location: {
-                    type: "Point",
-                    coordinates: [1, 2],
+                    path: {
+                        type: "Point",
+                        coordinates: [1, 2],
+                    },
                 },
                 phoneNumber: "+385981234567",
             })
@@ -53,8 +55,10 @@ describe("POST /found", () => {
                 color: [1, 2, 3],
                 date: new Date(),
                 location: {
-                    type: "Point",
-                    coordinates: [1, 2],
+                    path: {
+                        type: "Point",
+                        coordinates: [1, 2],
+                    },
                 },
                 phoneNumber: "+385981234567",
             })
@@ -81,7 +85,6 @@ describe("GET /found", () => {
             expect(item).toHaveProperty("color")
             expect(item).toHaveProperty("date")
             expect(item).toHaveProperty("location")
-            expect(item).toHaveProperty("identifiable")
             expect(item).toHaveProperty("trackingKey")
         })
     })

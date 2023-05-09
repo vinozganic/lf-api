@@ -1,7 +1,7 @@
 const locationValidation = (body) => {
     const { location } = body
 
-    if (!location.type || !location.coordinates) {
+    if (!location.path && !location.publicTransportLines) {
         return {
             success: false,
             error: {
@@ -10,8 +10,8 @@ const locationValidation = (body) => {
         }
     }
 
-    if (location.type === "Point") {
-        if (location.coordinates.length !== 2) {
+    if (location.path.type === "Point") {
+        if (location.path.coordinates.length !== 2) {
             return {
                 success: false,
                 error: {
@@ -20,8 +20,8 @@ const locationValidation = (body) => {
             }
         }
 
-        for (let i = 0; i < location.coordinates.length; i++) {
-            if (typeof location.coordinates[i] !== "number") {
+        for (let i = 0; i < location.path.coordinates.length; i++) {
+            if (typeof location.path.coordinates[i] !== "number") {
                 return {
                     success: false,
                     error: {
@@ -31,7 +31,7 @@ const locationValidation = (body) => {
             }
         }
 
-        if (location.coordinates[0] < -180 || location.coordinates[0] > 180) {
+        if (location.path.coordinates[0] < -180 || location.path.coordinates[0] > 180) {
             return {
                 success: false,
                 error: {
@@ -40,7 +40,7 @@ const locationValidation = (body) => {
             }
         }
 
-        if (location.coordinates[1] < -90 || location.coordinates[1] > 90) {
+        if (location.path.coordinates[1] < -90 || location.path.coordinates[1] > 90) {
             return {
                 success: false,
                 error: {
@@ -48,9 +48,9 @@ const locationValidation = (body) => {
                 },
             }
         }
-    } else if (location.type === "MultiLineString") {
-        for (let i = 0; i < location.coordinates.length; i++) {
-            if (location.coordinates[i].length < 2) {
+    } else if (location.path.type === "MultiLineString") {
+        for (let i = 0; i < location.path.coordinates.length; i++) {
+            if (location.path.coordinates[i].length < 2) {
                 return {
                     success: false,
                     error: {
@@ -59,8 +59,8 @@ const locationValidation = (body) => {
                 }
             }
 
-            for (let j = 0; j < location.coordinates[i].length; j++) {
-                if (location.coordinates[i][j].length !== 2) {
+            for (let j = 0; j < location.path.coordinates[i].length; j++) {
+                if (location.path.coordinates[i][j].length !== 2) {
                     return {
                         success: false,
                         error: {
@@ -69,7 +69,7 @@ const locationValidation = (body) => {
                     }
                 }
 
-                if (typeof location.coordinates[i][j][0] !== "number" || typeof location.coordinates[i][j][1] !== "number") {
+                if (typeof location.path.coordinates[i][j][0] !== "number" || typeof location.path.coordinates[i][j][1] !== "number") {
                     return {
                         success: false,
                         error: {
@@ -78,7 +78,7 @@ const locationValidation = (body) => {
                     }
                 }
 
-                if (location.coordinates[i][j][0] < -180 || location.coordinates[i][j][0] > 180) {
+                if (location.path.coordinates[i][j][0] < -180 || location.path.coordinates[i][j][0] > 180) {
                     return {
                         success: false,
                         error: {
@@ -87,7 +87,7 @@ const locationValidation = (body) => {
                     }
                 }
 
-                if (location.coordinates[i][j][1] < -90 || location.coordinates[i][j][1] > 90) {
+                if (location.path.coordinates[i][j][1] < -90 || location.path.coordinates[i][j][1] > 90) {
                     return {
                         success: false,
                         error: {
