@@ -18,6 +18,7 @@ describe("validateLocation", () => {
                     type: "not a valid type",
                     coordinates: [176, 75],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -31,6 +32,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: [1],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -44,6 +46,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: ["a", "b"],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -57,6 +60,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: [181, 75],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -70,6 +74,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: [15, 91],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -83,6 +88,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: [181, 91],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(false)
@@ -233,7 +239,7 @@ describe("validateLocation", () => {
             },
         })
         expect(result.success).toBe(false)
-        expect(result.error.message).toBe("Missing public transport lines.")
+        expect(result.error.message).toBe("Invalid location.")
     })
 
     test("returns an error if publicTransportLines are not an array", () => {
@@ -281,6 +287,7 @@ describe("validateLocation", () => {
                     type: "Point",
                     coordinates: [179, 75],
                 },
+                publicTransportLines: [],
             },
         })
         expect(result.success).toBe(true)

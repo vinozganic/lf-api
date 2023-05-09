@@ -1,7 +1,7 @@
 const locationValidation = (body) => {
     const { location } = body
 
-    if (!location.path && !location.publicTransportLines) {
+    if (!location.hasOwnProperty("path") || !location.hasOwnProperty("publicTransportLines")) {
         return {
             success: false,
             error: {
@@ -10,7 +10,16 @@ const locationValidation = (body) => {
         }
     }
 
-    if (location.path.type === "Point") {
+    if (location.path && ["Point", "MultiLineString"].indexOf(location.path.type) === -1) {
+        return {
+            success: false,
+            error: {
+                message: "Invalid location type.",
+            },
+        }
+    }
+
+    if (location.path?.type === "Point") {
         if (location.path.coordinates.length !== 2) {
             return {
                 success: false,
@@ -48,7 +57,7 @@ const locationValidation = (body) => {
                 },
             }
         }
-    } else if (location.path.type === "MultiLineString") {
+    } else if (location.path?.type === "MultiLineString") {
         for (let i = 0; i < location.path.coordinates.length; i++) {
             if (location.path.coordinates[i].length < 2) {
                 return {
@@ -97,9 +106,20 @@ const locationValidation = (body) => {
                 }
             }
         }
+    }
 
-        if (location.publicTransportLines) {
-            if (!Array.isArray(location.publicTransportLines)) {
+    if (location.publicTransportLines) {
+        if (!Array.isArray(location.publicTransportLines)) {
+            return {
+                success: false,
+                error: {
+                    message: "Invalid public transport lines.",
+                },
+            }
+        }
+
+        for (let i = 0; i < location.publicTransportLines.length; i++) {
+            if (typeof location.publicTransportLines[i] !== "number") {
                 return {
                     success: false,
                     error: {
@@ -107,31 +127,6 @@ const locationValidation = (body) => {
                     },
                 }
             }
-
-            for (let i = 0; i < location.publicTransportLines.length; i++) {
-                if (typeof location.publicTransportLines[i] !== "number") {
-                    return {
-                        success: false,
-                        error: {
-                            message: "Invalid public transport lines.",
-                        },
-                    }
-                }
-            }
-        } else {
-            return {
-                success: false,
-                error: {
-                    message: "Missing public transport lines.",
-                },
-            }
-        }
-    } else {
-        return {
-            success: false,
-            error: {
-                message: "Invalid location type.",
-            },
         }
     }
 

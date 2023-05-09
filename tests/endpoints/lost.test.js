@@ -34,6 +34,7 @@ describe("POST /lost", () => {
                         type: "Point",
                         coordinates: [1, 2],
                     },
+                    publicTransportLines: [2],
                 },
                 phoneNumber: "+385981234567",
             })
@@ -60,6 +61,7 @@ describe("POST /lost", () => {
                         type: "Point",
                         coordinates: [1, 2],
                     },
+                    publicTransportLines: [2],
                 },
                 phoneNumber: "+385981234567",
             })
