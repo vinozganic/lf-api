@@ -18,11 +18,6 @@ filteredFiles.forEach((file) => {
 insertTransportLinesValues = insertTransportLinesValues.slice(0, -1)
 insertTransportLinesValues += `ON CONFLICT (area_name, type, number) DO UPDATE SET geo_json = EXCLUDED.geo_json;`
 
-let connectionString =
-    NODE_ENV === "production"
-        ? "postgres://postgres:Pucon123@lf-pgsql.postgres.database.azure.com/config?sslmode=require"
-        : "postgres://user:password@localhost:5433/config"
-
 const developmentPoolOptions = {
     connectionString: "postgres://user:password@localhost:5433/config",
 }

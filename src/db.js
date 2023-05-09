@@ -76,11 +76,9 @@ const itemSchema = new Schema(
     },
     { strict: false }
 )
-
 itemSchema.set("toJSON", {
     virtuals: true,
 })
-
 itemSchema.index({ "location.path": "2dsphere" })
 
 const Found = mongoose.model("found", itemSchema)
