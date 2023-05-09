@@ -18,11 +18,17 @@ filteredFiles.forEach((file) => {
 insertTransportLinesValues = insertTransportLinesValues.slice(0, -1)
 insertTransportLinesValues += `ON CONFLICT (area_name, type, number) DO UPDATE SET geo_json = EXCLUDED.geo_json;`
 
-const pool = new Pool({
-    connectionString: "postgres://postgres:Pucon123@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
-    user: "postgres",
-    password: "Pucon123",
-})
+const developmentPoolOptions = {
+    connectionString: "postgres://user:password@localhost:5433/config",
+}
+
+// change <username> and <password> with credentials
+const productionPoolOptions = {
+    connectionString: "postgres://<username>:<password>@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
+}
+
+// change to const pool = new Pool(productionPoolOptions) if you want to fill production database
+const pool = new Pool(developmentPoolOptions)
 
 const insertConnectionStrings = `
     INSERT INTO connection_strings (name, value) VALUES  

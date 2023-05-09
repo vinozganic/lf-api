@@ -68,7 +68,6 @@ const createTypesTableIfNotExistsQuery = `
 `
 
 const Schema = mongoose.Schema
-
 const itemSchema = new Schema(
     {
         date: {
@@ -80,8 +79,7 @@ const itemSchema = new Schema(
 itemSchema.set("toJSON", {
     virtuals: true,
 })
-
-itemSchema.index({ location: "2dsphere" })
+itemSchema.index({ "location.path": "2dsphere" })
 
 const Found = mongoose.model("found", itemSchema)
 const Lost = mongoose.model("lost", itemSchema)

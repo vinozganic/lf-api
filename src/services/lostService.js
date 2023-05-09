@@ -22,16 +22,24 @@ const addLost = async (body) => {
 
     const date = new Date(body.date)
 
-    let location = body.location
+    let path = null
+    let publicTransportLines = []
+    if (body.location.path) {
+        path = {
+            type: body.location.path.type,
+            coordinates: body.location.path.coordinates,
+        }
+    }
+
     if (body.location.publicTransportLines) {
         const transportLines = await configConnector.query(getTransportLineQuery, [body.location.publicTransportLines])
-
         const transportLineGeoJsons = transportLines.rows.map((line) => line.geo_json)
+        publicTransportLines = transportLineGeoJsons
+    }
 
-        location = {
-            ...body.location,
-            publicTransportLines: transportLineGeoJsons,
-        }
+    const location = {
+        path: path,
+        publicTransportLines: publicTransportLines,
     }
 
     const newLost = new Lost({
