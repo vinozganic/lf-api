@@ -1,1 +1,43 @@
-{"type":"FeatureCollection","name":"Savski most \u279e Mihaljevac 3d77ba1ddf370ebe875c_shape","hash0":"3d77ba1ddf370ebe875c","hash0Name":"Savski most \u279e Mihaljevac","feedName":"zagrebavki-elektricni","provider":"Public-transport-Zagreb","routeId":21801680659114233,"routeShortName":"14","routeLongName":"Mihaljevac-Zapru\u0111e","agencyName":"Zagreba\u010dki Elektri\u010dni Tramvaj","routeTypeName":"Tram","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[15.953329,45.786295],[15.955138,45.788899],[15.956958,45.791573],[15.959232,45.794911],[15.960876,45.797336],[15.96284,45.800099],[15.964678,45.802951],[15.966945,45.806234],[15.968655,45.808776],[15.969598,45.812499],[15.977312,45.812906],[15.983496,45.813353],[15.97942,45.820142],[15.979824,45.822331],[15.979454,45.828057],[15.978034,45.831824],[15.977467,45.836471],[15.97494,45.842252]]},"properties":{"hash0":"3d77ba1ddf370ebe875c"}}]}
+{
+    "type": "FeatureCollection",
+    "name": "Savski most \u279e Mihaljevac 3d77ba1ddf370ebe875c_shape",
+    "hash0": "3d77ba1ddf370ebe875c",
+    "hash0Name": "Savski most \u279e Mihaljevac",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801680659114233,
+    "routeShortName": "14",
+    "routeLongName": "Mihaljevac - Zapru\u0111e",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Tram",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.953329, 45.786295],
+                    [15.955138, 45.788899],
+                    [15.956958, 45.791573],
+                    [15.959232, 45.794911],
+                    [15.960876, 45.797336],
+                    [15.96284, 45.800099],
+                    [15.964678, 45.802951],
+                    [15.966945, 45.806234],
+                    [15.968655, 45.808776],
+                    [15.969598, 45.812499],
+                    [15.977312, 45.812906],
+                    [15.983496, 45.813353],
+                    [15.97942, 45.820142],
+                    [15.979824, 45.822331],
+                    [15.979454, 45.828057],
+                    [15.978034, 45.831824],
+                    [15.977467, 45.836471],
+                    [15.97494, 45.842252]
+                ]
+            },
+            "properties": { "hash0": "3d77ba1ddf370ebe875c" }
+        }
+    ]
+}
