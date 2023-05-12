@@ -40,14 +40,14 @@ const addFound = async (body) => {
     const newFound = new Found({
         ...body,
         trackingKey: generateKey(),
-        streamChatToken: "",
+        // streamChatToken: "",
         date,
         location,
     })
 
-    const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)
-    const token = serverClient.createToken(newFound.id)
-    newFound.streamChatToken = token
+    // const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)
+    // const token = serverClient.createToken(newFound.id)
+    // newFound.streamChatToken = token
 
     await newFound.save()
     return { success: true, data: newFound }

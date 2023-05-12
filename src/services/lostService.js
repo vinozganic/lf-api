@@ -45,14 +45,14 @@ const addLost = async (body) => {
     const newLost = new Lost({
         ...body,
         trackingKey: generateKey(),
-        streamChatToken: "",
+        // streamChatToken: "",
         date,
         location,
     })
 
-    const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)
-    const token = serverClient.createToken(newLost.id)
-    newLost.streamChatToken = token
+    // const serverClient = StreamChat.getInstance(process.env.STREAM_CHAT_API_KEY, process.env.STREAM_CHAT_SECRET)
+    // const token = serverClient.createToken(newLost.id)
+    // newLost.streamChatToken = token
 
     await newLost.save()
     return { success: true, data: newLost }
