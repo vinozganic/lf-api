@@ -6,9 +6,11 @@ const { Pool } = require("pg")
 const developmentPoolOptions = {
     connectionString: "postgres://user:password@localhost:5433/config",
 }
+
 const productionPoolOptions = {
     connectionString: "postgres://<username>:<password>@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
 }
+
 const pool = new Pool(developmentPoolOptions)
 
 const insert = async (query) => {
@@ -179,13 +181,8 @@ const insertTypesValues = `
     ON CONFLICT (name) DO UPDATE SET nice_name = EXCLUDED.nice_name;
 `
 
-// const insert = async (query) => {
-//     await pool.query(query)
-// }
-
 insert(insertConnectionStrings)
 insert(insertAreasValues)
 insert(insertTypesValues)
-// insert(insertTransportLinesValues)
 insert(insertNounsValues)
 insert(insertAdjectivesValues)
