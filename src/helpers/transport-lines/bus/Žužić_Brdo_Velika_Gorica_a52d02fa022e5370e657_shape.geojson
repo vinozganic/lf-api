@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u017du\u017ei\u0107 Brdo \u279e Velika Gorica a52d02fa022e5370e657_shape",
+    "hash0": "a52d02fa022e5370e657",
+    "hash0Name": "\u017du\u017ei\u0107 Brdo - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783121,
+    "routeShortName": "322",
+    "routeLongName": "Velika Gorica - Cerovski Vrh",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.94548, 45.567115],
+                    [15.943638, 45.575368],
+                    [15.953397, 45.583161],
+                    [15.96301, 45.58755],
+                    [15.96462, 45.598592],
+                    [15.967375, 45.606344],
+                    [15.965428, 45.611829],
+                    [15.96023, 45.619875],
+                    [15.958738, 45.627107],
+                    [15.967668, 45.652713],
+                    [15.973872, 45.657483],
+                    [15.984994, 45.697895],
+                    [15.989248, 45.704661],
+                    [15.992746, 45.707252],
+                    [15.996166, 45.716138],
+                    [16.003078, 45.726209],
+                    [16.004252, 45.730906],
+                    [16.007826, 45.735632],
+                    [16.005889, 45.738317],
+                    [16.067483, 45.712748],
+                    [16.077502, 45.711464]
+                ]
+            },
+            "properties": { "hash0": "a52d02fa022e5370e657" }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "Trg Svetog \u0160imuna \u279e Mihaljevac c922c58ef79708bf91bb_shape",
+    "hash0": "c922c58ef79708bf91bb",
+    "hash0Name": "Trg Svetog \u0160imuna - Mihaljevac",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783074,
+    "routeShortName": "233",
+    "routeLongName": "Mihaljevac - Marku\u0161evec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.013808, 45.875368],
+                    [16.011064, 45.873269],
+                    [16.005437, 45.871231],
+                    [16.0005, 45.86911],
+                    [15.99676, 45.866626],
+                    [15.992711, 45.864637],
+                    [15.987882, 45.862662],
+                    [15.982774, 45.861209],
+                    [15.975287, 45.857395],
+                    [15.974593, 45.854534],
+                    [15.975522, 45.850265],
+                    [15.976933, 45.845903],
+                    [15.975147, 45.841724]
+                ]
+            },
+            "properties": { "hash0": "c922c58ef79708bf91bb" }
+        }
+    ]
+}

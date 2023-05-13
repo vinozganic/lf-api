@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sasi, okreti\u0161te \u279e Velika Gorica 3abf7f3734c080369d4b_shape",
+    "hash0": "3abf7f3734c080369d4b",
+    "hash0Name": "Sasi, okreti\u0161te - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783114,
+    "routeShortName": "309",
+    "routeLongName": "Velika Gorica - Sasi",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.105274, 45.780349],
+                    [16.117173, 45.772994],
+                    [16.116628, 45.768566],
+                    [16.113958, 45.763123],
+                    [16.109636, 45.751883],
+                    [16.106832, 45.74071],
+                    [16.10119, 45.731833],
+                    [16.085708, 45.725505],
+                    [16.074226, 45.717634],
+                    [16.077579, 45.711472]
+                ]
+            },
+            "properties": { "hash0": "3abf7f3734c080369d4b" }
+        }
+    ]
+}

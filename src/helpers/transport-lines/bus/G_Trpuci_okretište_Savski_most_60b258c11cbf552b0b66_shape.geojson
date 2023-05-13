@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "name": "G.Trpuci,okreti\u0161te \u279e Savski most 60b258c11cbf552b0b66_shape",
+    "hash0": "60b258c11cbf552b0b66",
+    "hash0Name": "G.Trpuci,okreti\u0161te - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783033,
+    "routeShortName": "163",
+    "routeLongName": "Savski most - Donji Trpuci - Gornji Trpuci",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.909155, 45.649756],
+                    [15.913068, 45.656692],
+                    [15.915945, 45.66123],
+                    [15.921816, 45.665111],
+                    [15.930383, 45.667225],
+                    [15.937611, 45.665209],
+                    [15.942659, 45.662972],
+                    [15.946189, 45.667849],
+                    [15.938654, 45.707651],
+                    [15.941753, 45.715907],
+                    [15.948173, 45.714551],
+                    [15.950801, 45.7144],
+                    [15.948196, 45.71495],
+                    [15.942242, 45.715756],
+                    [15.931554, 45.71819],
+                    [15.924841, 45.721529],
+                    [15.928855, 45.732023],
+                    [15.932161, 45.738074],
+                    [15.932832, 45.74419],
+                    [15.936757, 45.751121],
+                    [15.940702, 45.754166],
+                    [15.94437, 45.75724],
+                    [15.945712, 45.760339],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "60b258c11cbf552b0b66" }
+        }
+    ]
+}

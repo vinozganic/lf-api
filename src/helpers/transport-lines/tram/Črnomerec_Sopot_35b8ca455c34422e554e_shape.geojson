@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Sopot 35b8ca455c34422e554e_shape",
+    "hash0": "35b8ca455c34422e554e",
+    "hash0Name": "\u010crnomerec - Sopot",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801680659114226,
+    "routeShortName": "6",
+    "routeLongName": "\u010crnomerec - Sopot",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Tramvaj",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.934932, 45.815002],
+                    [15.943123, 45.813297],
+                    [15.948326, 45.812427],
+                    [15.951965, 45.812458],
+                    [15.956823, 45.813111],
+                    [15.963088, 45.812327],
+                    [15.969438, 45.813465],
+                    [15.977312, 45.812906],
+                    [15.977743, 45.808883],
+                    [15.979278, 45.805213],
+                    [15.983765, 45.805442],
+                    [15.99198, 45.80614],
+                    [15.993918, 45.803725],
+                    [15.995899, 45.80039],
+                    [15.998658, 45.796873],
+                    [16.002188, 45.792242],
+                    [16.004211, 45.788568],
+                    [16.001279, 45.781892],
+                    [16.00186, 45.778963],
+                    [15.999797, 45.778074],
+                    [15.995805, 45.777977],
+                    [15.989334, 45.777818],
+                    [15.984004, 45.777802]
+                ]
+            },
+            "properties": { "hash0": "35b8ca455c34422e554e" }
+        }
+    ]
+}

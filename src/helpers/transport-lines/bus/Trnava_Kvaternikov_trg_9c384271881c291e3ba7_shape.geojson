@@ -1,0 +1,39 @@
+{
+    "type": "FeatureCollection",
+    "name": "Trnava \u279e Kvaternikov trg 9c384271881c291e3ba7_shape",
+    "hash0": "9c384271881c291e3ba7",
+    "hash0Name": "Trnava - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783056,
+    "routeShortName": "215",
+    "routeLongName": "Kvaternikov trg - Trnava",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.060308, 45.814234],
+                    [16.054864, 45.812702],
+                    [16.052503, 45.810086],
+                    [16.049843, 45.806999],
+                    [16.046197, 45.806623],
+                    [16.04083, 45.807557],
+                    [16.034933, 45.806013],
+                    [16.030674, 45.807126],
+                    [16.025628, 45.808453],
+                    [16.022122, 45.810202],
+                    [16.016884, 45.810086],
+                    [16.010381, 45.808289],
+                    [16.005685, 45.807312],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "9c384271881c291e3ba7" }
+        }
+    ]
+}

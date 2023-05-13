@@ -1,0 +1,33 @@
+{
+    "type": "FeatureCollection",
+    "name": "Svetice \u279e Svetice 8319caebda009781dd9f_shape",
+    "hash0": "8319caebda009781dd9f",
+    "hash0Name": "Svetice - Rebro - Svetice",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783069,
+    "routeShortName": "228",
+    "routeLongName": "Svetice - Rebro - Svetice",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.01302, 45.818011],
+                    [16.007593, 45.823093],
+                    [16.002577, 45.825356],
+                    [15.997724, 45.826858],
+                    [15.997915, 45.822741],
+                    [16.003754, 45.81985],
+                    [16.012364, 45.822114],
+                    [16.01284, 45.819307]
+                ]
+            },
+            "properties": { "hash0": "8319caebda009781dd9f" }
+        }
+    ]
+}

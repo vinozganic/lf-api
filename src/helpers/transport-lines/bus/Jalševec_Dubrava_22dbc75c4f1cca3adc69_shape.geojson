@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Jal\u0161evec \u279e Dubrava 22dbc75c4f1cca3adc69_shape",
+    "hash0": "22dbc75c4f1cca3adc69",
+    "hash0Name": "Jal\u0161evec - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783054,
+    "routeShortName": "213",
+    "routeLongName": "Dubrava - Jal\u0161evec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.074749, 45.880457],
+                    [16.078007, 45.874111],
+                    [16.077601, 45.870695],
+                    [16.076394, 45.866685],
+                    [16.074578, 45.862936],
+                    [16.074287, 45.857102],
+                    [16.072625, 45.848743],
+                    [16.067783, 45.848075],
+                    [16.063297, 45.848966],
+                    [16.057626, 45.847395],
+                    [16.054535, 45.844437],
+                    [16.054689, 45.842685],
+                    [16.056439, 45.839004],
+                    [16.055871, 45.834505],
+                    [16.056371, 45.830135],
+                    [16.037267, 45.82469]
+                ]
+            },
+            "properties": { "hash0": "22dbc75c4f1cca3adc69" }
+        }
+    ]
+}

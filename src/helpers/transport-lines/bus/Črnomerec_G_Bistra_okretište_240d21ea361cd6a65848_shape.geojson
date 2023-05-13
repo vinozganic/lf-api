@@ -1,0 +1,49 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e G.Bistra-okreti\u0161te 240d21ea361cd6a65848_shape",
+    "hash0": "240d21ea361cd6a65848",
+    "hash0Name": "\u010crnomerec - G.Bistra-okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783039,
+    "routeShortName": "176",
+    "routeLongName": "\u010crnomerec - Gornja Bistra",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.933327, 45.816059],
+                    [15.895237, 45.812619],
+                    [15.87342, 45.813781],
+                    [15.869509, 45.814002],
+                    [15.848165, 45.815232],
+                    [15.835733, 45.815987],
+                    [15.826646, 45.837959],
+                    [15.833606, 45.845343],
+                    [15.834053, 45.849222],
+                    [15.835305, 45.854864],
+                    [15.843555, 45.86629],
+                    [15.845568, 45.872512],
+                    [15.853455, 45.879238],
+                    [15.857028, 45.883243],
+                    [15.856846, 45.890355],
+                    [15.856408, 45.898536],
+                    [15.854466, 45.904009],
+                    [15.86748, 45.901865],
+                    [15.876305, 45.906907],
+                    [15.879501, 45.908621],
+                    [15.885546, 45.910836],
+                    [15.8904, 45.915134],
+                    [15.895858, 45.91916],
+                    [15.900183, 45.920548]
+                ]
+            },
+            "properties": { "hash0": "240d21ea361cd6a65848" }
+        }
+    ]
+}

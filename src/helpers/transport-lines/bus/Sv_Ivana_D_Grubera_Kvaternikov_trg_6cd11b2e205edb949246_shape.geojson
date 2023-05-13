@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sv. Ivana-D.Grubera \u279e Kvaternikov trg 6cd11b2e205edb949246_shape",
+    "hash0": "6cd11b2e205edb949246",
+    "hash0Name": "Sv. Ivana-D.Grubera - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783057,
+    "routeShortName": "216",
+    "routeLongName": "Kvaternikov trg - Resnik - Ivanja Reka",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.118785, 45.801707],
+                    [16.118967, 45.797816],
+                    [16.113593, 45.799905],
+                    [16.100767, 45.801566],
+                    [16.095515, 45.801053],
+                    [16.087876, 45.802374],
+                    [16.080671, 45.803116],
+                    [16.074966, 45.802038],
+                    [16.067676, 45.801914],
+                    [16.060048, 45.800985],
+                    [16.057171, 45.800587],
+                    [16.052529, 45.799833],
+                    [16.043166, 45.798347],
+                    [16.036382, 45.797308],
+                    [16.027023, 45.797307],
+                    [16.023357, 45.797157],
+                    [16.017114, 45.797682],
+                    [16.009522, 45.803865],
+                    [16.005685, 45.807312],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "6cd11b2e205edb949246" }
+        }
+    ]
+}

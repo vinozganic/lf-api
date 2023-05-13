@@ -1,0 +1,40 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Lisi\u010dina 9d9125e80c27fe813ec4_shape",
+    "hash0": "9d9125e80c27fe813ec4",
+    "hash0Name": "\u010crnomerec - Lisi\u010dina",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783009,
+    "routeShortName": "131",
+    "routeLongName": "\u010crnomerec - Bizek",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.933327, 45.816059],
+                    [15.928246, 45.81377],
+                    [15.920109, 45.812205],
+                    [15.9172, 45.811601],
+                    [15.905129, 45.813021],
+                    [15.895237, 45.812619],
+                    [15.887202, 45.813054],
+                    [15.876575, 45.813631],
+                    [15.87342, 45.813781],
+                    [15.869509, 45.814002],
+                    [15.849831, 45.815649],
+                    [15.85007, 45.821063],
+                    [15.854311, 45.824354],
+                    [15.859353, 45.827408],
+                    [15.861707, 45.826288]
+                ]
+            },
+            "properties": { "hash0": "9d9125e80c27fe813ec4" }
+        }
+    ]
+}

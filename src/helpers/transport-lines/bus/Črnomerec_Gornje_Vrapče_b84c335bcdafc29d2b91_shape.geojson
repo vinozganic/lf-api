@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Gornje Vrap\u010de b84c335bcdafc29d2b91_shape",
+    "hash0": "b84c335bcdafc29d2b91",
+    "hash0Name": "\u010crnomerec - Gornje Vrap\u010de",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783003,
+    "routeShortName": "125",
+    "routeLongName": "\u010crnomerec - Gornje Vrap\u010de",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.933997, 45.815799],
+                    [15.928246, 45.81377],
+                    [15.920109, 45.812205],
+                    [15.9172, 45.811601],
+                    [15.906092, 45.813455],
+                    [15.905991, 45.819145],
+                    [15.90663, 45.8231],
+                    [15.905551, 45.826218],
+                    [15.905053, 45.830857],
+                    [15.903592, 45.832635],
+                    [15.901064, 45.838487],
+                    [15.899857, 45.842992]
+                ]
+            },
+            "properties": { "hash0": "b84c335bcdafc29d2b91" }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Slobo\u0161tina \u279e Glavni kolodvor 2eb5398f72a0d807f68f_shape",
+    "hash0": "2eb5398f72a0d807f68f",
+    "hash0Name": "Slobo\u0161tina - Glavni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783060,
+    "routeShortName": "219",
+    "routeLongName": "Glavni kolodvor - Slobo\u0161tina",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.987907, 45.764197],
+                    [15.991141, 45.764861],
+                    [15.991183, 45.768711],
+                    [15.990918, 45.773265],
+                    [15.989332, 45.777954],
+                    [15.984608, 45.777858],
+                    [15.980671, 45.778613],
+                    [15.980081, 45.784166],
+                    [15.979747, 45.795537],
+                    [15.979561, 45.799405],
+                    [15.977789, 45.803622]
+                ]
+            },
+            "properties": { "hash0": "2eb5398f72a0d807f68f" }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sopni\u010dka - \u0161kola \u279e Sesvete-izlaz 158f34a2b3460ed56bdf_shape",
+    "hash0": "158f34a2b3460ed56bdf",
+    "hash0Name": "Sopni\u010dka - \u0161kola - Sesvete-izlaz",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783096,
+    "routeShortName": "275",
+    "routeLongName": "Sesvete - Sesvetska Sopnica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.092985, 45.821846],
+                    [16.095715, 45.819283],
+                    [16.099184, 45.817058],
+                    [16.101961, 45.817688],
+                    [16.101144, 45.822041],
+                    [16.10777, 45.827498],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442]
+                ]
+            },
+            "properties": { "hash0": "158f34a2b3460ed56bdf" }
+        }
+    ]
+}

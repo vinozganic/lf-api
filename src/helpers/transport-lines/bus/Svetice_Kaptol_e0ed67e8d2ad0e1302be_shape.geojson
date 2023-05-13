@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection",
+    "name": "Svetice \u279e Kaptol e0ed67e8d2ad0e1302be_shape",
+    "hash0": "e0ed67e8d2ad0e1302be",
+    "hash0Name": "Svetice - Kaptol",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783044,
+    "routeShortName": "203",
+    "routeLongName": "Svetice - Vinec - Kaptol",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.013033, 45.817874],
+                    [16.013452, 45.823093],
+                    [16.01149, 45.824341],
+                    [16.00972, 45.828818],
+                    [16.005619, 45.833462],
+                    [16.004619, 45.835602],
+                    [16.002234, 45.839549],
+                    [15.999982, 45.843485],
+                    [15.997412, 45.847629],
+                    [15.993249, 45.850451],
+                    [15.99028, 45.848864],
+                    [15.986808, 45.85244],
+                    [15.985353, 45.848851],
+                    [15.98171, 45.845217],
+                    [15.98245, 45.838473],
+                    [15.983837, 45.835037],
+                    [15.984145, 45.831759],
+                    [15.98526, 45.828798],
+                    [15.984907, 45.824606],
+                    [15.982106, 45.823466],
+                    [15.979902, 45.819556],
+                    [15.978513, 45.815174]
+                ]
+            },
+            "properties": { "hash0": "e0ed67e8d2ad0e1302be" }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "name": "Trg bana J. Jela\u010di\u0107a \u279e Gara\u017ea Tu\u0161kanac 7dee9dc3c9f5035e3757_shape",
+    "hash0": "7dee9dc3c9f5035e3757",
+    "hash0Name": "Trg bana J. Jela\u010di\u0107a - Gara\u017ea Tu\u0161kanac",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783027,
+    "routeShortName": "150",
+    "routeLongName": "Tu\u0161kanac garaža - Trg bana J. Jela\u010di\u0107a",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.976084, 45.813655],
+                    [15.975586, 45.816384],
+                    [15.97529, 45.819391],
+                    [15.974542, 45.818077],
+                    [15.973925, 45.81667],
+                    [15.969813, 45.815922]
+                ]
+            },
+            "properties": { "hash0": "7dee9dc3c9f5035e3757" }
+        }
+    ]
+}

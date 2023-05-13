@@ -1,0 +1,43 @@
+{
+    "type": "FeatureCollection",
+    "name": "Britanski trg \u279e Kaptol 1feea861887cd7325a9a_shape",
+    "hash0": "1feea861887cd7325a9a",
+    "hash0Name": "Britanski trg - Kaptol",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782984,
+    "routeShortName": "105",
+    "routeLongName": "Kaptol - Britanski trg",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.964362, 45.81378],
+                    [15.96706, 45.815959],
+                    [15.966666, 45.817719],
+                    [15.969195, 45.821267],
+                    [15.970814, 45.825292],
+                    [15.971548, 45.829353],
+                    [15.971427, 45.831377],
+                    [15.971193, 45.835293],
+                    [15.975368, 45.832597],
+                    [15.975411, 45.830533],
+                    [15.975642, 45.827042],
+                    [15.975582, 45.822313],
+                    [15.975181, 45.819243],
+                    [15.975564, 45.822338],
+                    [15.978316, 45.827657],
+                    [15.977617, 45.824119],
+                    [15.976493, 45.820333],
+                    [15.978513, 45.815174]
+                ]
+            },
+            "properties": { "hash0": "1feea861887cd7325a9a" }
+        }
+    ]
+}

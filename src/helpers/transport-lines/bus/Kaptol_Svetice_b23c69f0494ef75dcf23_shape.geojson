@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kaptol \u279e Svetice b23c69f0494ef75dcf23_shape",
+    "hash0": "b23c69f0494ef75dcf23",
+    "hash0Name": "Kaptol - Svetice",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783067,
+    "routeShortName": "226",
+    "routeLongName": "Kaptol - Remete - Svetice",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.978558, 45.815748],
+                    [15.979157, 45.818815],
+                    [15.981579, 45.822758],
+                    [15.985141, 45.825463],
+                    [15.98576, 45.829286],
+                    [15.983861, 45.832734],
+                    [15.983843, 45.835515],
+                    [15.982489, 45.838403],
+                    [15.982, 45.845463],
+                    [15.985474, 45.8493],
+                    [15.986944, 45.852201],
+                    [15.996434, 45.847976],
+                    [15.992544, 45.846837],
+                    [15.995327, 45.84343],
+                    [15.997695, 45.838898],
+                    [16.002208, 45.834771],
+                    [16.004617, 45.832022],
+                    [16.006319, 45.828141],
+                    [16.011465, 45.824364],
+                    [16.012364, 45.822114],
+                    [16.01284, 45.819307]
+                ]
+            },
+            "properties": { "hash0": "b23c69f0494ef75dcf23" }
+        }
+    ]
+}

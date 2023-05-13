@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kaptol \u279e Krematorij 3aa78144c9a40a187663_shape",
+    "hash0": "3aa78144c9a40a187663",
+    "hash0Name": "Kaptol - Krematorij",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782985,
+    "routeShortName": "106",
+    "routeLongName": "Kaptol - Mirogoj - Krematorij",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.978558, 45.815748],
+                    [15.979157, 45.818815],
+                    [15.981579, 45.822758],
+                    [15.985141, 45.825463],
+                    [15.98576, 45.829286],
+                    [15.983861, 45.832734],
+                    [15.983843, 45.835515],
+                    [15.982489, 45.838403],
+                    [15.982, 45.845463]
+                ]
+            },
+            "properties": { "hash0": "3aa78144c9a40a187663" }
+        }
+    ]
+}

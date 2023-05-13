@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Jelkovec-tr\u017enica \u279e Sesvete-izlaz fe0a30637db8c46b10cd_shape",
+    "hash0": "fe0a30637db8c46b10cd",
+    "hash0Name": "Jelkovec-tr\u017enica - Sesvete-izlaz",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783103,
+    "routeShortName": "282",
+    "routeLongName": "Sesvete - Novi Jelkovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.114021, 45.812872],
+                    [16.112755, 45.809764],
+                    [16.101963, 45.80992],
+                    [16.101963, 45.80992],
+                    [16.101961, 45.817688],
+                    [16.101144, 45.822041],
+                    [16.10777, 45.827498],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442]
+                ]
+            },
+            "properties": { "hash0": "fe0a30637db8c46b10cd" }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Vrap\u010danska aleja \u279e Vrap\u010danska aleja 673749ad6153d6a24de7_shape",
+    "hash0": "673749ad6153d6a24de7",
+    "hash0Name": "Vrap\u010danska aleja - Vrap\u010danska aleja",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783020,
+    "routeShortName": "142",
+    "routeLongName": "Vrap\u010danska aleja - Ja\u010dkovina - Vrap\u010danska aleja",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.898559, 45.812969],
+                    [15.906092, 45.813455],
+                    [15.905991, 45.819145],
+                    [15.902716, 45.822025],
+                    [15.901064, 45.822895],
+                    [15.900157, 45.82409],
+                    [15.89872, 45.823529],
+                    [15.897714, 45.81984],
+                    [15.900204, 45.817512],
+                    [15.905975, 45.8143],
+                    [15.896984, 45.812821]
+                ]
+            },
+            "properties": { "hash0": "673749ad6153d6a24de7" }
+        }
+    ]
+}

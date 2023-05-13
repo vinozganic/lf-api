@@ -1,0 +1,50 @@
+{
+    "type": "FeatureCollection",
+    "name": "Planina Donja \u279e Dubec abcfc41905248825079a_shape",
+    "hash0": "abcfc41905248825079a",
+    "hash0Name": "Planina Donja - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783085,
+    "routeShortName": "262",
+    "routeLongName": "Dubec - Sesvete - Planina Donja",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.100399, 45.927077],
+                    [16.095455, 45.928347],
+                    [16.091271, 45.926922],
+                    [16.08702, 45.927278],
+                    [16.087249, 45.923084],
+                    [16.093226, 45.910872],
+                    [16.100335, 45.909977],
+                    [16.106592, 45.908765],
+                    [16.110011, 45.903964],
+                    [16.111451, 45.898978],
+                    [16.113501, 45.893682],
+                    [16.114303, 45.890885],
+                    [16.115082, 45.885786],
+                    [16.115116, 45.877567],
+                    [16.113348, 45.87029],
+                    [16.114899, 45.863001],
+                    [16.112469, 45.853679],
+                    [16.111626, 45.851517],
+                    [16.110558, 45.8485],
+                    [16.10896, 45.842126],
+                    [16.106914, 45.830495],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.10793, 45.825922],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "abcfc41905248825079a" }
+        }
+    ]
+}

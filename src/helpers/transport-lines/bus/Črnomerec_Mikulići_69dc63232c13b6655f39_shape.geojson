@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Mikuli\u0107i 69dc63232c13b6655f39_shape",
+    "hash0": "69dc63232c13b6655f39",
+    "hash0Name": "\u010crnomerec - Mikuli\u0107i",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783005,
+    "routeShortName": "127",
+    "routeLongName": "\u010crnomerec - Mikuli\u0107i",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.93391, 45.815739],
+                    [15.935201, 45.820084],
+                    [15.934718, 45.823521],
+                    [15.931164, 45.827957],
+                    [15.930297, 45.832233],
+                    [15.929576, 45.835831],
+                    [15.928246, 45.840101],
+                    [15.927053, 45.843909],
+                    [15.928822, 45.847415],
+                    [15.932752, 45.852374]
+                ]
+            },
+            "properties": { "hash0": "69dc63232c13b6655f39" }
+        }
+    ]
+}

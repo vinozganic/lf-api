@@ -1,0 +1,50 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Kvaternikov trg 232bdc53db512da879f6_shape",
+    "hash0": "232bdc53db512da879f6",
+    "hash0Name": "Velika Gorica - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783106,
+    "routeShortName": "290",
+    "routeLongName": "Kvaternikov trg - Zra\u010dna luka - Velika Gorica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.076934, 45.711452],
+                    [16.070648, 45.715912],
+                    [16.065463, 45.717595],
+                    [16.060796, 45.719064],
+                    [16.054048, 45.721144],
+                    [16.051863, 45.722872],
+                    [16.05599, 45.727685],
+                    [16.062656, 45.733405],
+                    [16.069914, 45.734279],
+                    [16.082836, 45.740001],
+                    [16.099547, 45.756868],
+                    [16.076121, 45.767687],
+                    [16.059323, 45.776479],
+                    [16.053659, 45.779262],
+                    [16.046617, 45.782834],
+                    [16.040973, 45.785672],
+                    [16.037653, 45.787336],
+                    [16.033671, 45.78917],
+                    [16.029776, 45.791239],
+                    [16.026335, 45.792933],
+                    [16.022804, 45.794708],
+                    [16.017114, 45.797682],
+                    [16.009522, 45.803865],
+                    [16.005685, 45.807312],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "232bdc53db512da879f6" }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010cret-Melini\u0161\u0107e \u279e Dubrava e9fb9797ffa34a257ef3_shape",
+    "hash0": "e9fb9797ffa34a257ef3",
+    "hash0Name": "\u010cret-Melini\u0161\u0107e - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783073,
+    "routeShortName": "232",
+    "routeLongName": "Dubrava - \u010cret",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.021176, 45.840828],
+                    [16.02702, 45.838619],
+                    [16.030609, 45.839796],
+                    [16.032401, 45.838027],
+                    [16.033184, 45.833409],
+                    [16.03425, 45.830226],
+                    [16.036352, 45.824559]
+                ]
+            },
+            "properties": { "hash0": "e9fb9797ffa34a257ef3" }
+        }
+    ]
+}

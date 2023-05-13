@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dotr\u0161\u0107inska \u279e Dubrava 6d1928d1986baaa929ed_shape",
+    "hash0": "6d1928d1986baaa929ed",
+    "hash0Name": "Dotr\u0161\u0107inska - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783071,
+    "routeShortName": "230",
+    "routeLongName": "Dubrava - Grane\u0161inski Novaki",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.032955, 45.860812],
+                    [16.033662, 45.856825],
+                    [16.034707, 45.854421],
+                    [16.035402, 45.850174],
+                    [16.037726, 45.84804],
+                    [16.038826, 45.843534],
+                    [16.03785, 45.83833],
+                    [16.038012, 45.833765],
+                    [16.03425, 45.830226],
+                    [16.036352, 45.824559]
+                ]
+            },
+            "properties": { "hash0": "6d1928d1986baaa929ed" }
+        }
+    ]
+}

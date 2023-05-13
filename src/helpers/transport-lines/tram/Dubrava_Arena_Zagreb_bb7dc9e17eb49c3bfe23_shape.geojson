@@ -1,0 +1,51 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubrava \u279e Arena Zagreb bb7dc9e17eb49c3bfe23_shape",
+    "hash0": "bb7dc9e17eb49c3bfe23",
+    "hash0Name": "Dubrava - Arena Zagreb",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801680659114227,
+    "routeShortName": "7",
+    "routeLongName": "Savski most - Dubrava",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Tramvaj",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.037135, 45.824421],
+                    [16.028295, 45.822356],
+                    [16.022082, 45.820976],
+                    [16.012153, 45.81862],
+                    [16.007574, 45.817612],
+                    [16.002854, 45.816521],
+                    [15.997631, 45.815284],
+                    [15.994793, 45.812272],
+                    [15.992974, 45.810019],
+                    [15.991697, 45.807594],
+                    [15.993918, 45.803725],
+                    [15.995899, 45.80039],
+                    [15.998658, 45.796873],
+                    [16.002188, 45.792242],
+                    [16.004211, 45.788568],
+                    [16.001279, 45.781892],
+                    [16.00186, 45.778963],
+                    [15.999797, 45.778074],
+                    [15.995805, 45.777977],
+                    [15.989334, 45.777818],
+                    [15.98457, 45.777676],
+                    [15.980858, 45.777607],
+                    [15.970888, 45.777305],
+                    [15.964731, 45.777128],
+                    [15.956305, 45.777162],
+                    [15.953875, 45.777177]
+                ]
+            },
+            "properties": { "hash0": "bb7dc9e17eb49c3bfe23" }
+        }
+    ]
+}

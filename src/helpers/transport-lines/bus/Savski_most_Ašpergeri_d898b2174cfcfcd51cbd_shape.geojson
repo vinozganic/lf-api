@@ -1,0 +1,53 @@
+{
+    "type": "FeatureCollection",
+    "name": "Savski most \u279e A\u0161pergeri d898b2174cfcfcd51cbd_shape",
+    "hash0": "d898b2174cfcfcd51cbd",
+    "hash0Name": "Savski most - A\u0161pergeri",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783032,
+    "routeShortName": "162",
+    "routeLongName": "Savski most - A\u0161pergeri",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.952774, 45.78523],
+                    [15.95076, 45.786213],
+                    [15.953179, 45.774645],
+                    [15.951402, 45.772015],
+                    [15.945491, 45.767165],
+                    [15.932593, 45.757583],
+                    [15.92656, 45.752729],
+                    [15.919009, 45.745671],
+                    [15.916753, 45.743044],
+                    [15.911496, 45.7328],
+                    [15.910797, 45.727705],
+                    [15.907083, 45.723852],
+                    [15.902803, 45.721468],
+                    [15.89916, 45.714503],
+                    [15.896668, 45.710727],
+                    [15.893393, 45.707035],
+                    [15.893782, 45.70384],
+                    [15.891185, 45.697356],
+                    [15.884753, 45.690952],
+                    [15.880177, 45.684551],
+                    [15.873248, 45.684225],
+                    [15.86703, 45.677586],
+                    [15.860981, 45.682187],
+                    [15.85727, 45.684685],
+                    [15.852271, 45.68797],
+                    [15.839759, 45.692425],
+                    [15.837349, 45.696508],
+                    [15.830088, 45.690834]
+                ]
+            },
+            "properties": { "hash0": "d898b2174cfcfcd51cbd" }
+        }
+    ]
+}

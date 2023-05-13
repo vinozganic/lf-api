@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sredi\u0161\u0107e \u279e Savski most fb8ccfc590429ff3736c_shape",
+    "hash0": "fb8ccfc590429ff3736c",
+    "hash0Name": "Sredi\u0161\u0107e - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783128,
+    "routeShortName": "607",
+    "routeLongName": "Savski most - Sopot",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.989332, 45.777954],
+                    [15.984608, 45.777858],
+                    [15.978596, 45.77782],
+                    [15.970685, 45.777504],
+                    [15.964491, 45.777332],
+                    [15.956558, 45.777388],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "fb8ccfc590429ff3736c" }
+        }
+    ]
+}

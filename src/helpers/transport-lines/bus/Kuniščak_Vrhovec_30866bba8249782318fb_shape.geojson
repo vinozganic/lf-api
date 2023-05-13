@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kuni\u0161\u010dak \u279e Vrhovec 30866bba8249782318fb_shape",
+    "hash0": "30866bba8249782318fb",
+    "hash0Name": "Kuni\u0161\u010dak - Vrhovec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783026,
+    "routeShortName": "149",
+    "routeLongName": "Kuni\u0161\u010dak - Vrhovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.945336, 45.815256],
+                    [15.949114, 45.813657],
+                    [15.949114, 45.813657],
+                    [15.947595, 45.820723],
+                    [15.947164, 45.82544],
+                    [15.948578, 45.831178],
+                    [15.949386, 45.833469],
+                    [15.95143, 45.836389],
+                    [15.952263, 45.839657],
+                    [15.952861, 45.843144]
+                ]
+            },
+            "properties": { "hash0": "30866bba8249782318fb" }
+        }
+    ]
+}

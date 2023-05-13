@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "Stupni\u010dki Obre\u017e \u279e Savski most c6131be523381d4dce3a_shape",
+    "hash0": "c6131be523381d4dce3a",
+    "hash0Name": "Stupni\u010dki Obre\u017e - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782990,
+    "routeShortName": "111",
+    "routeLongName": "Zagreb (Savski most) - Stupni\u010dki Obre\u017e",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.830388, 45.766095],
+                    [15.832773, 45.761466],
+                    [15.834093, 45.756413],
+                    [15.835744, 45.755018],
+                    [15.847171, 45.751627],
+                    [15.854272, 45.749761],
+                    [15.867389, 45.745304],
+                    [15.870923, 45.745025],
+                    [15.879128, 45.750056],
+                    [15.883799, 45.752941],
+                    [15.885751, 45.754072],
+                    [15.892605, 45.758339],
+                    [15.896273, 45.759768],
+                    [15.910932, 45.759629],
+                    [15.917708, 45.763395],
+                    [15.927131, 45.765152],
+                    [15.931974, 45.766662],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "c6131be523381d4dce3a" }
+        }
+    ]
+}

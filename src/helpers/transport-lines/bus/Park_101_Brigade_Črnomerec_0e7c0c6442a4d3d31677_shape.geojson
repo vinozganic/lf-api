@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Park 101.Brigade \u279e \u010crnomerec 0e7c0c6442a4d3d31677_shape",
+    "hash0": "0e7c0c6442a4d3d31677",
+    "hash0Name": "Park 101.Brigade - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782999,
+    "routeShortName": "121",
+    "routeLongName": "\u010crnomerec - Kara\u017enik - Gajnice",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.875269, 45.817556],
+                    [15.876893, 45.818402],
+                    [15.880308, 45.819116],
+                    [15.885889, 45.817963],
+                    [15.889338, 45.816915],
+                    [15.895295, 45.814952],
+                    [15.905975, 45.8143],
+                    [15.917806, 45.811621],
+                    [15.922028, 45.812477],
+                    [15.929201, 45.813851],
+                    [15.933231, 45.815318]
+                ]
+            },
+            "properties": { "hash0": "0e7c0c6442a4d3d31677" }
+        }
+    ]
+}

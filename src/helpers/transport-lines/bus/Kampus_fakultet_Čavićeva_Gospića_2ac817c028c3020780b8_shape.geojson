@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kampus fakultet \u279e \u010cavi\u0107eva-Gospi\u0107a 2ac817c028c3020780b8_shape",
+    "hash0": "2ac817c028c3020780b8",
+    "hash0Name": "Kampus fakultet - \u010cavi\u0107eva-Gospi\u0107a",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783077,
+    "routeShortName": "236",
+    "routeLongName": "Kampus - \u010cavi\u0107eva",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.042063, 45.81122],
+                    [16.041561, 45.813257],
+                    [16.034933, 45.806013],
+                    [16.030674, 45.807126],
+                    [16.027733, 45.803408],
+                    [16.031568, 45.801525]
+                ]
+            },
+            "properties": { "hash0": "2ac817c028c3020780b8" }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Kauzlari\u0107ev prilaz bf20bee8fe9c820e0817_shape",
+    "hash0": "bf20bee8fe9c820e0817",
+    "hash0Name": "Glavni kolodvor - Kauzlari\u0107ev prilaz",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783061,
+    "routeShortName": "220",
+    "routeLongName": "Glavni kolodvor - Dugave",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977422, 45.803578],
+                    [15.978566, 45.799333],
+                    [15.979006, 45.793979],
+                    [15.97974, 45.782882],
+                    [15.981796, 45.777402],
+                    [15.98654, 45.777615],
+                    [15.990388, 45.777043],
+                    [15.990624, 45.771935],
+                    [15.992178, 45.767766],
+                    [15.993417, 45.7653],
+                    [15.993577, 45.76243],
+                    [15.998448, 45.762125],
+                    [16.002383, 45.765205]
+                ]
+            },
+            "properties": { "hash0": "bf20bee8fe9c820e0817" }
+        }
+    ]
+}

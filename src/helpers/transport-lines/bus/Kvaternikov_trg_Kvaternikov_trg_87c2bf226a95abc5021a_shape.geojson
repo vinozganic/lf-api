@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kvaternikov trg \u279e Kvaternikov trg 87c2bf226a95abc5021a_shape",
+    "hash0": "87c2bf226a95abc5021a",
+    "hash0Name": "Kvaternikov trg - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783048,
+    "routeShortName": "207",
+    "routeLongName": "Kvaternikov trg - Rim - Kvaternikov trg",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.997761, 45.814248],
+                    [15.996308, 45.818111],
+                    [15.995412, 45.820041],
+                    [15.992973, 45.824889],
+                    [15.991472, 45.829106],
+                    [15.989457, 45.831598],
+                    [15.992463, 45.832421],
+                    [15.999021, 45.833294],
+                    [15.999788, 45.835435],
+                    [15.995595, 45.837886],
+                    [15.990238, 45.840499],
+                    [15.990598, 45.837724],
+                    [15.992405, 45.834552],
+                    [15.993614, 45.832428],
+                    [15.990161, 45.832542],
+                    [15.991468, 45.829015],
+                    [15.992925, 45.824857],
+                    [15.995445, 45.819888],
+                    [15.996367, 45.817659],
+                    [15.997705, 45.813959]
+                ]
+            },
+            "properties": { "hash0": "87c2bf226a95abc5021a" }
+        }
+    ]
+}

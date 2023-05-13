@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubrava \u279e Bidrovec-brana 1c69290f99be218b41d6_shape",
+    "hash0": "1c69290f99be218b41d6",
+    "hash0Name": "Dubrava - Bidrovec-brana",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783046,
+    "routeShortName": "205",
+    "routeLongName": "Dubrava - Marku\u0160evac - Bidrovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.03682, 45.825036],
+                    [16.033919, 45.831869],
+                    [16.03332, 45.834566],
+                    [16.031902, 45.839156],
+                    [16.029821, 45.840418],
+                    [16.02879, 45.844102],
+                    [16.026377, 45.853167],
+                    [16.022356, 45.861409],
+                    [16.018587, 45.865607],
+                    [16.016886, 45.869883],
+                    [16.014842, 45.875735],
+                    [16.018609, 45.877067],
+                    [16.025239, 45.881433],
+                    [16.028602, 45.882067],
+                    [16.029863, 45.882552],
+                    [16.029027, 45.885504],
+                    [16.027104, 45.88844],
+                    [16.028522, 45.89289],
+                    [16.030251, 45.89507]
+                ]
+            },
+            "properties": { "hash0": "1c69290f99be218b41d6" }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Mraclin-\u017eelj.stanica 7b358691e70503971383_shape",
+    "hash0": "7b358691e70503971383",
+    "hash0Name": "Velika Gorica - Mraclin-\u017eelj.stanica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783110,
+    "routeShortName": "304",
+    "routeLongName": "Velika Gorica - Mraclin",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077511, 45.711462],
+                    [16.066866, 45.709163],
+                    [16.066891, 45.709131],
+                    [16.062969, 45.702975],
+                    [16.059428, 45.689139],
+                    [16.056186, 45.680301],
+                    [16.065382, 45.675921],
+                    [16.069178, 45.675014],
+                    [16.072988, 45.671417],
+                    [16.086825, 45.665384],
+                    [16.090664, 45.666028],
+                    [16.096948, 45.666801],
+                    [16.101728, 45.668778]
+                ]
+            },
+            "properties": { "hash0": "7b358691e70503971383" }
+        }
+    ]
+}

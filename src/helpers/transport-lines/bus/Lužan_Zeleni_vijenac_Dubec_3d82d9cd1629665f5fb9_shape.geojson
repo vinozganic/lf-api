@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "Lu\u017ean-Zeleni vijenac \u279e Dubec 3d82d9cd1629665f5fb9_shape",
+    "hash0": "3d82d9cd1629665f5fb9",
+    "hash0Name": "Lu\u017ean-Zeleni vijenac - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783094,
+    "routeShortName": "273",
+    "routeLongName": "Dubec - Sesvete- Lu\u017ean",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.196373, 45.885721],
+                    [16.193142, 45.890139],
+                    [16.188378, 45.888971],
+                    [16.173164, 45.881511],
+                    [16.16016, 45.870692],
+                    [16.153699, 45.863963],
+                    [16.147427, 45.85732],
+                    [16.139267, 45.849619],
+                    [16.131913, 45.843929],
+                    [16.115725, 45.830592],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "3d82d9cd1629665f5fb9" }
+        }
+    ]
+}

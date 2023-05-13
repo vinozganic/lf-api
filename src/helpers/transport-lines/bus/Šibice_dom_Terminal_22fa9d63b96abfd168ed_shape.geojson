@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u0160ibice - dom \u279e Terminal 22fa9d63b96abfd168ed_shape",
+    "hash0": "22fa9d63b96abfd168ed",
+    "hash0Name": "\u0160ibice - dom - Terminal",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783041,
+    "routeShortName": "182",
+    "routeLongName": "Trg Mladosti - \u0160ibice",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.774076, 45.863149],
+                    [15.778135, 45.861392],
+                    [15.787738, 45.862023],
+                    [15.795681, 45.861044],
+                    [15.799751, 45.861058]
+                ]
+            },
+            "properties": { "hash0": "22fa9d63b96abfd168ed" }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Pantov\u010dak \u279e Britanski trg ea4dc86d6a50f8d62581_shape",
+    "hash0": "ea4dc86d6a50f8d62581",
+    "hash0Name": "Pantov\u010dak - Britanski trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782980,
+    "routeShortName": "101",
+    "routeLongName": "Britanski trg - Gornje Prekri\u017eje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.958194, 45.84557],
+                    [15.959235, 45.840444],
+                    [15.961769, 45.837431],
+                    [15.962467, 45.834961],
+                    [15.962282, 45.832245],
+                    [15.961302, 45.828213],
+                    [15.961262, 45.825084],
+                    [15.960141, 45.822706],
+                    [15.960486, 45.819639],
+                    [15.96103, 45.81686],
+                    [15.964018, 45.813944]
+                ]
+            },
+            "properties": { "hash0": "ea4dc86d6a50f8d62581" }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Brodec - mljekara 350ef56dd8152aa79557_shape",
+    "hash0": "350ef56dd8152aa79557",
+    "hash0Name": "Velika Gorica - Brodec - mljekara",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783122,
+    "routeShortName": "323",
+    "routeLongName": "Velika Gorica - Ribnica - Lazina",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077511, 45.711462],
+                    [16.111448, 45.705478],
+                    [16.119827, 45.704118],
+                    [16.127127, 45.70341],
+                    [16.134293, 45.705046],
+                    [16.14099, 45.705942],
+                    [16.149479, 45.706664],
+                    [16.154106, 45.708208],
+                    [16.151175, 45.716933],
+                    [16.15119, 45.716915]
+                ]
+            },
+            "properties": { "hash0": "350ef56dd8152aa79557" }
+        }
+    ]
+}

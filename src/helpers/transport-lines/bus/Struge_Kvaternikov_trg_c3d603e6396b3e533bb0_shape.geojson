@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Struge \u279e Kvaternikov trg c3d603e6396b3e533bb0_shape",
+    "hash0": "c3d603e6396b3e533bb0",
+    "hash0Name": "Struge - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783058,
+    "routeShortName": "217",
+    "routeLongName": "Kvaternikov trg - Petru\u0161eve\u010dko naselje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.071703, 45.790915],
+                    [16.065901, 45.786868],
+                    [16.061639, 45.781732],
+                    [16.059323, 45.776479],
+                    [16.053659, 45.779262],
+                    [16.046617, 45.782834],
+                    [16.040973, 45.785672],
+                    [16.037653, 45.787336],
+                    [16.033671, 45.78917],
+                    [16.029776, 45.791239],
+                    [16.026335, 45.792933],
+                    [16.022804, 45.794708],
+                    [16.017114, 45.797682],
+                    [16.009522, 45.803865],
+                    [16.005685, 45.807312],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "c3d603e6396b3e533bb0" }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Reljkovi\u0107eva \u279e Reljkovi\u0107eva 61d691d24ea4e05a4991_shape",
+    "hash0": "61d691d24ea4e05a4991",
+    "hash0Name": "Reljkovi\u0107eva - Vinogradi - Reljkovi\u0107eva",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783019,
+    "routeShortName": "141",
+    "routeLongName": "Reljkovi\u0107eva - Vinogradi - Reljkovi\u0107eva",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.955139, 45.81248],
+                    [15.953554, 45.816525],
+                    [15.951702, 45.819928],
+                    [15.949756, 45.821532],
+                    [15.948266, 45.824654],
+                    [15.949898, 45.821347],
+                    [15.952029, 45.819886],
+                    [15.953506, 45.816421],
+                    [15.955922, 45.813502],
+                    [15.954981, 45.812277]
+                ]
+            },
+            "properties": { "hash0": "61d691d24ea4e05a4991" }
+        }
+    ]
+}

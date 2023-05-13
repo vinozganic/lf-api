@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubec \u279e Glavnica Donja okr. 863abdb26e000790b664_shape",
+    "hash0": "863abdb26e000790b664",
+    "hash0Name": "Dubec - Glavnica Donja okr.",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783092,
+    "routeShortName": "271",
+    "routeLongName": "Dubec - Sesvete - Glavnica Donja",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077315, 45.828388],
+                    [16.10809, 45.82778],
+                    [16.1173, 45.831696],
+                    [16.132891, 45.844547],
+                    [16.139925, 45.850094],
+                    [16.148022, 45.857798],
+                    [16.154248, 45.864319],
+                    [16.161318, 45.871678],
+                    [16.173499, 45.882191],
+                    [16.174856, 45.886381],
+                    [16.168472, 45.894691],
+                    [16.165946, 45.898193],
+                    [16.163403, 45.904605],
+                    [16.164393, 45.909132],
+                    [16.159797, 45.915958],
+                    [16.155382, 45.922503],
+                    [16.15219, 45.927926],
+                    [16.14921, 45.935007],
+                    [16.143688, 45.937863]
+                ]
+            },
+            "properties": { "hash0": "863abdb26e000790b664" }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubec \u279e Dubrava 0ea4d40e345427aad887_shape",
+    "hash0": "0ea4d40e345427aad887",
+    "hash0Name": "Dubec - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783064,
+    "routeShortName": "223",
+    "routeLongName": "Dubrava - Trnovi\u010dica - Dubec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077357, 45.827825],
+                    [16.081709, 45.829669],
+                    [16.083061, 45.833186],
+                    [16.07777, 45.834921],
+                    [16.072898, 45.836753],
+                    [16.068583, 45.836206],
+                    [16.063339, 45.831974],
+                    [16.057226, 45.832045],
+                    [16.052192, 45.82982],
+                    [16.04376, 45.825895],
+                    [16.037267, 45.82469]
+                ]
+            },
+            "properties": { "hash0": "0ea4d40e345427aad887" }
+        }
+    ]
+}

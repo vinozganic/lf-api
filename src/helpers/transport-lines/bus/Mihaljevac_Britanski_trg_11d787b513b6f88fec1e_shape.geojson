@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "Mihaljevac \u279e Britanski trg 11d787b513b6f88fec1e_shape",
+    "hash0": "11d787b513b6f88fec1e",
+    "hash0Name": "Mihaljevac - Britanski trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782981,
+    "routeShortName": "102",
+    "routeLongName": "Britanski trg - Mihaljevac",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.975189, 45.841614],
+                    [15.971205, 45.844642],
+                    [15.965745, 45.847069],
+                    [15.960288, 45.850252],
+                    [15.958394, 45.852585],
+                    [15.954891, 45.855026],
+                    [15.949955, 45.852435],
+                    [15.953574, 45.848713],
+                    [15.955494, 45.846688],
+                    [15.957804, 45.845719],
+                    [15.962766, 45.842933],
+                    [15.966149, 45.843874],
+                    [15.968961, 45.840053],
+                    [15.971194, 45.835631],
+                    [15.971154, 45.830451],
+                    [15.972176, 45.827964],
+                    [15.970363, 45.824719],
+                    [15.968836, 45.821209],
+                    [15.966596, 45.817748],
+                    [15.967106, 45.815867],
+                    [15.964018, 45.813944]
+                ]
+            },
+            "properties": { "hash0": "11d787b513b6f88fec1e" }
+        }
+    ]
+}

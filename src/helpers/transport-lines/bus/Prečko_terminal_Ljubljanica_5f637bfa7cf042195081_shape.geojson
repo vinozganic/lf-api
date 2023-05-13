@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Pre\u010dko-terminal \u279e Ljubljanica 5f637bfa7cf042195081_shape",
+    "hash0": "5f637bfa7cf042195081",
+    "hash0Name": "Pre\u010dko-terminal - Ljubljanica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782993,
+    "routeShortName": "114",
+    "routeLongName": "Ljubljanica - Pre\u010dko",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.899685, 45.794993],
+                    [15.901332, 45.796547],
+                    [15.909984, 45.795977],
+                    [15.920848, 45.794957],
+                    [15.924017, 45.79472],
+                    [15.932644, 45.794005],
+                    [15.936965, 45.797063]
+                ]
+            },
+            "properties": { "hash0": "5f637bfa7cf042195081" }
+        }
+    ]
+}

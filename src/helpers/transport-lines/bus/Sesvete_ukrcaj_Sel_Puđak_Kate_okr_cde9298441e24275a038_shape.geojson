@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sesvete-ukrcaj \u279e Sel.-Pu\u0111ak Kate okr. cde9298441e24275a038_shape",
+    "hash0": "cde9298441e24275a038",
+    "hash0Name": "Sesvete-ukrcaj - Sel.-Pu\u0111ak Kate okr.",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783098,
+    "routeShortName": "277",
+    "routeLongName": "Sesvete - Sesvetska Selnica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.106927, 45.826164],
+                    [16.105547, 45.827811],
+                    [16.103338, 45.821106],
+                    [16.117484, 45.819471],
+                    [16.12491, 45.819144],
+                    [16.130006, 45.818178],
+                    [16.134339, 45.815817]
+                ]
+            },
+            "properties": { "hash0": "cde9298441e24275a038" }
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "name": "Zapru\u0111e \u279e Sasi, okreti\u0161te f25e632bb43dec98bb5d_shape",
+    "hash0": "f25e632bb43dec98bb5d",
+    "hash0Name": "Zapru\u0111e - Sasi, okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783113,
+    "routeShortName": "308",
+    "routeLongName": "Zagreb (Zapru\u0111e) - Sasi",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.002194, 45.776723],
+                    [16.003828, 45.772531],
+                    [16.005751, 45.767603],
+                    [16.006626, 45.765359],
+                    [16.008029, 45.761238],
+                    [16.011062, 45.760835],
+                    [16.015808, 45.760517],
+                    [16.020848, 45.757765],
+                    [16.045945, 45.753817],
+                    [16.053487, 45.753272],
+                    [16.05878, 45.754208],
+                    [16.072505, 45.759928],
+                    [16.077451, 45.764079],
+                    [16.081624, 45.763028],
+                    [16.086479, 45.756481],
+                    [16.091475, 45.753653],
+                    [16.096423, 45.751304],
+                    [16.101224, 45.749483],
+                    [16.109848, 45.751757],
+                    [16.113984, 45.762977],
+                    [16.116655, 45.768614],
+                    [16.117163, 45.773145],
+                    [16.105274, 45.780349]
+                ]
+            },
+            "properties": { "hash0": "f25e632bb43dec98bb5d" }
+        }
+    ]
+}

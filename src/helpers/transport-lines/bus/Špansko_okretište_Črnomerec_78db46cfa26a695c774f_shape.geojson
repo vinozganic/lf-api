@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u0160pansko-okreti\u0161te \u279e \u010crnomerec 78db46cfa26a695c774f_shape",
+    "hash0": "78db46cfa26a695c774f",
+    "hash0Name": "\u0160pansko-okreti\u0161te - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783014,
+    "routeShortName": "136",
+    "routeLongName": "\u010crnomerec - \u0160pansko",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.889258, 45.802291],
+                    [15.894972, 45.802054],
+                    [15.897952, 45.802674],
+                    [15.898391, 45.806467],
+                    [15.901773, 45.806428],
+                    [15.903876, 45.809278],
+                    [15.90574, 45.811428],
+                    [15.90748, 45.812739],
+                    [15.917806, 45.811621],
+                    [15.922028, 45.812477],
+                    [15.929201, 45.813851],
+                    [15.933231, 45.815318]
+                ]
+            },
+            "properties": { "hash0": "78db46cfa26a695c774f" }
+        }
+    ]
+}

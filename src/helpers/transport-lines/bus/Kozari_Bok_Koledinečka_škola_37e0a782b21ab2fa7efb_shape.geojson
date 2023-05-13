@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kozari Bok \u279e Koledine\u010dka-\u0161kola 37e0a782b21ab2fa7efb_shape",
+    "hash0": "37e0a782b21ab2fa7efb",
+    "hash0Name": "Kozari Bok - Koledine\u010dka-\u0161kola",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783055,
+    "routeShortName": "214",
+    "routeLongName": "Koledine\u010dka - Trnava - Kozari Bok",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.043615, 45.798242],
+                    [16.048836, 45.801321],
+                    [16.049834, 45.806948],
+                    [16.052587, 45.810299],
+                    [16.055354, 45.813602],
+                    [16.060308, 45.814234],
+                    [16.060459, 45.811702],
+                    [16.06544, 45.80972],
+                    [16.06604, 45.815081],
+                    [16.064511, 45.818723],
+                    [16.064093, 45.823324],
+                    [16.063717, 45.825102],
+                    [16.063081, 45.827725],
+                    [16.056034, 45.830648],
+                    [16.057498, 45.83198],
+                    [16.061444, 45.83192]
+                ]
+            },
+            "properties": { "hash0": "37e0a782b21ab2fa7efb" }
+        }
+    ]
+}

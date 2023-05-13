@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubrava \u279e Kozari Bok dee5bbf284da6f87b44b_shape",
+    "hash0": "dee5bbf284da6f87b44b",
+    "hash0Name": "Dubrava - Kozari Bok",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783076,
+    "routeShortName": "235",
+    "routeLongName": "Dubrava - Trnava - Kozari Bok",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.036757, 45.824594],
+                    [16.056034, 45.830648],
+                    [16.057498, 45.83198],
+                    [16.061458, 45.831929],
+                    [16.063598, 45.831382],
+                    [16.062978, 45.828145],
+                    [16.063652, 45.825183],
+                    [16.064067, 45.822218],
+                    [16.064691, 45.81769],
+                    [16.066147, 45.813958],
+                    [16.063818, 45.809811],
+                    [16.060585, 45.8122],
+                    [16.060308, 45.814234],
+                    [16.054864, 45.812702],
+                    [16.052503, 45.810086],
+                    [16.049843, 45.806999],
+                    [16.048221, 45.800077],
+                    [16.038771, 45.797448],
+                    [16.043606, 45.798312]
+                ]
+            },
+            "properties": { "hash0": "dee5bbf284da6f87b44b" }
+        }
+    ]
+}

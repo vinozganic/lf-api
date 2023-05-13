@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Kozja\u010da, okreti\u0161te c93c61b2a94eedcd8e21_shape",
+    "hash0": "c93c61b2a94eedcd8e21",
+    "hash0Name": "Velika Gorica - Kozja\u010da, okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783109,
+    "routeShortName": "303",
+    "routeLongName": "Velika Gorica - Kozja\u010da",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077426, 45.711526],
+                    [16.066866, 45.709163],
+                    [16.066891, 45.709131],
+                    [16.062969, 45.702975],
+                    [16.059428, 45.689139],
+                    [16.056369, 45.679649],
+                    [16.058804, 45.670143],
+                    [16.054993, 45.643401],
+                    [16.032192, 45.63861],
+                    [16.025251, 45.633901],
+                    [16.022735, 45.632424],
+                    [16.019746, 45.624989],
+                    [16.01481, 45.615996],
+                    [16.008996, 45.6154],
+                    [16.002866, 45.611466],
+                    [16.005478, 45.607093]
+                ]
+            },
+            "properties": { "hash0": "c93c61b2a94eedcd8e21" }
+        }
+    ]
+}

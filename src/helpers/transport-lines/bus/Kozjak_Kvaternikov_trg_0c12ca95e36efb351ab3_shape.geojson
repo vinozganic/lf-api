@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kozjak \u279e Kvaternikov trg 0c12ca95e36efb351ab3_shape",
+    "hash0": "0c12ca95e36efb351ab3",
+    "hash0Name": "Kozjak - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783043,
+    "routeShortName": "202",
+    "routeLongName": "Kvaternikov trg - Kozjak",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.998319, 45.831394],
+                    [15.995797, 45.830025],
+                    [15.997222, 45.826124],
+                    [15.997915, 45.822741],
+                    [15.99947, 45.81809],
+                    [15.996747, 45.817538],
+                    [15.997761, 45.814248]
+                ]
+            },
+            "properties": { "hash0": "0c12ca95e36efb351ab3" }
+        }
+    ]
+}

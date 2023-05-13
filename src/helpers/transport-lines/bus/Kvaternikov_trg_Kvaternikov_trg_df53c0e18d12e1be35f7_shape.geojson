@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kvaternikov trg \u279e Kvaternikov trg df53c0e18d12e1be35f7_shape",
+    "hash0": "df53c0e18d12e1be35f7",
+    "hash0Name": "Kvaternikov trg - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783045,
+    "routeShortName": "204",
+    "routeLongName": "Kvaternikov trg - Horvatovac - Vo\u0107arska - Kvaternikov trg",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.99828, 45.813797],
+                    [15.99442, 45.817454],
+                    [15.99256, 45.820032],
+                    [15.990874, 45.82182],
+                    [15.989993, 45.823754],
+                    [15.988035, 45.826262],
+                    [15.984907, 45.824606],
+                    [15.986093, 45.822132],
+                    [15.987837, 45.818656],
+                    [15.990857, 45.81718],
+                    [15.99442, 45.817454],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "df53c0e18d12e1be35f7" }
+        }
+    ]
+}

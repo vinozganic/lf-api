@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Podsused - most \u279e Ljubljanica 83b6d61a86af7fca4e8e_shape",
+    "hash0": "83b6d61a86af7fca4e8e",
+    "hash0Name": "Podsused - most - Ljubljanica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782995,
+    "routeShortName": "116",
+    "routeLongName": "Ljubljanica - Podsused most",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.836132, 45.815152],
+                    [15.846921, 45.814539],
+                    [15.85263, 45.813881],
+                    [15.860202, 45.811795],
+                    [15.858419, 45.805436],
+                    [15.857017, 45.800311],
+                    [15.857404, 45.797947],
+                    [15.875996, 45.797328],
+                    [15.888171, 45.796985],
+                    [15.893599, 45.79695],
+                    [15.901332, 45.796547],
+                    [15.909984, 45.795977],
+                    [15.920848, 45.794957],
+                    [15.924017, 45.79472],
+                    [15.932644, 45.794005],
+                    [15.936965, 45.797063]
+                ]
+            },
+            "properties": { "hash0": "83b6d61a86af7fca4e8e" }
+        }
+    ]
+}

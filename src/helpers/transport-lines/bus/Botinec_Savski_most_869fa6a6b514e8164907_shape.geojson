@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Botinec \u279e Savski most 869fa6a6b514e8164907_shape",
+    "hash0": "869fa6a6b514e8164907",
+    "hash0Name": "Botinec - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782989,
+    "routeShortName": "110",
+    "routeLongName": "Savski most - Botinec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.938467, 45.755224],
+                    [15.943622, 45.757435],
+                    [15.945712, 45.760339],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "869fa6a6b514e8164907" }
+        }
+    ]
+}

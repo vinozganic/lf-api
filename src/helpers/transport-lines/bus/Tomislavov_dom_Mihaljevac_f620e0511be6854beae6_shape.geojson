@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Tomislavov dom \u279e Mihaljevac f620e0511be6854beae6_shape",
+    "hash0": "f620e0511be6854beae6",
+    "hash0Name": "Tomislavov dom - Mihaljevac",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783018,
+    "routeShortName": "140",
+    "routeLongName": "Mihaljevac - Sljeme",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.946613, 45.897966],
+                    [15.940398, 45.895544],
+                    [15.932079, 45.88725],
+                    [15.942024, 45.881626],
+                    [15.939998, 45.875636],
+                    [15.949055, 45.857477],
+                    [15.975198, 45.841885]
+                ]
+            },
+            "properties": { "hash0": "f620e0511be6854beae6" }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "type": "FeatureCollection",
+    "name": "Ztc \u279e Velika Gorica 658787783bc57c5fbff3_shape",
+    "hash0": "658787783bc57c5fbff3",
+    "hash0Name": "Ztc - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783125,
+    "routeShortName": "326",
+    "routeLongName": "Velika Gorica - Zrakoplovno tehni\u010dki centar",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.091548, 45.718229],
+                    [16.077368, 45.71156]
+                ]
+            },
+            "properties": { "hash0": "658787783bc57c5fbff3" }
+        }
+    ]
+}

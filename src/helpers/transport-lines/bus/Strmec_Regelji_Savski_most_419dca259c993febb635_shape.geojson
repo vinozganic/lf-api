@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "name": "Strmec-Regelji \u279e Savski most 419dca259c993febb635_shape",
+    "hash0": "419dca259c993febb635",
+    "hash0Name": "Strmec-Regelji - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783029,
+    "routeShortName": "159",
+    "routeLongName": "Savski most - Strmec Odranski",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.901729, 45.699387],
+                    [15.906947, 45.701389],
+                    [15.913701, 45.706124],
+                    [15.918186, 45.710214],
+                    [15.920806, 45.716677],
+                    [15.924841, 45.721529],
+                    [15.928855, 45.732023],
+                    [15.932161, 45.738074],
+                    [15.932832, 45.74419],
+                    [15.936757, 45.751121],
+                    [15.940702, 45.754166],
+                    [15.94437, 45.75724],
+                    [15.945712, 45.760339],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "419dca259c993febb635" }
+        }
+    ]
+}

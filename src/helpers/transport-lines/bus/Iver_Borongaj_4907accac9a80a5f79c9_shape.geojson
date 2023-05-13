@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Iver \u279e Borongaj 4907accac9a80a5f79c9_shape",
+    "hash0": "4907accac9a80a5f79c9",
+    "hash0Name": "Iver - Borongaj",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783090,
+    "routeShortName": "269",
+    "routeLongName": "Borongaj - Sesvetski Kraljevec - Iver",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.182832, 45.812683],
+                    [16.180171, 45.815282],
+                    [16.174782, 45.816511],
+                    [16.169162, 45.818406],
+                    [16.159536, 45.822376],
+                    [16.151127, 45.824414],
+                    [16.143412, 45.825708],
+                    [16.129842, 45.823813],
+                    [16.124719, 45.823981],
+                    [16.124719, 45.823981],
+                    [16.105547, 45.827811],
+                    [16.076435, 45.827135],
+                    [16.053988, 45.819597],
+                    [16.047498, 45.818491],
+                    [16.042728, 45.817688],
+                    [16.018651, 45.814786]
+                ]
+            },
+            "properties": { "hash0": "4907accac9a80a5f79c9" }
+        }
+    ]
+}

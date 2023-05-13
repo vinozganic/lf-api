@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "name": "Zavr\u0161je \u279e Trg S. Severa 77d5667aaa347771a01b_shape",
+    "hash0": "77d5667aaa347771a01b",
+    "hash0Name": "Zavr\u0161je - Trg S. Severa",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783028,
+    "routeShortName": "151",
+    "routeLongName": "Kusto\u0161ija - Zavr\u0161je - Vrap\u010danska",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.922031, 45.831301],
+                    [15.917749, 45.832362],
+                    [15.914941, 45.83368],
+                    [15.909641, 45.835618],
+                    [15.905053, 45.830857]
+                ]
+            },
+            "properties": { "hash0": "77d5667aaa347771a01b" }
+        }
+    ]
+}

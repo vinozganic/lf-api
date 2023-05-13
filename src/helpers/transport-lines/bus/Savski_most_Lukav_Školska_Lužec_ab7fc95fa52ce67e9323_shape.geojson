@@ -1,0 +1,49 @@
+{
+    "type": "FeatureCollection",
+    "name": "Savski most \u279e Lukav.-\u0160kolska-Lu\u017eec ab7fc95fa52ce67e9323_shape",
+    "hash0": "ab7fc95fa52ce67e9323",
+    "hash0Name": "Savski most - Lukav.-\u0160kolska-Lu\u017eec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783118,
+    "routeShortName": "315",
+    "routeLongName": "Zagreb (Savski most) - Lukavec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.952845, 45.7852],
+                    [15.953179, 45.774645],
+                    [15.951402, 45.772015],
+                    [15.94606, 45.765749],
+                    [15.962116, 45.753878],
+                    [15.965652, 45.7493],
+                    [15.960062, 45.750684],
+                    [15.960133, 45.746893],
+                    [15.9572, 45.74256],
+                    [15.958589, 45.73995],
+                    [15.962938, 45.736886],
+                    [15.976288, 45.733669],
+                    [15.976127, 45.730025],
+                    [15.980898, 45.72653],
+                    [15.986056, 45.730001],
+                    [15.993328, 45.729816],
+                    [15.997683, 45.731224],
+                    [16.003693, 45.730942],
+                    [16.002811, 45.725846],
+                    [15.996127, 45.716082],
+                    [15.992815, 45.707296],
+                    [15.989874, 45.70452],
+                    [15.990123, 45.702401],
+                    [15.997088, 45.699903]
+                ]
+            },
+            "properties": { "hash0": "ab7fc95fa52ce67e9323" }
+        }
+    ]
+}

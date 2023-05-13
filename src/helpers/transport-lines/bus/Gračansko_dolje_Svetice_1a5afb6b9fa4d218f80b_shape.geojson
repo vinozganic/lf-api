@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection",
+    "name": "Gra\u010dansko dolje \u279e Svetice 1a5afb6b9fa4d218f80b_shape",
+    "hash0": "1a5afb6b9fa4d218f80b",
+    "hash0Name": "Gra\u010dansko dolje - Svetice",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783068,
+    "routeShortName": "227",
+    "routeLongName": "Svetice - Gornji Bukovac - Gra\u010dansko dolje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.983143, 45.861607],
+                    [15.987693, 45.862623],
+                    [15.995262, 45.861115],
+                    [16.001462, 45.855955],
+                    [16.008571, 45.851502],
+                    [16.011709, 45.848178],
+                    [16.01396, 45.846614],
+                    [16.016962, 45.844636],
+                    [16.020532, 45.842492],
+                    [16.021244, 45.840797],
+                    [16.02702, 45.838619],
+                    [16.019035, 45.839675],
+                    [16.01548, 45.840763],
+                    [16.009052, 45.844377],
+                    [16.007559, 45.842903],
+                    [16.007543, 45.840726],
+                    [16.009484, 45.837694],
+                    [16.011656, 45.833447],
+                    [16.012205, 45.829663],
+                    [16.013494, 45.827362],
+                    [16.012364, 45.822114],
+                    [16.01284, 45.819307]
+                ]
+            },
+            "properties": { "hash0": "1a5afb6b9fa4d218f80b" }
+        }
+    ]
+}

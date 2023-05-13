@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Miro\u0161eve\u010dka 218 \u279e \u010cu\u010derje-crkva 21d0f20a020ebc67a2ed_shape",
+    "hash0": "21d0f20a020ebc67a2ed",
+    "hash0Name": "Miro\u0161eve\u010dka 218 - \u010cu\u010derje-crkva",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783080,
+    "routeShortName": "239",
+    "routeLongName": "\u010cu\u010derje - Dankovec - Marku\u0161eve\u010dka Travna",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.033075, 45.878918],
+                    [16.043796, 45.880642],
+                    [16.04766, 45.878449],
+                    [16.054382, 45.872712],
+                    [16.056432, 45.872236],
+                    [16.056325, 45.875437],
+                    [16.057418, 45.879928],
+                    [16.056072, 45.88528],
+                    [16.05778, 45.887191],
+                    [16.060018, 45.890593],
+                    [16.060215, 45.893941]
+                ]
+            },
+            "properties": { "hash0": "21d0f20a020ebc67a2ed" }
+        }
+    ]
+}

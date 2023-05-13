@@ -1,0 +1,39 @@
+{
+    "type": "FeatureCollection",
+    "name": "M.Polje-okreti\u0161te \u279e Dubec 22a34695b11c8629e1ba_shape",
+    "hash0": "22a34695b11c8629e1ba",
+    "hash0Name": "M.Polje-okreti\u0161te - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783088,
+    "routeShortName": "267",
+    "routeLongName": "Dubec - Markovo Polje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.12899, 45.860514],
+                    [16.125842, 45.85775],
+                    [16.121727, 45.858247],
+                    [16.11592, 45.86135],
+                    [16.112469, 45.853679],
+                    [16.111626, 45.851517],
+                    [16.110558, 45.8485],
+                    [16.10896, 45.842126],
+                    [16.106914, 45.830495],
+                    [16.105547, 45.827811],
+                    [16.097482, 45.827647],
+                    [16.090762, 45.826471],
+                    [16.08586, 45.826338],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "22a34695b11c8629e1ba" }
+        }
+    ]
+}

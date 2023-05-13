@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Remetine\u010dka 15 c221458455a57b29e509_shape",
+    "hash0": "c221458455a57b29e509",
+    "hash0Name": "Glavni kolodvor - Remetine\u010dka 15",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783083,
+    "routeShortName": "243",
+    "routeLongName": "Glavni kolodvor - Kajzerica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977234, 45.801989],
+                    [15.978566, 45.799333],
+                    [15.979006, 45.793979],
+                    [15.978265, 45.783504],
+                    [15.970529, 45.783319],
+                    [15.967051, 45.782972],
+                    [15.964325, 45.785578],
+                    [15.956102, 45.783616],
+                    [15.954446, 45.780017]
+                ]
+            },
+            "properties": { "hash0": "c221458455a57b29e509" }
+        }
+    ]
+}

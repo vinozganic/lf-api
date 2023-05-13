@@ -1,0 +1,33 @@
+{
+    "type": "FeatureCollection",
+    "name": "Podbre\u017eje okreti\u0161te \u279e Glavni kolodvor d8b15ed0d8e7335f26c5_shape",
+    "hash0": "d8b15ed0d8e7335f26c5",
+    "hash0Name": "Podbre\u017eje okreti\u0161te - Glavni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783082,
+    "routeShortName": "242",
+    "routeLongName": "Glavni kolodvor - Podbre\u017eje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.973458, 45.767264],
+                    [15.980772, 45.768023],
+                    [15.980519, 45.772456],
+                    [15.980671, 45.778613],
+                    [15.980081, 45.784166],
+                    [15.979747, 45.795537],
+                    [15.979561, 45.799405],
+                    [15.977791, 45.803745]
+                ]
+            },
+            "properties": { "hash0": "d8b15ed0d8e7335f26c5" }
+        }
+    ]
+}

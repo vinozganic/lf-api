@@ -1,0 +1,43 @@
+{
+    "type": "FeatureCollection",
+    "name": "Jesenovec-okreti\u0161te \u279e Dubec 7f06080daa70e42234e5_shape",
+    "hash0": "7f06080daa70e42234e5",
+    "hash0Name": "Jesenovec-okreti\u0161te - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783087,
+    "routeShortName": "264",
+    "routeLongName": "Dubec - Sesvete - Jesenovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.145721, 45.917533],
+                    [16.152043, 45.914216],
+                    [16.156487, 45.907739],
+                    [16.158145, 45.905682],
+                    [16.163338, 45.904209],
+                    [16.166043, 45.897998],
+                    [16.168799, 45.894386],
+                    [16.174694, 45.886248],
+                    [16.173164, 45.881511],
+                    [16.16016, 45.870692],
+                    [16.153699, 45.863963],
+                    [16.147427, 45.85732],
+                    [16.139267, 45.849619],
+                    [16.131913, 45.843929],
+                    [16.115725, 45.830592],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "7f06080daa70e42234e5" }
+        }
+    ]
+}

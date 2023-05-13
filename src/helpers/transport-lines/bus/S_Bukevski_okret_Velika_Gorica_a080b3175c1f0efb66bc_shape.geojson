@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "S. Bukevski, okret. \u279e Velika Gorica a080b3175c1f0efb66bc_shape",
+    "hash0": "a080b3175c1f0efb66bc",
+    "hash0Name": "S. Bukevski, okret. - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783120,
+    "routeShortName": "321",
+    "routeLongName": "Velika Gorica - Strmec Bukevski",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.162956, 45.745137],
+                    [16.156464, 45.750367],
+                    [16.138381, 45.747999],
+                    [16.127919, 45.752973],
+                    [16.119804, 45.750645],
+                    [16.111851, 45.750097],
+                    [16.106832, 45.74071],
+                    [16.10119, 45.731833],
+                    [16.085708, 45.725505],
+                    [16.074226, 45.717634],
+                    [16.077579, 45.711472]
+                ]
+            },
+            "properties": { "hash0": "a080b3175c1f0efb66bc" }
+        }
+    ]
+}

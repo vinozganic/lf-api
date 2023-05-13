@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "name": "Brezovica \u0161kola \u279e Savski most 594f93616306a86941d3_shape",
+    "hash0": "594f93616306a86941d3",
+    "hash0Name": "Brezovica \u0161kola - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783010,
+    "routeShortName": "132",
+    "routeLongName": "Brezovica \u0161kola - Savski most",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.907008, 45.72459],
+                    [15.902863, 45.730277],
+                    [15.899844, 45.731915],
+                    [15.896303, 45.732916],
+                    [15.892096, 45.73517],
+                    [15.885398, 45.730607],
+                    [15.883976, 45.73166],
+                    [15.888571, 45.737239],
+                    [15.889902, 45.74108],
+                    [15.889177, 45.743989],
+                    [15.888602, 45.748468],
+                    [15.890148, 45.750446],
+                    [15.885751, 45.754072],
+                    [15.892605, 45.758339],
+                    [15.896273, 45.759768],
+                    [15.910932, 45.759629],
+                    [15.917708, 45.763395],
+                    [15.927131, 45.765152],
+                    [15.931974, 45.766662],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "594f93616306a86941d3" }
+        }
+    ]
+}

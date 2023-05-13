@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubec \u279e Borongaj 7015e99cf138ba1277e3_shape",
+    "hash0": "7015e99cf138ba1277e3",
+    "hash0Name": "Dubec - Borongaj",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783072,
+    "routeShortName": "231",
+    "routeLongName": "Borongaj - Dubec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.078045, 45.827958],
+                    [16.082847, 45.826019],
+                    [16.076966, 45.823555],
+                    [16.068978, 45.822179],
+                    [16.062054, 45.82088],
+                    [16.053988, 45.819597],
+                    [16.047498, 45.818491],
+                    [16.042728, 45.817688],
+                    [16.031734, 45.815774],
+                    [16.025497, 45.814626],
+                    [16.018651, 45.814786]
+                ]
+            },
+            "properties": { "hash0": "7015e99cf138ba1277e3" }
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Dubravica okreti\u0161te efc48b0b77275b879f31_shape",
+    "hash0": "efc48b0b77275b879f31",
+    "hash0Name": "\u010crnomerec - Dubravica okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783002,
+    "routeShortName": "124",
+    "routeLongName": "\u010crnomerec - Gornji Stenjevec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.933327, 45.816059],
+                    [15.928246, 45.81377],
+                    [15.920109, 45.812205],
+                    [15.9172, 45.811601],
+                    [15.905129, 45.813021],
+                    [15.895237, 45.812619],
+                    [15.887202, 45.813054],
+                    [15.885488, 45.818083],
+                    [15.881164, 45.81893],
+                    [15.87541, 45.8193],
+                    [15.870751, 45.819118],
+                    [15.871113, 45.821206],
+                    [15.870079, 45.8257],
+                    [15.870195, 45.830155],
+                    [15.869604, 45.833294]
+                ]
+            },
+            "properties": { "hash0": "efc48b0b77275b879f31" }
+        }
+    ]
+}

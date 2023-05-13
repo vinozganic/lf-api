@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "name": "Galijska \u279e Glavni kolodvor 8c5a91ef3214e9bebad2_shape",
+    "hash0": "8c5a91ef3214e9bebad2",
+    "hash0Name": "Galijska - Glavni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783081,
+    "routeShortName": "241",
+    "routeLongName": "Glavni kolodvor - Veliko Polje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.014347, 45.742869],
+                    [16.015872, 45.738392],
+                    [16.01465, 45.733574],
+                    [16.010909, 45.736059],
+                    [16.004264, 45.739834],
+                    [15.997997, 45.744302],
+                    [15.991812, 45.74871],
+                    [15.987749, 45.760609],
+                    [15.991141, 45.764861],
+                    [15.991183, 45.768711],
+                    [15.989916, 45.772688],
+                    [15.980519, 45.772456],
+                    [15.980671, 45.778613],
+                    [15.980081, 45.784166],
+                    [15.979747, 45.795537],
+                    [15.979561, 45.799405],
+                    [15.977791, 45.803745]
+                ]
+            },
+            "properties": { "hash0": "8c5a91ef3214e9bebad2" }
+        }
+    ]
+}

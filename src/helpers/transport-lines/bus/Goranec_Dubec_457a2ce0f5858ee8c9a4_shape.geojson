@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "Goranec \u279e Dubec 457a2ce0f5858ee8c9a4_shape",
+    "hash0": "457a2ce0f5858ee8c9a4",
+    "hash0Name": "Goranec - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783084,
+    "routeShortName": "261",
+    "routeLongName": "Dubec - Sesvete - Goranec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.078601, 45.89719],
+                    [16.085086, 45.895311],
+                    [16.089629, 45.893571],
+                    [16.095374, 45.892412],
+                    [16.098452, 45.89173],
+                    [16.101034, 45.891207],
+                    [16.106281, 45.884546],
+                    [16.108595, 45.881529],
+                    [16.111321, 45.877118],
+                    [16.113348, 45.87029],
+                    [16.114899, 45.863001],
+                    [16.112469, 45.853679],
+                    [16.111626, 45.851517],
+                    [16.110558, 45.8485],
+                    [16.10896, 45.842126],
+                    [16.106914, 45.830495],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.10793, 45.825922],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "457a2ce0f5858ee8c9a4" }
+        }
+    ]
+}

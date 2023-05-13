@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sesvete-ukrcaj \u279e Kozari Bok d7e93d0a9ac2e711785d_shape",
+    "hash0": "d7e93d0a9ac2e711785d",
+    "hash0Name": "Sesvete-ukrcaj - Kozari Bok",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783066,
+    "routeShortName": "225",
+    "routeLongName": "Sesvete - Resnik - Kozari Bok",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.107757, 45.825963],
+                    [16.105547, 45.827811],
+                    [16.097482, 45.827647],
+                    [16.090762, 45.826471],
+                    [16.08586, 45.826338],
+                    [16.077644, 45.827926],
+                    [16.062978, 45.828145],
+                    [16.063652, 45.825183],
+                    [16.064067, 45.822218],
+                    [16.064691, 45.81769],
+                    [16.066147, 45.813958],
+                    [16.06426, 45.809094],
+                    [16.072074, 45.806006],
+                    [16.081073, 45.803071],
+                    [16.088386, 45.802172],
+                    [16.087876, 45.802374],
+                    [16.080671, 45.803116],
+                    [16.074966, 45.802038],
+                    [16.067676, 45.801914],
+                    [16.060048, 45.800985],
+                    [16.057171, 45.800587],
+                    [16.052529, 45.799833],
+                    [16.044873, 45.79863]
+                ]
+            },
+            "properties": { "hash0": "d7e93d0a9ac2e711785d" }
+        }
+    ]
+}

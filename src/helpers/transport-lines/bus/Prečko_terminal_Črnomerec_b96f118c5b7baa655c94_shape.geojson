@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "name": "Pre\u010dko-terminal \u279e \u010crnomerec b96f118c5b7baa655c94_shape",
+    "hash0": "b96f118c5b7baa655c94",
+    "hash0Name": "Pre\u010dko-terminal - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782998,
+    "routeShortName": "120",
+    "routeLongName": "\u010crnomerec - Gajnice - Pre\u010dko",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.899685, 45.794993],
+                    [15.898627, 45.79716],
+                    [15.890807, 45.797337],
+                    [15.886598, 45.797528],
+                    [15.871717, 45.797522],
+                    [15.857841, 45.797704],
+                    [15.857976, 45.802738],
+                    [15.859183, 45.807263],
+                    [15.861898, 45.812912],
+                    [15.870128, 45.813826],
+                    [15.873781, 45.813646],
+                    [15.878548, 45.813386],
+                    [15.886312, 45.812924],
+                    [15.895898, 45.812436],
+                    [15.90748, 45.812739],
+                    [15.917806, 45.811621],
+                    [15.922028, 45.812477],
+                    [15.929201, 45.813851],
+                    [15.933231, 45.815318]
+                ]
+            },
+            "properties": { "hash0": "b96f118c5b7baa655c94" }
+        }
+    ]
+}

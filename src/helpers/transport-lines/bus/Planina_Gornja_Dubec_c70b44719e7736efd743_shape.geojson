@@ -1,0 +1,49 @@
+{
+    "type": "FeatureCollection",
+    "name": "Planina Gornja \u279e Dubec c70b44719e7736efd743_shape",
+    "hash0": "c70b44719e7736efd743",
+    "hash0Name": "Planina Gornja - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783086,
+    "routeShortName": "263",
+    "routeLongName": "Dubec - Sesvete - Ka\u0161ina - Planina Gornja",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.079363, 45.939793],
+                    [16.102136, 45.935332],
+                    [16.116961, 45.926553],
+                    [16.11995, 45.922024],
+                    [16.121726, 45.918285],
+                    [16.123572, 45.914933],
+                    [16.124439, 45.909884],
+                    [16.125196, 45.905971],
+                    [16.12489, 45.900622],
+                    [16.124893, 45.897529],
+                    [16.123619, 45.892688],
+                    [16.115385, 45.885595],
+                    [16.115116, 45.877567],
+                    [16.113348, 45.87029],
+                    [16.114899, 45.863001],
+                    [16.112469, 45.853679],
+                    [16.111626, 45.851517],
+                    [16.110558, 45.8485],
+                    [16.10896, 45.842126],
+                    [16.106914, 45.830495],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.10793, 45.825922],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "c70b44719e7736efd743" }
+        }
+    ]
+}

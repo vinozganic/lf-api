@@ -1,0 +1,53 @@
+{
+    "type": "FeatureCollection",
+    "name": "Havidi\u0107 Selo \u279e Savski most 2ac156c2bd2cea6cd412_shape",
+    "hash0": "2ac156c2bd2cea6cd412",
+    "hash0Name": "Havidi\u0107 Selo - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783030,
+    "routeShortName": "160",
+    "routeLongName": "Savski most - Lipnica - Havidi\u0107 Selo",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.934245, 45.623258],
+                    [15.924361, 45.628647],
+                    [15.92204, 45.630692],
+                    [15.922557, 45.633019],
+                    [15.924516, 45.637403],
+                    [15.933902, 45.638115],
+                    [15.935214, 45.641206],
+                    [15.93679, 45.646962],
+                    [15.938996, 45.649794],
+                    [15.942835, 45.652673],
+                    [15.940865, 45.657522],
+                    [15.942659, 45.662972],
+                    [15.946189, 45.667849],
+                    [15.938654, 45.707651],
+                    [15.941753, 45.715907],
+                    [15.931554, 45.71819],
+                    [15.924841, 45.721529],
+                    [15.928855, 45.732023],
+                    [15.932161, 45.738074],
+                    [15.932832, 45.74419],
+                    [15.936757, 45.751121],
+                    [15.940702, 45.754166],
+                    [15.94437, 45.75724],
+                    [15.945712, 45.760339],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "2ac156c2bd2cea6cd412" }
+        }
+    ]
+}

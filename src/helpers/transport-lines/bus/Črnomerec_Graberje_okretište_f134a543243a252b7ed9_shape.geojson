@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e Graberje-okreti\u0161te f134a543243a252b7ed9_shape",
+    "hash0": "f134a543243a252b7ed9",
+    "hash0Name": "\u010crnomerec - Graberje-okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783013,
+    "routeShortName": "135",
+    "routeLongName": "\u010crnomerec - Graberje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.934131, 45.8158],
+                    [15.927179, 45.814643],
+                    [15.926665, 45.817797],
+                    [15.922956, 45.819566],
+                    [15.917974, 45.822685],
+                    [15.916759, 45.824771],
+                    [15.914193, 45.826798]
+                ]
+            },
+            "properties": { "hash0": "f134a543243a252b7ed9" }
+        }
+    ]
+}

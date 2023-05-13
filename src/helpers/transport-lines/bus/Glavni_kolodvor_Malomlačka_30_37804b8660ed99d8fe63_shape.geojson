@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Malomla\u010dka 30 37804b8660ed99d8fe63_shape",
+    "hash0": "37804b8660ed99d8fe63",
+    "hash0Name": "Glavni kolodvor - Malomla\u010dka 30",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783070,
+    "routeShortName": "229",
+    "routeLongName": "Glavni kolodvor - Mala Mlaka",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.979041, 45.803857],
+                    [15.978566, 45.799333],
+                    [15.979006, 45.793979],
+                    [15.97974, 45.782882],
+                    [15.981796, 45.777402],
+                    [15.98654, 45.777615],
+                    [15.990388, 45.777043],
+                    [15.990624, 45.771935],
+                    [15.990959, 45.767079],
+                    [15.987695, 45.764304],
+                    [15.990608, 45.763521],
+                    [15.989958, 45.759346],
+                    [15.99358, 45.747226],
+                    [15.999723, 45.74277],
+                    [16.005945, 45.739405],
+                    [15.996223, 45.734744],
+                    [15.992315, 45.729874],
+                    [15.986056, 45.730001],
+                    [15.980633, 45.726697]
+                ]
+            },
+            "properties": { "hash0": "37804b8660ed99d8fe63" }
+        }
+    ]
+}

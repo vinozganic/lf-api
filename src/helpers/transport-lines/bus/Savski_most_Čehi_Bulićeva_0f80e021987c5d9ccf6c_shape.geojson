@@ -1,0 +1,43 @@
+{
+    "type": "FeatureCollection",
+    "name": "Savski most \u279e \u010cehi - Buli\u0107eva 0f80e021987c5d9ccf6c_shape",
+    "hash0": "0f80e021987c5d9ccf6c",
+    "hash0Name": "Savski most - \u010cehi - Buli\u0107eva",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783011,
+    "routeShortName": "133",
+    "routeLongName": "Savski most - Sveta Klara - \u010cehi",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.952645, 45.784882],
+                    [15.95076, 45.786213],
+                    [15.953179, 45.774645],
+                    [15.951402, 45.772015],
+                    [15.956563, 45.767433],
+                    [15.963945, 45.764891],
+                    [15.967624, 45.762219],
+                    [15.972712, 45.758525],
+                    [15.970864, 45.756394],
+                    [15.967183, 45.753707],
+                    [15.963779, 45.755106],
+                    [15.962116, 45.753878],
+                    [15.965652, 45.7493],
+                    [15.960062, 45.750684],
+                    [15.960133, 45.746893],
+                    [15.9572, 45.74256],
+                    [15.958931, 45.739738],
+                    [15.962942, 45.736742]
+                ]
+            },
+            "properties": { "hash0": "0f80e021987c5d9ccf6c" }
+        }
+    ]
+}

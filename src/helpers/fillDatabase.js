@@ -3,34 +3,37 @@ const path = require("path")
 
 const { Pool } = require("pg")
 
-const files = fs.readdirSync(__dirname + "\\transport-lines")
-const filteredFiles = files.filter((file) => file !== "scriptTram.js")
-
-let insertTransportLinesValues = `
-    INSERT INTO transport_lines (area_name, type, name, number, geo_json) VALUES 
-`
-
-filteredFiles.forEach((file) => {
-    const data = JSON.parse(fs.readFileSync(path.join(__dirname, "transport-lines", file)))
-    const value = `('Zagreb', 'Tramvaj', '${data.routeLongName}', '${data.routeShortName}', '${JSON.stringify(
-        data.features[0].geometry
-    )}'),`
-    insertTransportLinesValues += value
-})
-insertTransportLinesValues = insertTransportLinesValues.slice(0, -1)
-insertTransportLinesValues += `ON CONFLICT (area_name, type, number) DO UPDATE SET geo_json = EXCLUDED.geo_json;`
-
 const developmentPoolOptions = {
     connectionString: "postgres://user:password@localhost:5433/config",
 }
-
-// change <username> and <password> with credentials
 const productionPoolOptions = {
     connectionString: "postgres://<username>:<password>@lf-pgsql.postgres.database.azure.com/config?sslmode=require",
 }
-
-// change to const pool = new Pool(productionPoolOptions) if you want to fill production database
 const pool = new Pool(developmentPoolOptions)
+
+const insert = async (query) => {
+    await pool.query(query)
+}
+
+const transportLinesFolder = path.join(__dirname, "transport-lines")
+const subFolders = fs.readdirSync(transportLinesFolder)
+
+let insertTransportLinesValues = `
+    INSERT INTO transport_lines (area_name, type, name, number, geo_json) VALUES
+`
+
+subFolders.forEach((subFolder) => {
+    const subFolderPath = path.join(transportLinesFolder, subFolder)
+    const files = fs.readdirSync(subFolderPath)
+
+    files.forEach((file) => {
+        const data = JSON.parse(fs.readFileSync(path.join(subFolderPath, file)))
+        let value = `('Zagreb', '${data.routeTypeName}', '${data.routeLongName}', '${data.routeShortName}', '${JSON.stringify(data.features[0].geometry)}')`
+        value += ` ON CONFLICT (area_name, type, number) DO UPDATE SET geo_json = EXCLUDED.geo_json;`
+        const insertValue = `${insertTransportLinesValues} ${value}`
+        insert(insertValue)
+    })
+})
 
 const insertConnectionStrings = `
     INSERT INTO connection_strings (name, value) VALUES  
@@ -176,13 +179,13 @@ const insertTypesValues = `
     ON CONFLICT (name) DO UPDATE SET nice_name = EXCLUDED.nice_name;
 `
 
-const insert = async (query) => {
-    await pool.query(query)
-}
+// const insert = async (query) => {
+//     await pool.query(query)
+// }
 
 insert(insertConnectionStrings)
 insert(insertAreasValues)
 insert(insertTypesValues)
-insert(insertTransportLinesValues)
+// insert(insertTransportLinesValues)
 insert(insertNounsValues)
 insert(insertAdjectivesValues)
