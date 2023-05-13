@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "name": "Vrap\u010danska aleja \u279e Ratarska 531462675c28f20b343f_shape",
+    "hash0": "531462675c28f20b343f",
+    "hash0Name": "Vrap\u010danska aleja - Ratarska",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783023,
+    "routeShortName": "145",
+    "routeLongName": "Vrap\u010danska aleja - Oranice",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.896495, 45.812673],
+                    [15.906257, 45.812627],
+                    [15.90784, 45.808378],
+                    [15.913646, 45.800025]
+                ]
+            },
+            "properties": { "hash0": "531462675c28f20b343f" }
+        }
+    ]
+}

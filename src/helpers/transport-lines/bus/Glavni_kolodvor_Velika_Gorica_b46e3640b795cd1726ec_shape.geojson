@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Velika Gorica b46e3640b795cd1726ec_shape",
+    "hash0": "b46e3640b795cd1726ec",
+    "hash0Name": "Glavni kolodvor - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783089,
+    "routeShortName": "268",
+    "routeLongName": "Zagreb (Glavni kolodvor) - Velika Gorica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977119, 45.803206],
+                    [15.978566, 45.799333],
+                    [15.979006, 45.793979],
+                    [15.97974, 45.782882],
+                    [15.979798, 45.776513],
+                    [15.980405, 45.77101],
+                    [15.980645, 45.76662],
+                    [15.980889, 45.764992],
+                    [15.982025, 45.761262],
+                    [15.987694, 45.760505],
+                    [15.99358, 45.747226],
+                    [15.999723, 45.74277],
+                    [16.005889, 45.738317],
+                    [16.010725, 45.734881],
+                    [16.017317, 45.732449],
+                    [16.028747, 45.72907],
+                    [16.050205, 45.722141],
+                    [16.05424, 45.720025],
+                    [16.05732, 45.716974],
+                    [16.06153, 45.714748],
+                    [16.067483, 45.712748],
+                    [16.077502, 45.711477]
+                ]
+            },
+            "properties": { "hash0": "b46e3640b795cd1726ec" }
+        }
+    ]
+}

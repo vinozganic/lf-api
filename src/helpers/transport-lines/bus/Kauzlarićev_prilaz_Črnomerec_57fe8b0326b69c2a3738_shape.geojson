@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kauzlari\u0107ev prilaz \u279e \u010crnomerec 57fe8b0326b69c2a3738_shape",
+    "hash0": "57fe8b0326b69c2a3738",
+    "hash0Name": "\u010crnomerec - Dugave",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782988,
+    "routeShortName": "109",
+    "routeLongName": "\u010crnomerec - Dugave",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.002334, 45.764875],
+                    [15.99717, 45.762166],
+                    [15.993005, 45.763189],
+                    [15.991141, 45.764861],
+                    [15.991183, 45.768711],
+                    [15.990918, 45.773265],
+                    [15.989332, 45.777954],
+                    [15.984608, 45.777858],
+                    [15.978596, 45.77782],
+                    [15.970685, 45.777504],
+                    [15.964491, 45.777332],
+                    [15.956558, 45.777388],
+                    [15.950506, 45.786505],
+                    [15.945608, 45.788807],
+                    [15.94485, 45.791676],
+                    [15.943096, 45.799051],
+                    [15.943368, 45.801854],
+                    [15.942512, 45.807774],
+                    [15.94213, 45.812533],
+                    [15.93414, 45.814943]
+                ]
+            },
+            "properties": { "hash0": "57fe8b0326b69c2a3738" }
+        }
+    ]
+}

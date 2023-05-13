@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u017dejinci - okreti\u0161te \u279e Terminal fc97eac89052fa1c159d_shape",
+    "hash0": "fc97eac89052fa1c159d",
+    "hash0Name": "\u017dejinci - okreti\u0161te - Terminal",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783038,
+    "routeShortName": "174",
+    "routeLongName": "Zapre\u0161i\u0107 - \u017dejinci",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.830007, 45.968225],
+                    [15.829914, 45.968281],
+                    [15.819413, 45.959232],
+                    [15.812673, 45.953203],
+                    [15.81207, 45.941492],
+                    [15.814841, 45.932109],
+                    [15.809823, 45.924143],
+                    [15.8075, 45.918695],
+                    [15.808248, 45.912605],
+                    [15.80672, 45.907779],
+                    [15.80177, 45.904345],
+                    [15.798418, 45.898958],
+                    [15.794677, 45.891355],
+                    [15.800449, 45.877606],
+                    [15.796755, 45.876907],
+                    [15.794798, 45.874089],
+                    [15.794963, 45.869631],
+                    [15.800599, 45.869385],
+                    [15.80114, 45.864332],
+                    [15.799751, 45.861058]
+                ]
+            },
+            "properties": { "hash0": "fc97eac89052fa1c159d" }
+        }
+    ]
+}

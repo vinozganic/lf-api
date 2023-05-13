@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Podsused - most \u279e \u010crnomerec f26e01d65fe915619e18_shape",
+    "hash0": "f26e01d65fe915619e18",
+    "hash0Name": "Podsused - most - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782997,
+    "routeShortName": "119",
+    "routeLongName": "\u010crnomerec - Podsused most",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.836132, 45.815152],
+                    [15.846921, 45.814539],
+                    [15.85263, 45.813881],
+                    [15.861391, 45.812225],
+                    [15.869931, 45.811719],
+                    [15.873257, 45.811317],
+                    [15.880488, 45.81158],
+                    [15.884518, 45.811725],
+                    [15.891385, 45.811594],
+                    [15.895267, 45.811755],
+                    [15.90574, 45.811428],
+                    [15.90748, 45.812739],
+                    [15.917806, 45.811621],
+                    [15.922028, 45.812477],
+                    [15.929201, 45.813851],
+                    [15.933231, 45.815318]
+                ]
+            },
+            "properties": { "hash0": "f26e01d65fe915619e18" }
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sesvete-ukrcaj \u279e Ivanja Reka-okret. d27c47fb8ab3e37a29f4_shape",
+    "hash0": "d27c47fb8ab3e37a29f4",
+    "hash0Name": "Sesvete-ukrcaj - Ivanja Reka-okret.",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783105,
+    "routeShortName": "284",
+    "routeLongName": "Sesvete - Ivanja Reka",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.106927, 45.826164],
+                    [16.105547, 45.827811],
+                    [16.103338, 45.821106],
+                    [16.117484, 45.819471],
+                    [16.119257, 45.814353],
+                    [16.118637, 45.810095],
+                    [16.11957, 45.805202],
+                    [16.118627, 45.801825],
+                    [16.118967, 45.797816]
+                ]
+            },
+            "properties": { "hash0": "d27c47fb8ab3e37a29f4" }
+        }
+    ]
+}

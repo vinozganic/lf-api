@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010ci\u010dka Poljana-okret. \u279e Velika Gorica ebceb5daf9703d30e4f6_shape",
+    "hash0": "ebceb5daf9703d30e4f6",
+    "hash0Name": "\u010ci\u010dka Poljana-okret. - Velika Gorica",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783123,
+    "routeShortName": "324",
+    "routeLongName": "Velika Gorica - \u010ci\u010dka Poljana",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.182955, 45.674418],
+                    [16.180302, 45.679509],
+                    [16.181071, 45.687136],
+                    [16.181605, 45.6948],
+                    [16.181605, 45.6948],
+                    [16.175856, 45.708],
+                    [16.164178, 45.707702],
+                    [16.160407, 45.710055],
+                    [16.154106, 45.708208],
+                    [16.149057, 45.706645],
+                    [16.141165, 45.70595],
+                    [16.134106, 45.705052],
+                    [16.127174, 45.703455],
+                    [16.119751, 45.70418],
+                    [16.112121, 45.705419],
+                    [16.077626, 45.71137]
+                ]
+            },
+            "properties": { "hash0": "ebceb5daf9703d30e4f6" }
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Petrovina,dru\u0161t. dom 451a46ddc66026027045_shape",
+    "hash0": "451a46ddc66026027045",
+    "hash0Name": "Glavni kolodvor - Petrovina,dru\u0161t. dom",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783115,
+    "routeShortName": "310",
+    "routeLongName": "Zagreb (Glavni kolodvor) - Petrovina",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.979205, 45.803781],
+                    [15.978566, 45.799333],
+                    [15.979798, 45.776513],
+                    [16.026763, 45.728666],
+                    [16.019327, 45.719454],
+                    [16.018264, 45.716697],
+                    [16.016625, 45.71416],
+                    [16.0203, 45.712077],
+                    [16.022916, 45.714029],
+                    [16.028403, 45.71242],
+                    [16.036056, 45.709307],
+                    [16.040405, 45.708018],
+                    [16.040067, 45.70652],
+                    [16.03784, 45.704599],
+                    [16.037174, 45.700857],
+                    [16.035648, 45.696182],
+                    [16.03137, 45.692703]
+                ]
+            },
+            "properties": { "hash0": "451a46ddc66026027045" }
+        }
+    ]
+}

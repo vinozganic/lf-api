@@ -1,0 +1,40 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Vukomeri\u0107, okreti\u0161te 7ebe44fba0bf40128eb3_shape",
+    "hash0": "7ebe44fba0bf40128eb3",
+    "hash0Name": "Velika Gorica - Vukomeri\u0107, okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783117,
+    "routeShortName": "313",
+    "routeLongName": "Zagreb (Glavni kolodvor) - Vukomeri\u0107",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077511, 45.711462],
+                    [16.070648, 45.715912],
+                    [16.005945, 45.739405],
+                    [16.007616, 45.735402],
+                    [16.00412, 45.73126],
+                    [16.002811, 45.725846],
+                    [15.996127, 45.716082],
+                    [15.992815, 45.707296],
+                    [15.989241, 45.704626],
+                    [15.984579, 45.697258],
+                    [15.973715, 45.657328],
+                    [15.966873, 45.652487],
+                    [15.95849, 45.627119],
+                    [15.950509, 45.620151],
+                    [15.94852, 45.615571]
+                ]
+            },
+            "properties": { "hash0": "7ebe44fba0bf40128eb3" }
+        }
+    ]
+}

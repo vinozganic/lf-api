@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Velika Gorica \u279e Pleso-dru\u0161tveni dom 83e42b2343a014ccd681_shape",
+    "hash0": "83e42b2343a014ccd681",
+    "hash0Name": "Velika Gorica - Pleso-dru\u0161tveni dom",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783127,
+    "routeShortName": "335",
+    "routeLongName": "Velika Gorica - Pleso - Donja Lomnica",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.07728, 45.711574],
+                    [16.07636, 45.717251],
+                    [16.082797, 45.723628],
+                    [16.084186, 45.728432],
+                    [16.077612, 45.727625],
+                    [16.072414, 45.728391],
+                    [16.067232, 45.73018]
+                ]
+            },
+            "properties": { "hash0": "83e42b2343a014ccd681" }
+        }
+    ]
+}

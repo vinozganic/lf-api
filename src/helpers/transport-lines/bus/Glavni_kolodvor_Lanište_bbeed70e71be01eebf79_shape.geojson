@@ -1,0 +1,39 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Lani\u0161te bbeed70e71be01eebf79_shape",
+    "hash0": "bbeed70e71be01eebf79",
+    "hash0Name": "Glavni kolodvor - Lani\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783075,
+    "routeShortName": "234",
+    "routeLongName": "Glavni kolodvor - Kajzerica - Lani\u0161te",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977234, 45.801989],
+                    [15.978566, 45.799333],
+                    [15.979006, 45.793979],
+                    [15.978265, 45.783504],
+                    [15.970529, 45.783319],
+                    [15.967051, 45.782972],
+                    [15.966151, 45.778309],
+                    [15.964491, 45.777332],
+                    [15.956558, 45.777388],
+                    [15.953179, 45.774645],
+                    [15.951402, 45.772015],
+                    [15.945837, 45.768334],
+                    [15.945212, 45.770422],
+                    [15.947725, 45.774242]
+                ]
+            },
+            "properties": { "hash0": "bbeed70e71be01eebf79" }
+        }
+    ]
+}

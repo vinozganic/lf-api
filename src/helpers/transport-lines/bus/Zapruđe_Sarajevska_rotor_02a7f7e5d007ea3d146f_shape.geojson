@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Zapru\u0111e \u279e Sarajevska-rotor 02a7f7e5d007ea3d146f_shape",
+    "hash0": "02a7f7e5d007ea3d146f",
+    "hash0Name": "Zapru\u0111e - Sarajevska-rotor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783107,
+    "routeShortName": "295",
+    "routeLongName": "Zapru\u0111e - Jaku\u0161evec - Zapru\u0111e",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.003167, 45.781688],
+                    [16.018408, 45.772733],
+                    [16.021794, 45.769362],
+                    [16.017819, 45.763583],
+                    [16.015379, 45.760495],
+                    [16.01085, 45.760873],
+                    [16.00888, 45.760863],
+                    [16.01063, 45.764453],
+                    [16.014747, 45.762406],
+                    [16.015379, 45.760495],
+                    [16.01085, 45.760873],
+                    [16.00888, 45.760863],
+                    [16.006752, 45.76522],
+                    [16.005381, 45.769325],
+                    [16.003668, 45.774548],
+                    [16.003006, 45.776975]
+                ]
+            },
+            "properties": { "hash0": "02a7f7e5d007ea3d146f" }
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "name": "Jaru\u0161\u010dica \u279e \u017ditnjak - okreti\u0161te da645cfec062af0378ba_shape",
+    "hash0": "da645cfec062af0378ba",
+    "hash0Name": "Jaru\u0161\u010dica - \u017ditnjak - okreti\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783063,
+    "routeShortName": "222",
+    "routeLongName": "Remetinec - \u017ditnjak",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.935903, 45.76892],
+                    [15.940826, 45.769173],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.956925, 45.776843],
+                    [15.964189, 45.77691],
+                    [15.973007, 45.777197],
+                    [15.981796, 45.777402],
+                    [15.98654, 45.777615],
+                    [15.991608, 45.777698],
+                    [15.997877, 45.777808],
+                    [16.000377, 45.777784],
+                    [16.002746, 45.792092],
+                    [16.006766, 45.795862],
+                    [16.020484, 45.796539],
+                    [16.023855, 45.796919],
+                    [16.028761, 45.796663],
+                    [16.038771, 45.797448],
+                    [16.043606, 45.798312],
+                    [16.050067, 45.800137],
+                    [16.057598, 45.800614],
+                    [16.061805, 45.801473]
+                ]
+            },
+            "properties": { "hash0": "da645cfec062af0378ba" }
+        }
+    ]
+}

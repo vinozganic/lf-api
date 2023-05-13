@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Borovje \u279e Glavni kolodvor 4be13e9851c1a019bc7d_shape",
+    "hash0": "4be13e9851c1a019bc7d",
+    "hash0Name": "Borovje - Glavni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783059,
+    "routeShortName": "218",
+    "routeLongName": "Glavni kolodvor - Borovje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.011224, 45.788923],
+                    [16.008225, 45.788981],
+                    [16.005433, 45.787095],
+                    [16.002792, 45.790425],
+                    [15.999667, 45.79018],
+                    [15.995691, 45.790582],
+                    [15.994749, 45.793821],
+                    [15.989348, 45.795424],
+                    [15.979747, 45.795537],
+                    [15.979561, 45.799405],
+                    [15.977791, 45.803745]
+                ]
+            },
+            "properties": { "hash0": "4be13e9851c1a019bc7d" }
+        }
+    ]
+}

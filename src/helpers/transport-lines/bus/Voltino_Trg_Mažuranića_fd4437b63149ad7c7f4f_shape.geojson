@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Voltino \u279e Trg Ma\u017eurani\u0107a fd4437b63149ad7c7f4f_shape",
+    "hash0": "fd4437b63149ad7c7f4f",
+    "hash0Name": "Voltino - Trg Ma\u017eurani\u0107a",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782996,
+    "routeShortName": "118",
+    "routeLongName": "Trg Ma\u017eurani\u0107a - Voltino",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.925805, 45.800463],
+                    [15.930236, 45.801396],
+                    [15.930127, 45.805146],
+                    [15.93005, 45.808968],
+                    [15.935984, 45.807858],
+                    [15.943901, 45.806993],
+                    [15.949202, 45.80885],
+                    [15.953724, 45.808158],
+                    [15.956806, 45.80731],
+                    [15.960206, 45.807501],
+                    [15.969265, 45.807681]
+                ]
+            },
+            "properties": { "hash0": "fd4437b63149ad7c7f4f" }
+        }
+    ]
+}

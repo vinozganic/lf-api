@@ -1,0 +1,40 @@
+{
+    "type": "FeatureCollection",
+    "name": "Borongaj \u279e Zapadni kolodvor c6714db6c30fd3291f27_shape",
+    "hash0": "c6714db6c30fd3291f27",
+    "hash0Name": "Borongaj - Zapadni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801680659114221,
+    "routeShortName": "1",
+    "routeLongName": "Zapadni kolodvor - Borongaj",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Tramvaj",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.018831, 45.814551],
+                    [16.01333, 45.815406],
+                    [16.008621, 45.815021],
+                    [16.004747, 45.813341],
+                    [15.99934, 45.811531],
+                    [15.997721, 45.811126],
+                    [15.992275, 45.810259],
+                    [15.988373, 45.810016],
+                    [15.984228, 45.811804],
+                    [15.976544, 45.813171],
+                    [15.968637, 45.813268],
+                    [15.964733, 45.812417],
+                    [15.957786, 45.813169],
+                    [15.957094, 45.809666],
+                    [15.955034, 45.809613]
+                ]
+            },
+            "properties": { "hash0": "c6714db6c30fd3291f27" }
+        }
+    ]
+}

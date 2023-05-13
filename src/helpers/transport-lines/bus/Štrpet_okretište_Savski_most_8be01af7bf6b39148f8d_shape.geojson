@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u0160trpet-okreti\u0161te \u279e Savski most 8be01af7bf6b39148f8d_shape",
+    "hash0": "8be01af7bf6b39148f8d",
+    "hash0Name": "\u0160trpet-okreti\u0161te - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783031,
+    "routeShortName": "161",
+    "routeLongName": "Savski most - Kupine\u010dki Kraljevec - \u0160trpet",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.857064, 45.666811],
+                    [15.859786, 45.66402],
+                    [15.871115, 45.656484],
+                    [15.871398, 45.660197],
+                    [15.871158, 45.66445],
+                    [15.873109, 45.672197],
+                    [15.874241, 45.675825],
+                    [15.876193, 45.6796],
+                    [15.880144, 45.684406],
+                    [15.885234, 45.691469],
+                    [15.891615, 45.697866],
+                    [15.893665, 45.704187],
+                    [15.893918, 45.707578],
+                    [15.897072, 45.711164],
+                    [15.899392, 45.714969],
+                    [15.903333, 45.721743],
+                    [15.907737, 45.724163],
+                    [15.910906, 45.728085],
+                    [15.912039, 45.733236],
+                    [15.916875, 45.743078],
+                    [15.919127, 45.745712],
+                    [15.926646, 45.752767],
+                    [15.932644, 45.757471],
+                    [15.947098, 45.76716],
+                    [15.951603, 45.77208],
+                    [15.95331, 45.774903],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "8be01af7bf6b39148f8d" }
+        }
+    ]
+}

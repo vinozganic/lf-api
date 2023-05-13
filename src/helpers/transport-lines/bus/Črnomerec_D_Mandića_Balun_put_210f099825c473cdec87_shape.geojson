@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010crnomerec \u279e D.Mandi\u0107a-Balun. put 210f099825c473cdec87_shape",
+    "hash0": "210f099825c473cdec87",
+    "hash0Name": "\u010crnomerec - D.Mandi\u0107a-Balun. put",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783015,
+    "routeShortName": "137",
+    "routeLongName": "\u010crnomerec - Dominika Mandi\u0107a - Balunov put",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.933997, 45.815799],
+                    [15.928246, 45.81377],
+                    [15.920109, 45.812205],
+                    [15.9172, 45.811601],
+                    [15.905129, 45.813021],
+                    [15.896495, 45.812673],
+                    [15.895233, 45.815071],
+                    [15.890479, 45.816882],
+                    [15.890035, 45.820419],
+                    [15.890763, 45.826945],
+                    [15.894042, 45.830675],
+                    [15.892167, 45.834445],
+                    [15.888657, 45.83683]
+                ]
+            },
+            "properties": { "hash0": "210f099825c473cdec87" }
+        }
+    ]
+}

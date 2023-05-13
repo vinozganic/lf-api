@@ -1,0 +1,51 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubec \u279e \u010crnomerec 217ed89dc98c5d1e7262_shape",
+    "hash0": "217ed89dc98c5d1e7262",
+    "hash0Name": "Dubec - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801680659114230,
+    "routeShortName": "11",
+    "routeLongName": "\u010crnomerec - Dubec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Tramvaj",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.0777, 45.827847],
+                    [16.072487, 45.828404],
+                    [16.067959, 45.828839],
+                    [16.062087, 45.829037],
+                    [16.054483, 45.829435],
+                    [16.0519, 45.828775],
+                    [16.048156, 45.827587],
+                    [16.04369, 45.825981],
+                    [16.037131, 45.824302],
+                    [16.028295, 45.822356],
+                    [16.022082, 45.820976],
+                    [16.012153, 45.81862],
+                    [16.007574, 45.817612],
+                    [16.002854, 45.816521],
+                    [15.997631, 45.815284],
+                    [15.99106, 45.813844],
+                    [15.986536, 45.813822],
+                    [15.983432, 45.812828],
+                    [15.976544, 45.813171],
+                    [15.968637, 45.813268],
+                    [15.964733, 45.812417],
+                    [15.957786, 45.813169],
+                    [15.952514, 45.812472],
+                    [15.94886, 45.812493],
+                    [15.941471, 45.813639],
+                    [15.933924, 45.815398]
+                ]
+            },
+            "properties": { "hash0": "217ed89dc98c5d1e7262" }
+        }
+    ]
+}

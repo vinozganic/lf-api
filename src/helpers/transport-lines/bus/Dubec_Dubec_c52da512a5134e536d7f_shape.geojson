@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubec \u279e Dubec c52da512a5134e536d7f_shape",
+    "hash0": "c52da512a5134e536d7f",
+    "hash0Name": "Dubec - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783052,
+    "routeShortName": "211",
+    "routeLongName": "Dubec - Branove\u010dina - Dubec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.077357, 45.827825],
+                    [16.081709, 45.829669],
+                    [16.083061, 45.833186],
+                    [16.07777, 45.834921],
+                    [16.079008, 45.841734],
+                    [16.078512, 45.834525],
+                    [16.082766, 45.833531],
+                    [16.081537, 45.829524],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "c52da512a5134e536d7f" }
+        }
+    ]
+}

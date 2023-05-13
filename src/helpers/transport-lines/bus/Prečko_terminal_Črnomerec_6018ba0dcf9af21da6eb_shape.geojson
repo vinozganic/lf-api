@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "name": "Pre\u010dko-terminal \u279e \u010crnomerec 6018ba0dcf9af21da6eb_shape",
+    "hash0": "6018ba0dcf9af21da6eb",
+    "hash0Name": "Pre\u010dko-terminal - \u010crnomerec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783012,
+    "routeShortName": "134",
+    "routeLongName": "\u010crnomerec - Pre\u010dko",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.899685, 45.794993],
+                    [15.901332, 45.796547],
+                    [15.90937, 45.796951],
+                    [15.913646, 45.800025],
+                    [15.917698, 45.802411],
+                    [15.920701, 45.804292],
+                    [15.923006, 45.805718],
+                    [15.927313, 45.808749],
+                    [15.934697, 45.812081],
+                    [15.933231, 45.815318]
+                ]
+            },
+            "properties": { "hash0": "6018ba0dcf9af21da6eb" }
+        }
+    ]
+}

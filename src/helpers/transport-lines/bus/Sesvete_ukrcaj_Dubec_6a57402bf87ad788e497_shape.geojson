@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sesvete-ukrcaj \u279e Dubec 6a57402bf87ad788e497_shape",
+    "hash0": "6a57402bf87ad788e497",
+    "hash0Name": "Sesvete-ukrcaj - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783053,
+    "routeShortName": "212",
+    "routeLongName": "Dubec - Sesvete",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.108209, 45.825864],
+                    [16.105547, 45.827811],
+                    [16.097482, 45.827647],
+                    [16.090762, 45.826471],
+                    [16.08586, 45.826338],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "6a57402bf87ad788e497" }
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "name": "Morav\u010de-Benkova \u279e Dubec 8934bccd672c50d07267_shape",
+    "hash0": "8934bccd672c50d07267",
+    "hash0Name": "Morav\u010de-Benkova - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783093,
+    "routeShortName": "272",
+    "routeLongName": "Dubec - Sesvete - Morav\u010de",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.167667, 45.936557],
+                    [16.170287, 45.929713],
+                    [16.170746, 45.923933],
+                    [16.169922, 45.919016],
+                    [16.167757, 45.912242],
+                    [16.164428, 45.908541],
+                    [16.163338, 45.904209],
+                    [16.166043, 45.897998],
+                    [16.168799, 45.894386],
+                    [16.174694, 45.886248],
+                    [16.173164, 45.881511],
+                    [16.16016, 45.870692],
+                    [16.153699, 45.863963],
+                    [16.147427, 45.85732],
+                    [16.139267, 45.849619],
+                    [16.131913, 45.843929],
+                    [16.115725, 45.830592],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "8934bccd672c50d07267" }
+        }
+    ]
+}

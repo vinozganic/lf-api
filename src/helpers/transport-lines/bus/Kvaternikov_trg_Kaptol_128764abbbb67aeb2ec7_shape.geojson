@@ -1,0 +1,36 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kvaternikov trg \u279e Kaptol 128764abbbb67aeb2ec7_shape",
+    "hash0": "128764abbbb67aeb2ec7",
+    "hash0Name": "Kvaternikov trg - Kaptol",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783042,
+    "routeShortName": "201",
+    "routeLongName": "Kaptol - Kvaternikov trg",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.997761, 45.814248],
+                    [15.996308, 45.818111],
+                    [15.995412, 45.820041],
+                    [15.992973, 45.824889],
+                    [15.991472, 45.829106],
+                    [15.989457, 45.831598],
+                    [15.98526, 45.828798],
+                    [15.984907, 45.824606],
+                    [15.982106, 45.823466],
+                    [15.979902, 45.819556],
+                    [15.978513, 45.815174]
+                ]
+            },
+            "properties": { "hash0": "128764abbbb67aeb2ec7" }
+        }
+    ]
+}

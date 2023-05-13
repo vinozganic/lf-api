@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Sesvete-ukrcaj \u279e Letni\u010dka - \u0161kola 6b686f90bc71f3b2940d_shape",
+    "hash0": "6b686f90bc71f3b2940d",
+    "hash0Name": "Sesvete-ukrcaj - Letni\u010dka - \u0161kola",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783099,
+    "routeShortName": "278",
+    "routeLongName": "Sesvete - Sesvetska Sela - Kraljeve\u010dki Novaki",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.107175, 45.826093],
+                    [16.10777, 45.827498],
+                    [16.117897, 45.824619],
+                    [16.126437, 45.823819],
+                    [16.131593, 45.824698],
+                    [16.132518, 45.830294],
+                    [16.135979, 45.830595]
+                ]
+            },
+            "properties": { "hash0": "6b686f90bc71f3b2940d" }
+        }
+    ]
+}

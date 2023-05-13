@@ -1,0 +1,50 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dragono\u017eec-\u0161kola \u279e Glavni kolodvor 45e998f7179ee08ab5cd_shape",
+    "hash0": "45e998f7179ee08ab5cd",
+    "hash0Name": "Dragono\u017eec-\u0161kola - Glavni kolodvor",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783035,
+    "routeShortName": "166",
+    "routeLongName": "Zagreb (Glavni kolodvor) - Donji Dragono\u010dec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.942727, 45.662715],
+                    [15.948639, 45.660921],
+                    [15.956443, 45.659959],
+                    [15.96496, 45.658917],
+                    [15.984994, 45.697895],
+                    [15.989248, 45.704661],
+                    [15.992746, 45.707252],
+                    [15.996166, 45.716138],
+                    [16.003078, 45.726209],
+                    [16.004252, 45.730906],
+                    [15.996933, 45.731088],
+                    [15.996847, 45.735635],
+                    [16.004264, 45.739834],
+                    [15.997997, 45.744302],
+                    [15.991812, 45.74871],
+                    [15.987749, 45.760609],
+                    [15.991141, 45.764861],
+                    [15.991183, 45.768711],
+                    [15.989916, 45.772688],
+                    [15.980519, 45.772456],
+                    [15.980671, 45.778613],
+                    [15.980081, 45.784166],
+                    [15.979747, 45.795537],
+                    [15.979561, 45.799405],
+                    [15.978579, 45.803939]
+                ]
+            },
+            "properties": { "hash0": "45e998f7179ee08ab5cd" }
+        }
+    ]
+}

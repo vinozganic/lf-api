@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "name": "Ljubljanica \u279e Hrgovi\u0107i-jezero 4c134f1f0fc097350d0b_shape",
+    "hash0": "4c134f1f0fc097350d0b",
+    "hash0Name": "Ljubljanica - Hrgovi\u0107i-jezero",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782992,
+    "routeShortName": "113",
+    "routeLongName": "Ljubljanica - Jarun",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.936707, 45.795814],
+                    [15.935459, 45.794088],
+                    [15.92977, 45.793177],
+                    [15.930239, 45.789884],
+                    [15.928082, 45.78606],
+                    [15.925094, 45.782437],
+                    [15.917955, 45.785223],
+                    [15.912524, 45.787609],
+                    [15.909252, 45.782358],
+                    [15.907846, 45.779613],
+                    [15.912392, 45.778362],
+                    [15.921495, 45.776115],
+                    [15.932135, 45.774441],
+                    [15.937697, 45.776345],
+                    [15.937241, 45.780736],
+                    [15.932469, 45.781235],
+                    [15.925642, 45.782926]
+                ]
+            },
+            "properties": { "hash0": "4c134f1f0fc097350d0b" }
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "\u010cu\u010derje \u279e Dubrava 25aa9152990aabe49e8f_shape",
+    "hash0": "25aa9152990aabe49e8f",
+    "hash0Name": "\u010cu\u010derje - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783050,
+    "routeShortName": "209",
+    "routeLongName": "Dubrava - \u010cu\u010derje",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.060976, 45.905031],
+                    [16.063174, 45.901248],
+                    [16.060475, 45.898595],
+                    [16.059785, 45.89476],
+                    [16.059967, 45.890683],
+                    [16.058019, 45.887473],
+                    [16.056077, 45.88526],
+                    [16.057409, 45.879889],
+                    [16.056303, 45.875222],
+                    [16.056375, 45.871905],
+                    [16.055982, 45.867515],
+                    [16.055411, 45.862975],
+                    [16.056047, 45.858087],
+                    [16.055444, 45.855375],
+                    [16.055534, 45.851976],
+                    [16.054535, 45.844437],
+                    [16.054689, 45.842685],
+                    [16.056439, 45.839004],
+                    [16.055871, 45.834505],
+                    [16.056371, 45.830135],
+                    [16.037267, 45.82469]
+                ]
+            },
+            "properties": { "hash0": "25aa9152990aabe49e8f" }
+        }
+    ]
+}

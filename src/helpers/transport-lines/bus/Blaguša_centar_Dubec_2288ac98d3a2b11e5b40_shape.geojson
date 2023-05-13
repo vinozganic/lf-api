@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection",
+    "name": "Blagu\u0161a - centar \u279e Dubec 2288ac98d3a2b11e5b40_shape",
+    "hash0": "2288ac98d3a2b11e5b40",
+    "hash0Name": "Blagu\u0161a - centar - Dubec",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783091,
+    "routeShortName": "270",
+    "routeLongName": "Dubec - Blagu\u0161a",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.130349, 45.929625],
+                    [16.131096, 45.924147],
+                    [16.131742, 45.920222],
+                    [16.133126, 45.911611],
+                    [16.131234, 45.908727],
+                    [16.130473, 45.904248],
+                    [16.132379, 45.901037],
+                    [16.133786, 45.897239],
+                    [16.133819, 45.891285],
+                    [16.136491, 45.888503],
+                    [16.137795, 45.884444],
+                    [16.13826, 45.880098],
+                    [16.14145, 45.876995],
+                    [16.145255, 45.871797],
+                    [16.153699, 45.863963],
+                    [16.147427, 45.85732],
+                    [16.139267, 45.849619],
+                    [16.131913, 45.843929],
+                    [16.115725, 45.830592],
+                    [16.110753, 45.826662],
+                    [16.109511, 45.825442],
+                    [16.077699, 45.828008]
+                ]
+            },
+            "properties": { "hash0": "2288ac98d3a2b11e5b40" }
+        }
+    ]
+}

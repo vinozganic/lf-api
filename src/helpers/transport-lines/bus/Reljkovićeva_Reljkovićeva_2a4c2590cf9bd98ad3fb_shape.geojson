@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "name": "Reljkovi\u0107eva \u279e Reljkovi\u0107eva 2a4c2590cf9bd98ad3fb_shape",
+    "hash0": "2a4c2590cf9bd98ad3fb",
+    "hash0Name": "Reljkovi\u0107eva - Reljkovi\u0107eva",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783017,
+    "routeShortName": "139",
+    "routeLongName": "Reljkovi\u0107eva - Jelenovac - Reljkovi\u0107eva",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.955139, 45.81248],
+                    [15.953931, 45.816861],
+                    [15.954392, 45.818716],
+                    [15.953187, 45.823831],
+                    [15.952569, 45.829761],
+                    [15.955359, 45.828147],
+                    [15.957695, 45.825698],
+                    [15.958384, 45.825201],
+                    [15.956238, 45.821571],
+                    [15.954327, 45.818823],
+                    [15.953991, 45.817042],
+                    [15.955922, 45.813502],
+                    [15.954981, 45.812277]
+                ]
+            },
+            "properties": { "hash0": "2a4c2590cf9bd98ad3fb" }
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Rim.put-dj.igrali\u0161te fa525112b4be363246c5_shape",
+    "hash0": "fa525112b4be363246c5",
+    "hash0Name": "Glavni kolodvor - Rim.put-dj.igrali\u0161te",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783102,
+    "routeShortName": "281",
+    "routeLongName": "Glavni kolodvor - Novi Jelkovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977098, 45.803284],
+                    [15.978566, 45.799333],
+                    [15.98075, 45.794656],
+                    [15.992213, 45.795378],
+                    [16.006766, 45.795862],
+                    [16.020484, 45.796539],
+                    [16.023855, 45.796919],
+                    [16.028761, 45.796663],
+                    [16.038771, 45.797448],
+                    [16.043606, 45.798312],
+                    [16.050067, 45.800137],
+                    [16.076833, 45.803813],
+                    [16.084894, 45.804837],
+                    [16.101073, 45.807914],
+                    [16.105898, 45.809829],
+                    [16.114843, 45.810427]
+                ]
+            },
+            "properties": { "hash0": "fa525112b4be363246c5" }
+        }
+    ]
+}

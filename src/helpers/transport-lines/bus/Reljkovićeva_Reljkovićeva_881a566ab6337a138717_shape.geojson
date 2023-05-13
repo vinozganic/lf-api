@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "name": "Reljkovi\u0107eva \u279e Reljkovi\u0107eva 881a566ab6337a138717_shape",
+    "hash0": "881a566ab6337a138717",
+    "hash0Name": "Reljkovi\u0107eva - Reljkovi\u0107eva",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783025,
+    "routeShortName": "148",
+    "routeLongName": " Reljkovi\u0107eva - Hercegova\u010dka - Bosanska - Reljkovi\u0107eva",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.955139, 45.81248],
+                    [15.956759, 45.814247],
+                    [15.957471, 45.81848],
+                    [15.958616, 45.816995],
+                    [15.954981, 45.812277]
+                ]
+            },
+            "properties": { "hash0": "881a566ab6337a138717" }
+        }
+    ]
+}

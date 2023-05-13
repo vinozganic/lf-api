@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "name": "Miro\u0161evec \u279e Dubrava 0abc327c12b72960408a_shape",
+    "hash0": "0abc327c12b72960408a",
+    "hash0Name": "Miro\u0161evec - Dubrava",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783047,
+    "routeShortName": "206",
+    "routeLongName": "Dubrava - Miro\u0161evec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.043954, 45.840783],
+                    [16.047605, 45.837688],
+                    [16.049188, 45.835054],
+                    [16.049955, 45.833239],
+                    [16.052192, 45.82982],
+                    [16.037267, 45.82469]
+                ]
+            },
+            "properties": { "hash0": "0abc327c12b72960408a" }
+        }
+    ]
+}

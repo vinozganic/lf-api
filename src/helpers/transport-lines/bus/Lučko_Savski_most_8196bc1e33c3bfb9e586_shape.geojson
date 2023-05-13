@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "name": "Lu\u010dko \u279e Savski most 8196bc1e33c3bfb9e586_shape",
+    "hash0": "8196bc1e33c3bfb9e586",
+    "hash0Name": "Lu\u010dko - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782991,
+    "routeShortName": "112",
+    "routeLongName": "Savski most - Lu\u010dko",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.884047, 45.769845],
+                    [15.882351, 45.761257],
+                    [15.896273, 45.759768],
+                    [15.910932, 45.759629],
+                    [15.917708, 45.763395],
+                    [15.927131, 45.765152],
+                    [15.931974, 45.766662],
+                    [15.935903, 45.76892],
+                    [15.940826, 45.769173],
+                    [15.945212, 45.770422],
+                    [15.944799, 45.772334],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "8196bc1e33c3bfb9e586" }
+        }
+    ]
+}

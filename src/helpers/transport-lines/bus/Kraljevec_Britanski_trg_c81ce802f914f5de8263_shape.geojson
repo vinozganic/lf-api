@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kraljevec \u279e Britanski trg c81ce802f914f5de8263_shape",
+    "hash0": "c81ce802f914f5de8263",
+    "hash0Name": "Kraljevec - Britanski trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782982,
+    "routeShortName": "103",
+    "routeLongName": "Britanski trg - Kraljevec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.968771, 45.830592],
+                    [15.96836, 45.82662],
+                    [15.965358, 45.820879],
+                    [15.964, 45.818592],
+                    [15.964018, 45.813944]
+                ]
+            },
+            "properties": { "hash0": "c81ce802f914f5de8263" }
+        }
+    ]
+}

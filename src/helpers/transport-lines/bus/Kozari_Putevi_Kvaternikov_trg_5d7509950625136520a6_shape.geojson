@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "Kozari Putevi \u279e Kvaternikov trg 5d7509950625136520a6_shape",
+    "hash0": "5d7509950625136520a6",
+    "hash0Name": "Kozari Putevi - Kvaternikov trg",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783078,
+    "routeShortName": "237",
+    "routeLongName": "Kvaternikov Trg - Kozari Putevi",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.047121, 45.792681],
+                    [16.041873, 45.791481],
+                    [16.036382, 45.797308],
+                    [16.027023, 45.797307],
+                    [16.023357, 45.797157],
+                    [16.017114, 45.797682],
+                    [16.009522, 45.803865],
+                    [16.005685, 45.807312],
+                    [15.998643, 45.813396]
+                ]
+            },
+            "properties": { "hash0": "5d7509950625136520a6" }
+        }
+    ]
+}

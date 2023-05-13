@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "Glavni kolodvor \u279e Savski most da29778cb86e8a0d6066_shape",
+    "hash0": "da29778cb86e8a0d6066",
+    "hash0Name": "Glavni kolodvor - Savski most",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932782987,
+    "routeShortName": "108",
+    "routeLongName": "Glavni kolodvor - Savski most",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [15.977098, 45.803284],
+                    [15.978566, 45.799333],
+                    [15.978192, 45.795006],
+                    [15.968264, 45.791523],
+                    [15.961318, 45.790496],
+                    [15.954769, 45.788497],
+                    [15.952836, 45.785847]
+                ]
+            },
+            "properties": { "hash0": "da29778cb86e8a0d6066" }
+        }
+    ]
+}

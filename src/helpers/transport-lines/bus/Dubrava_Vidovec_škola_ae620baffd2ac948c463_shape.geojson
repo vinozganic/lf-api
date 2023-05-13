@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "name": "Dubrava \u279e Vidovec - \u0161kola ae620baffd2ac948c463_shape",
+    "hash0": "ae620baffd2ac948c463",
+    "hash0Name": "Dubrava - Vidovec - \u0161kola",
+    "feedName": "zagrebavki-elektricni",
+    "provider": "Public-transport-Zagreb",
+    "routeId": 21801683932783049,
+    "routeShortName": "208",
+    "routeLongName": "Dubrava - Vidovec",
+    "agencyName": "Zagreba\u010dki Elektri\u010dni Tramvaj",
+    "routeTypeName": "Bus",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [16.036643, 45.825074],
+                    [16.056034, 45.830648],
+                    [16.05604, 45.834785],
+                    [16.056527, 45.837938],
+                    [16.055327, 45.841947],
+                    [16.054503, 45.844288],
+                    [16.053271, 45.846542],
+                    [16.048786, 45.849999],
+                    [16.046495, 45.85172],
+                    [16.041273, 45.856068],
+                    [16.040069, 45.859304],
+                    [16.037958, 45.865054],
+                    [16.037313, 45.867699],
+                    [16.03553, 45.871191],
+                    [16.034474, 45.875857],
+                    [16.033263, 45.87859],
+                    [16.032953, 45.8806],
+                    [16.035014, 45.888484],
+                    [16.033438, 45.891371],
+                    [16.032632, 45.896288],
+                    [16.034366, 45.89847]
+                ]
+            },
+            "properties": { "hash0": "ae620baffd2ac948c463" }
+        }
+    ]
+}
