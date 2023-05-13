@@ -134,7 +134,7 @@ const insertTypesValues = `
     ('dress', 'Haljina'),
     ('sneakers', 'Tenisice'),
     ('shoes', 'Cipele'),
-    ('boots', 'Čižme'),
+    ('boots', 'Čizme'),
     ('underpants', 'Gaće'),
     ('socks', 'Čarape'),
     ('mobilePhone', 'Mobitel'),
