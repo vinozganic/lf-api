@@ -2,6 +2,11 @@
 
 Welcome to the `lf-api`, the back-end part (API) of Lost & Found App, a centralized and automated platform aimed at quickly reuniting lost items with their rightful owners. In a world where the average person loses 9 items a year, and events can see hundreds to thousands of items lost, Lost & Found steps in as the modern solution to an age-old problem.
 
+### Lost & Found - Repositories
+**Front-end** (`lf-ui`): https://github.com/vinozganic/lf-ui  
+**Back-end API** (`lf-api`): https://github.com/vinozganic/lf-api  
+**Matching Service** (`lf-matcher`): https://github.com/vinozganic/lf-matcher  
+
 ## 🌟 Why Lost & Found?
 
 - **Fast Posting**: Report a lost or found item in less than 90 seconds.
