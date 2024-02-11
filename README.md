@@ -1,6 +1,6 @@
-# Lost & Found API: Reunite With Your Belongings 🔍
+# Lost & Found: Reunite With Your Belongings 🔍
 
-Welcome to the `lf-api`, the backbone of Lost & Found, a centralized and automated platform aimed at quickly reuniting lost items with their rightful owners. In a world where the average person loses 9 items a year, and events can see hundreds to thousands of items lost, Lost & Found steps in as the modern solution to an age-old problem.
+Welcome to the `lf-api`, the back-end part (API) of Lost & Found App, a centralized and automated platform aimed at quickly reuniting lost items with their rightful owners. In a world where the average person loses 9 items a year, and events can see hundreds to thousands of items lost, Lost & Found steps in as the modern solution to an age-old problem.
 
 ## 🌟 Why Lost & Found?
 
