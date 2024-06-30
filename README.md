@@ -19,10 +19,10 @@ Welcome to the `lf-api`, the back-end part (API) of Lost & Found App, a centrali
 - **Machine Learning Matching**: Utilizing state-of-the-art ML models to increase the chances of items being reunited with their owners.
 - **No Barrier Entry**: Access the platform's full capabilities without the need to register or download anything.
 
-## 📸  Screenshots
-<img src="https://i.ibb.co/fMrQ7Gf/lfz-screenshot.png" alt="Lost & Found - Home screen" width="600"/>
-<img src="https://i.ibb.co/WWFDdHd/Screenshot-2024-02-11-at-14-14-49.jpg" alt="Lost & Found - Submitting Process 1" width="600"/>
-<img src="https://i.ibb.co/Fz0NyXN/Screenshot-2024-02-11-at-14-16-16.jpg" alt="Lost & Found - Submitting Process 2" width="600"/>
+## 📸 Screenshots
+![Lost & Found - Home screen](https://github.com/vinozganic/lf-ui/assets/95239040/e1a1ce61-6aa1-4122-b0ac-5107d1aa4e51)
+![Lost & Found - Submitting Process 1](https://github.com/vinozganic/lf-ui/assets/95239040/6499d677-aa44-4c6e-a56e-92c0bc1dc1c1)
+![Lost & Found - Submitting Process 2](https://github.com/vinozganic/lf-ui/assets/95239040/381abdef-ea29-487f-8684-bc275c869911)
 
 
 ## 🤝 Contributing
